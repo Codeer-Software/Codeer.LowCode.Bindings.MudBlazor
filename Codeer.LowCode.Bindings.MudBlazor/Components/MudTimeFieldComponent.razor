@@ -1,0 +1,28 @@
+@using Codeer.LowCode.Bindings.MudBlazor.Enums
+@using Codeer.LowCode.Bindings.MudBlazor.Internal
+@using Codeer.LowCode.Blazor.OperatingModel
+@inherits MudFieldComponentBase<TimeField, MudTimeFieldDesign>
+
+@if (IsViewMode) {
+  <span class="d-block py-2">@GetViewOnlyValue()</span>
+} else {
+  <MudTimePicker @bind-Time:get="@GetValue()" @bind-Time:set="@RaiseOnValueChanged" 
+                 InputId="@WebElementId" Disabled="@IsDisabled" ReadOnly="IsViewMode"
+                 Variant="MudDesign.Variant.ToVariant()" />
+}
+
+@code {
+
+  private bool IsDisabled => Field.IsEnabled == false;
+  private bool IsViewMode => Field.IsViewOnly;
+
+  private TimeSpan? GetValue() => (Field.Design.SaveAsUtc ? DateTimeHelper.ToLocalTime(Field.Value) : Field.Value)?.ToTimeSpan();
+
+  private async Task RaiseOnValueChanged(TimeSpan? value) {
+    var timeOnly = DateTimeHelper.ToTimeOnly(value);
+    await Field.SetValueAsync(Field.Design.SaveAsUtc ? DateTimeHelper.ToUniversalTime(timeOnly) : timeOnly);
+  }
+
+  private string GetViewOnlyValue() => GetValue().ToString() ?? "";
+
+}

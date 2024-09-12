@@ -1,0 +1,17 @@
+@using Codeer.LowCode.Bindings.MudBlazor.Enums
+@using Codeer.LowCode.Blazor.OperatingModel
+@inherits MudFieldComponentBase<SubmitButtonField, MudSubmitButtonFieldDesign>
+
+<MudButton StartIcon="@Field.Design.Icon" Disabled="IsDisabled" OnClick="@RaiseOnClick" FullWidth="true"
+           Variant="MudDesign.Variant.ToVariant()" Color="MudDesign.Color.ToColor()">
+  @Label
+</MudButton>
+
+@code {
+  private string? Label => Field.Design.Text;
+  private bool IsDisabled => Field.IsEnabled == false || IsViewMode;
+  private bool IsViewMode => Field.IsViewOnly;
+
+  private Task RaiseOnClick() => Field.InvokeOnClick();
+
+}

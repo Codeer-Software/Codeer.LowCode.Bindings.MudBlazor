@@ -1,0 +1,34 @@
+@using Codeer.LowCode.Bindings.MudBlazor.Enums
+@using Codeer.LowCode.Blazor.OperatingModel
+@inherits MudFieldComponentBase<DateTimeField, MudDateTimeFieldDesign>
+
+@if (IsViewMode) {
+  <span class="d-block py-2">@GetViewOnlyValue()</span>
+} else {
+  <MudTextField T="DateTime?" @bind-Value:get="@GetValue()" @bind-Value:set="@RaiseOnValueChanged"
+                InputId="@WebElementId" Disabled="@IsDisabled" ReadOnly="IsViewMode" InputType="InputType.DateTimeLocal"
+                Variant="MudDesign.Variant.ToVariant()" />
+}
+
+@code {
+  private bool IsDisabled => Field.IsEnabled == false;
+  private bool IsViewMode => Field.IsViewOnly;
+
+  private DateTime? GetValue()
+    => Field.Design.SaveAsUtc ? Field.Value?.ToLocalTime() : Field.Value;
+
+  private async Task RaiseOnValueChanged(DateTime? value) {
+    await Field.SetValueAsync(Field.Design.SaveAsUtc ? value?.ToUniversalTime() : value);
+  }
+
+  private string GetViewOnlyValue()
+  {
+    var value = Field.Services.AppInfoService.IsDesignMode ? new DateTime(2024, 5, 13) : Field.Value;
+    try {
+      return value?.ToString(Field.Design.Format) ?? string.Empty;
+    } catch(FormatException) {
+      return value?.ToString() ?? string.Empty;
+    }
+  }
+
+}

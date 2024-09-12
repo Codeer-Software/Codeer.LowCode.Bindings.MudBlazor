@@ -1,0 +1,67 @@
+CREATE TABLE Authors (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    FullName TEXT,
+    Email TEXT NOT NULL UNIQUE,
+    Profile TEXT
+);
+
+CREATE TABLE Recipes (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    AuthorEmail Text,
+    RecipeName TEXT,
+    Description TEXT,
+    ServingSize TEXT
+);
+
+CREATE TABLE Ingredients (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    RecipeId INTEGER,
+    IngredientName TEXT,
+    Quantity REAL,
+    Measurement TEXT,
+    Preparation TEXT,
+    Note TEXT,
+    SortIndex INTEGER
+);
+
+CREATE TABLE CookingSteps (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    RecipeId INTEGER,
+    StepNumber INTEGER,
+    Instruction TEXT
+);
+
+CREATE TABLE Colors (
+    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name TEXT,
+    Color TEXT
+);
+----data--------
+INSERT INTO Recipes (RecipeName, Description, ServingSize) VALUES
+('Tomato Spaghetti', 'Simple and delicious tomato spaghetti', 'Serves 2'),
+('Chicken Curry', 'Spicy and authentic chicken curry', 'Serves 4'),
+('Vegetable Salad', 'Fresh and healthy vegetable salad', 'Serves 2');
+
+INSERT INTO Ingredients (RecipeId, IngredientName, Quantity, Measurement, Preparation, Note, SortIndex) VALUES
+(1, 'Spaghetti', 200, 'g', '', '', 0),
+(1, 'Tomato', 3, 'pcs', 'diced', '', 1),
+(1, 'Olive Oil', 2, 'tbsp', '', '', 2),
+(1, 'Garlic', 1, 'clove', 'minced', '', 3),
+(2, 'Chicken Thigh', 400, 'g', 'cut into pieces', '', 0),
+(2, 'Onion', 2, 'pcs', 'chopped', '', 1),
+(2, 'Curry Powder', 3, 'tbsp', '', 'adjust to taste', 2),
+(2, 'Canned Tomatoes', 1, 'can', '', '', 3),
+(3, 'Lettuce', 1, 'head', 'torn', '', 0),
+(3, 'Tomato', 2, 'pcs', 'wedges', '', 1),
+(3, 'Cucumber', 1, 'pc', 'sliced', '', 2),
+(3, 'Dressing', 3, 'tbsp', '', 'as per taste', 3);
+
+INSERT INTO CookingSteps (RecipeId, StepNumber, Instruction) VALUES
+(1, 1, 'Boil the spaghetti'),
+(1, 2, 'Sauté garlic and tomatoes in olive oil'),
+(1, 3, 'Mix the cooked spaghetti with the sautéed tomatoes and garlic'),
+(2, 1, 'Sauté the chicken pieces'),
+(2, 2, 'Add onions and curry powder and sauté further'),
+(2, 3, 'Add water and canned tomatoes and simmer'),
+(3, 1, 'Prepare and cut the vegetables'),
+(3, 2, 'Toss the vegetables with dressing in a bowl');

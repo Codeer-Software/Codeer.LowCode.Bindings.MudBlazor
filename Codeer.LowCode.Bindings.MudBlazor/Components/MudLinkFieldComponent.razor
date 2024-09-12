@@ -1,0 +1,65 @@
+@using Codeer.LowCode.Bindings.MudBlazor.Enums
+@using Codeer.LowCode.Blazor.Components.Renderer
+@using Codeer.LowCode.Blazor.OperatingModel
+@using Codeer.LowCode.Blazor.Components.Dialog
+@using Codeer.LowCode.Blazor.Repository.Match
+@inherits MudFieldComponentBase<LinkField, MudLinkFieldDesign>
+
+@if (IsViewMode) {
+  <span class="d-block py-2">@ViewOnlyValue</span>
+} else {
+  <MudStack Row Spacing="1">
+    @if (IsSelectOnly) {
+      <MudTextField Value="@DisplayText" Disabled="@IsDisabled" ReadOnly="true" Adornment="Adornment"
+                    InputId="@WebElementId" AdornmentIcon="@Icons.Material.Filled.Close" OnAdornmentClick="@Clear"
+                    Variant="MudDesign.Variant.ToVariant()" />
+    } else {
+      <MudTextField T="string?" @bind-Value:get="@DisplayText" @bind-Value:set="RaiseOnValueChanged"
+                    InputId="@WebElementId" Disabled="@IsDisabled" Adornment="Adornment"
+                    AdornmentIcon="@Icons.Material.Filled.Close" OnAdornmentClick="@Clear"
+                    Variant="MudDesign.Variant.ToVariant()"/>
+    }
+    <MudIconButton Icon="@Icons.Material.Filled.Search" OnClick="OpenModal" Disabled="@IsDisabled"
+                   Variant="MudDesign.ButtonVariant.ToVariant()" Color="MudDesign.ButtonColor.ToColor()"/>
+  </MudStack>
+
+  <ModalBase @bind-IsOpen="_isModalOpen" Title="検索" Size="modal-lg">
+    @if (_isModalOpen) {
+      <LinkTableRenderer SearchConditions="@Conditions" ItemSelected="OnItemSelected" ModuleDesign="Field.Module.Design" LinkFieldDesign="Field.Design"/>
+    }
+  </ModalBase>
+}
+
+@code {
+  private bool _isModalOpen;
+  private SearchCondition Conditions => Field.GetSearchConditionAssignedValue();
+
+  private bool IsSelectOnly => !string.IsNullOrEmpty(Field.Design.DisplayTextVariable);
+  private bool IsDisabled => Field.IsEnabled == false;
+  private bool IsViewMode => Field.IsViewOnly;
+  private bool HasValue => Field.Value != null;
+  private Adornment Adornment => HasValue ? Adornment.End : Adornment.None;
+  private string DisplayText => Field.DisplayText;
+  private string? ViewOnlyValue => Field.Services.AppInfoService.IsDesignMode ? "Link" : DisplayText;
+
+  private async Task OpenModal() {
+    await Task.CompletedTask;
+    _isModalOpen = true;
+  }
+
+  private void CloseModal() => _isModalOpen = false;
+
+  private async Task RaiseOnValueChanged(string? value) {
+    await Field.SetValueAsync(value);
+  }
+
+  private async Task OnItemSelected(Module obj) {
+    CloseModal();
+    await Field.SetValueAsync(obj);
+  }
+
+  private async void Clear() {
+    await Field.SetValueAsync((string?)null);
+  }
+
+}

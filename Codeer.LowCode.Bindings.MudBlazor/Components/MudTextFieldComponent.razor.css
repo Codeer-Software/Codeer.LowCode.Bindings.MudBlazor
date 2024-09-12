@@ -1,0 +1,15 @@
+input[style*="--background:"],
+textarea[style*="--background:"],
+span[style*="--background:"] {
+    background: var(--background);
+}
+
+input[style*="--foreground:"],
+textarea[style*="--foreground:"],
+span[style*="--foreground:"] {
+    color: var(--foreground);
+}
+
+span {
+  overflow-wrap: break-word;
+}

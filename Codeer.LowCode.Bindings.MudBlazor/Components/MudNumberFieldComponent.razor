@@ -1,0 +1,35 @@
+@using Codeer.LowCode.Bindings.MudBlazor.Enums
+@using Codeer.LowCode.Blazor.OperatingModel
+@inherits MudFieldComponentBase<NumberField, MudNumberFieldDesign>
+
+@if (IsViewMode) {
+  <span class="d-block py-2">@GetViewOnlyValue()</span>
+} else {
+  <MudNumericField T="decimal?" @bind-Value:get="@Field.Value" @bind-Value:set="@RaiseOnValueChanged"
+                   InputId="@WebElementId" Disabled="@IsDisabled" ReadOnly="IsViewMode"
+                   Placeholder="@Placeholder" Max="@Max" Min="@Min"
+                   Variant="MudDesign.Variant.ToVariant()" />
+}
+
+@code {
+  private bool IsDisabled => Field.IsEnabled == false;
+  private bool IsViewMode => Field.IsViewOnly;
+  private string? Placeholder => Field.Design.Placeholder;
+  private decimal? Max => Field.Design.Max;
+  private decimal? Min => Field.Design.Min;
+
+  private async Task RaiseOnValueChanged(decimal? fieldValue) {
+    await Field.SetValueAsync(fieldValue);
+  }
+
+  private string GetViewOnlyValue() {
+    var value = Field.Services.AppInfoService.IsDesignMode ? 1000 : Field.Value;
+    try {
+      return value?.ToString(Field.Design.Format) ?? string.Empty;
+    }
+    catch (FormatException) {
+      return value?.ToString() ?? string.Empty;
+    }
+  }
+
+}

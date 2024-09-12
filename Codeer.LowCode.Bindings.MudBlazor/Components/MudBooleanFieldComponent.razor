@@ -1,0 +1,40 @@
+@using Codeer.LowCode.Bindings.MudBlazor.Enums
+@using Codeer.LowCode.Blazor.Repository.Design
+@using Codeer.LowCode.Blazor.OperatingModel
+@inherits MudFieldComponentBase<BooleanField, MudBooleanFieldDesign>
+
+@if (Field.ModuleLayoutType == ModuleLayoutType.List && Field.IsViewOnly) {
+  <span class="d-block py-2">
+    @ViewOnlyValue
+  </span>
+} else {
+  if (Field.Design.UIType == BooleanUIType.CheckBox) {
+    <MudCheckBox @bind-Value:get="@IsChecked" @bind-Value:set="@OnChange" Disabled="@(IsDisabled || IsViewMode)" Label="@Label"
+                 Color="MudDesign.Color.ToColor()" />
+  } else if (Field.Design.UIType == BooleanUIType.Switch) {
+    <MudSwitch @bind-Value:get="@IsChecked" @bind-Value:set="@OnChange" Disabled="@(IsDisabled || IsViewMode)" Label="@Label"
+               Color="MudDesign.Color.ToColor()" />
+  } else if (Field.Design.UIType == BooleanUIType.ToggleButton) {
+    <MudButton Variant="@(IsChecked ? Variant.Filled : Variant.Outlined)" Disabled="@(IsDisabled || IsViewMode)"
+               Color="MudDesign.Color.ToColor()" OnClick="@OnClick">
+      @Label
+    </MudButton>
+  }
+}
+
+@code {
+  private bool IsDisabled => Field.IsEnabled == false;
+  private bool IsViewMode => Field.IsViewOnly;
+  private bool IsChecked => Field.Value == true;
+  private string Label => Field.Design.Text;
+  private object? ViewOnlyValue => Field.Services.AppInfoService.IsDesignMode ? "Boolean" : Field.Value;
+
+  private async Task OnChange(bool isChecked) {
+    await Field.SetValueAsync(isChecked);
+  }
+
+  private async Task OnClick() {
+    await Field.SetValueAsync(!IsChecked);
+  }
+
+}

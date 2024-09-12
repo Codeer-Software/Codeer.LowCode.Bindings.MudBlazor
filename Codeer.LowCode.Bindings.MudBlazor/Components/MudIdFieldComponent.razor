@@ -1,0 +1,23 @@
+@using Codeer.LowCode.Bindings.MudBlazor.Enums
+@using Codeer.LowCode.Blazor.OperatingModel
+@inherits MudFieldComponentBase<IdField, MudIdFieldDesign>
+
+@if (IsViewMode) {
+  <span class="d-block py-2">@ViewOnlyValue</span>
+} else {
+  <MudTextField T="string?" @bind-Value:get="@Value" @bind-Value:set="@RaiseOnValueChanged" InputId="@WebElementId" 
+                Disabled="@IsDisabled" ReadOnly="IsViewMode" Placeholder="@Placeholder" Variant="MudDesign.Variant.ToVariant()" />
+}
+
+@code {
+  private bool IsDisabled => Field.IsEnabled == false;
+  private bool IsViewMode => Field.IsViewOnly;
+  private string Placeholder => Field.Design.Placeholder;
+  private string? Value => Field.Services.AppInfoService.IsDesignMode ? string.Empty : Field.Value;
+  private string? ViewOnlyValue => Field.Services.AppInfoService.IsDesignMode ? "Id" : Field.Value;
+
+  private async Task RaiseOnValueChanged(string? value) {
+    await Field.SetValueAsync(value);
+  }
+
+}

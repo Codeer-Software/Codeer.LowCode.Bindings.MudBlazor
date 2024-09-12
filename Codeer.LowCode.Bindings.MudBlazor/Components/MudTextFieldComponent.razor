@@ -1,0 +1,40 @@
+@using Codeer.LowCode.Bindings.MudBlazor.Enums
+@using Codeer.LowCode.Blazor.OperatingModel
+@inherits MudFieldComponentBase<TextField, MudTextFieldDesign>
+
+@if (IsViewMode) {
+  <span class="d-block py-2" style="@(WhiteSpaceStyle())">@ViewOnlyValue</span>
+} else {
+  if (Field.Design.IsMultiline) {
+    <MudTextField T="string?" @bind-Value:get="@Value" @bind-Value:set="@RaiseOnValueChanged" InputId="@WebElementId" 
+                  Disabled="@IsDisabled" ReadOnly="IsViewMode" MaxLength="@(MaxLength ?? 524288)" Placeholder="@Placeholder" Rows="@Rows"
+                  Variant="MudDesign.Variant.ToVariant()" />
+  } else {
+    <MudTextField T="string?" @bind-Value:get="@Value" @bind-Value:set="@RaiseOnValueChanged" InputId="@WebElementId" 
+                  Disabled="@IsDisabled" ReadOnly="IsViewMode" MaxLength="@(MaxLength ?? 524288)" Placeholder="@Placeholder"
+                  Variant="MudDesign.Variant.ToVariant()" />
+  }
+}
+
+@code {
+  private bool IsDisabled => Field.IsEnabled == false;
+  private bool IsViewMode => Field.IsViewOnly;
+  private string? Placeholder => Field.Design.Placeholder;
+  private int? MaxLength => Field.Design.MaxLength;
+  private int Rows { get; set; }
+  private string? ViewOnlyValue => Field.Services.AppInfoService.IsDesignMode ? "text" : Field.Value;
+  private string? Value => Field.Value;
+
+  protected override void OnParametersSet() {
+    base.OnParametersSet();
+    Rows = Field.Design.Rows ?? 3;
+  }
+
+  private async void RaiseOnValueChanged(string? value) {
+    await Field.SetValueAsync(value);
+  }
+
+  private string WhiteSpaceStyle()
+    => Field.Design.IsMultiline ? "white-space: pre-line" : "";
+
+}

@@ -1,0 +1,82 @@
+{
+  "TopPageModule": "Components",
+  "IsApplicationRoot": false,
+  "Name": "Main",
+  "Description": "",
+  "Left": {
+    "IsVisible": true,
+    "Home": {
+      "Type": "Text",
+      "Text": "Home",
+      "Icon": "",
+      "ResourcePath": ""
+    },
+    "Links": [
+      {
+        "Title": "Components",
+        "Icon": "",
+        "PageFrame": "",
+        "Module": "Components"
+      },
+      {
+        "Title": "Calendar",
+        "Icon": "",
+        "PageFrame": "",
+        "Module": "Calendar"
+      },
+      {
+        "Title": "Chart",
+        "Icon": "",
+        "PageFrame": "",
+        "Module": "Chart"
+      },
+      {
+        "Title": "Data/CalendarData",
+        "Icon": "",
+        "PageFrame": "",
+        "Module": "CalendarData"
+      },
+      {
+        "Title": "Data/ChartData",
+        "Icon": "",
+        "PageFrame": "",
+        "Module": "ChartData"
+      }
+    ],
+    "Foreground": "#ffffff",
+    "BackgroundStart": "#052767",
+    "BackgroundEnd": "#3a0647",
+    "UserName": ""
+  },
+  "Right": {
+    "IsVisible": false,
+    "Home": {
+      "Type": "None",
+      "Text": "",
+      "Icon": "",
+      "ResourcePath": ""
+    },
+    "Links": [],
+    "Foreground": "#ffffff",
+    "BackgroundStart": "#052767",
+    "BackgroundEnd": "#3a0647",
+    "UserName": ""
+  },
+  "Header": {
+    "IsVisible": false,
+    "Foreground": "#000000",
+    "Background": "#f8f9fa",
+    "Home": {
+      "Type": "None",
+      "Text": "",
+      "Icon": "",
+      "ResourcePath": ""
+    },
+    "Links": [],
+    "UserName": ""
+  },
+  "OtherPages": [],
+  "UserReadCondition": {
+    "ModuleName": ""
+  }
+}

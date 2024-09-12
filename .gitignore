@@ -40,6 +40,10 @@ bld/
 # Visual Studio 2017 auto generated files
 Generated\ Files/
 
+# Jetbrain Rider Cache
+.idea/
+Assets/Plugins/Editor/JetBrains*
+
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*

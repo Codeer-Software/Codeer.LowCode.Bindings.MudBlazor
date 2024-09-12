@@ -1,0 +1,28 @@
+div[style*="--background:"] input,
+span[style*="--background:"] {
+  background: var(--background);
+}
+
+div[style*="--foreground:"] input,
+span[style*="--foreground:"] {
+  color: var(--foreground);
+}
+
+.border-0 {
+  outline: 0;
+}
+
+input[readonly] {
+  min-width: 0;
+}
+
+button.btn-close {
+  box-sizing: border-box;
+  flex-basis: 14px;
+  margin-right: 0.75rem;
+  margin-left: 8px;
+}
+
+.w-0 {
+  width: 0;
+}

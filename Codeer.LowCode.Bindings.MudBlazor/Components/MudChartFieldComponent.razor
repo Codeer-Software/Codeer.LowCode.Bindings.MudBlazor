@@ -1,0 +1,47 @@
+﻿@using Codeer.LowCode.Blazor.Components.Fields
+@using Codeer.LowCode.Blazor.RequestInterfaces
+@inherits FieldComponentBase<MudChartField>
+@inject Services Services
+
+@if (!string.IsNullOrEmpty(Field.Design.SearchCondition.ModuleName)) {
+  <div class="container vertical">
+    <div class="container vertical fill">
+      @*
+        I'm waiting for a bug fix in the Blazor compiler.
+        The namespace is not being resolved, resulting in a CS0234 error. I'll be using DynamicComponent until the bug is fixed.
+
+        <MudChart
+          ChartType="@Field.Design.ChartType"
+          ChartSeries="@Field.Series"
+          Width="100%"
+          Height="@Field.Design.Height"
+          ChartOptions="@Field.Options"
+          InputData="@Field.InputData"
+          InputLabels="@Field.InputLabels"/>
+      *@
+      <DynamicComponent Type="typeof(MudChart)" Parameters="Parameters" />
+    </div>
+  </div>
+} else if (Services.AppInfoService.IsDesignMode) {
+  <ConfigurationRequiredBanner>
+    ModuleName is not set
+  </ConfigurationRequiredBanner>
+}
+
+@code {
+  private Dictionary<string, object> Parameters => new Dictionary<string, object>
+  {
+      { nameof(MudChart.ChartType), Field.Design.ChartType },
+      { nameof(MudChart.ChartSeries), Field.Series },
+      { nameof(MudChart.Width), "100%" },
+      { nameof(MudChart.Height), Field.Design.Height },
+      { nameof(MudChart.ChartOptions), Field.Options },
+      { nameof(MudChart.InputData), Field.InputData },
+      { nameof(MudChart.InputLabels), Field.InputLabels }
+  };
+
+  protected override async Task OnParametersSetAsync() {
+    await base.OnParametersSetAsync();
+    Field.SetStateChangedReceiver(StateHasChanged);
+  }
+}

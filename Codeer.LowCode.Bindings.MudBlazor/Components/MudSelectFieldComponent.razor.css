@@ -1,0 +1,9 @@
+select[style*="--background:"],
+span[style*="--background:"] {
+    background: var(--background);
+}
+
+select[style*="--foreground:"],
+span[style*="--foreground:"] {
+    color: var(--foreground);
+}

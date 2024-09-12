@@ -1,0 +1,33 @@
+﻿@using Codeer.LowCode.Bindings.MudBlazor.Models
+@using Heron.MudCalendar
+@inherits FieldComponentBase<MudCalendarField>
+
+<div class="container vertical">
+  <div class="container vertical fill">
+    <MudCalendar Items="Field.Items"
+                 @bind-CurrentDay:get="Field.SelectedDate" @bind-CurrentDay:set="CurrentDayChanged"
+                 CellClicked="CellClicked" ItemClicked="ItemClicked"/>
+  </div>
+</div>
+
+@code {
+
+  protected override async Task OnParametersSetAsync() {
+    await base.OnParametersSetAsync();
+    Field.SetStateChangedReceiver(StateHasChanged);
+  }
+
+  private async Task CurrentDayChanged(DateTime value) {
+    await Field.SetCurrentDayAsync(value);
+  }
+
+  private async void CellClicked(DateTime date) {
+    await Field.AddAsync(date);
+  }
+
+  private async void ItemClicked(CalendarItem item) {
+    if (item is not ModuleCalendarItem moduleItem) return;
+    await Field.EditAsync(moduleItem.Module);
+  }
+
+}

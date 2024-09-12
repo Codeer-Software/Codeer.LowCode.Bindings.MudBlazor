@@ -1,0 +1,105 @@
+@using Microsoft.AspNetCore.Components.Forms
+@using Codeer.LowCode.Blazor.OperatingModel
+@using Codeer.LowCode.Blazor.Repository.Design
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.JSInterop
+@using Codeer.LowCode.Blazor.Components.Interop
+@using Codeer.LowCode.Blazor.Repository.Data;
+@using Codeer.LowCode.Blazor.Utils
+@using FileFieldDesign = Codeer.LowCode.Bindings.MudBlazor.Designs.MudFileFieldDesign
+@using ObjectFit = Codeer.LowCode.Blazor.Repository.Design.ObjectFit
+@inherits MudFieldComponentBase<FileField, MudFileFieldDesign>
+@inject IJSRuntime JSRuntime
+
+@if (Field.ModuleLayoutType == ModuleLayoutType.List && Field.IsViewOnly) {
+  <span class="d-block py-2">@(Field.FileName)</span>
+} else {
+  if (IsViewMode == false) {
+    <div class="d-flex">
+      <MudFileUpload T="IBrowserFile" OnFilesChanged="LoadFiles" Disabled="IsDisabled">
+        <ActivatorContent>
+          <MudIconButton Variant="Variant.Outlined" Icon="@Icons.Material.Filled.UploadFile" />
+        </ActivatorContent>
+      </MudFileUpload>
+      <a href="#" @onclick="Download" @onclick:preventDefault>
+        <span>@(Field.FileName)</span>
+      </a>
+      <MudIconButton Variant="Variant.Text" Color="Color.Error" Icon="@Icons.Material.Filled.Delete" OnClick="Remove"/>
+    </div>
+  }
+
+  if ((ShowPreview || IsViewMode) && IsImageType() && string.IsNullOrEmpty(_objectUrl) == false) {
+    <div class="@("cover".On(Field.Design.ObjectFit == ObjectFit.Cover))">
+      <img src="@(_objectUrl)" alt="Base64 Image" class="mt-1"/>
+    </div>
+  }
+}
+
+@code {
+  private string _objectUrl = string.Empty;
+  private JsBlob _jsBlob = default!;
+
+  private bool IsDisabled => Field.IsEnabled == false;
+  private bool IsViewMode => Field.IsViewOnly;
+  private bool ShowPreview => Field.Design.ShowPreview;
+
+  protected override async Task OnInitializedAsync() {
+    await base.OnInitializedAsync();
+    AddDisposable(_jsBlob = await JsBlob.CreateAsync(JSRuntime));
+    await LoadImage();
+  }
+
+  async Task LoadImage() {
+    if (Field.ModuleLayoutType == ModuleLayoutType.List) return;
+    if (!IsImageType()) return;
+
+    using var memoryStream = await Field.GetMemoryStreamAsync();
+    if (memoryStream == null) {
+      if (!string.IsNullOrEmpty(_objectUrl)) {
+        await _jsBlob.RevokeObjectUrlAsync(_objectUrl);
+      }
+
+      _objectUrl = string.Empty;
+      return;
+    }
+
+    _objectUrl = await _jsBlob.CreateObjectUrlAsync(memoryStream);
+  }
+
+  private async Task LoadFiles(InputFileChangeEventArgs e) {
+    var maxAllowedSize = Field.Design.MaxAllowedSize ?? FileFieldDesign.DefaultMaxAllowedSize;
+    var file = e.File;
+    await Field.SetFile(e.File.Name, new StreamContent(file.OpenReadStream(maxAllowedSize)));
+    if (IsImageType()) {
+      await using var stream = file.OpenReadStream(maxAllowedSize);
+      await LoadImageFromStream(stream);
+    }
+  }
+
+  private async Task LoadImageFromStream(Stream stream) {
+    await using var memoryStream = new MemoryStream();
+    await stream.CopyToAsync(memoryStream);
+    memoryStream.Position = 0;
+    _objectUrl = await _jsBlob.CreateObjectUrlAsync(memoryStream);
+  }
+
+  private Task Download() => Field.DownloadAsync();
+
+  private bool IsImageType() {
+    var type = Field.FileName?.ToLower();
+    return !string.IsNullOrEmpty(type) && (type.EndsWith(".jpg") || type.EndsWith(".jpeg") || type.EndsWith(".png"));
+  }
+
+  private async Task Remove() {
+    await Field.SetDataAsync(new FileFieldData());
+  }
+
+  public override async ValueTask DisposeAsync() {
+    if (!string.IsNullOrEmpty(_objectUrl)) {
+      await _jsBlob.RevokeObjectUrlAsync(_objectUrl);
+    }
+
+    await base.DisposeAsync();
+  }
+
+}

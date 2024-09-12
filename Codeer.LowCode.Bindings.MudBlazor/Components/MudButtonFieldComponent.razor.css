@@ -1,0 +1,7 @@
+﻿button[style*="--background:"] {
+    background: var(--background);
+}
+
+button[style*="--foreground:"] {
+    color: var(--foreground);
+}
