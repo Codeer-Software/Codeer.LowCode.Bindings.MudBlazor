@@ -24,8 +24,8 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudBooleanFieldDesign"
     },
     {
-      "MudVariant": "Filled",
-      "Color": "Success",
+      "MudVariant": "Outlined",
+      "Color": "Primary",
       "Text": "Button",
       "Icon": "",
       "Variant": "Primary",
@@ -203,7 +203,7 @@
     },
     {
       "MudVariant": "Filled",
-      "Color": "Default",
+      "Color": "Success",
       "Text": "Button",
       "Icon": "",
       "Variant": "Primary",
@@ -213,7 +213,7 @@
     },
     {
       "MudVariant": "Text",
-      "Color": "Default",
+      "Color": "Secondary",
       "Text": "Button",
       "Icon": "",
       "Variant": "Primary",
