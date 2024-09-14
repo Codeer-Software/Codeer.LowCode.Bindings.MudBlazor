@@ -33,6 +33,13 @@
       "OnDataChanged": "",
       "Name": "MudCalendar",
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudCalendarFieldDesign"
+    },
+    {
+      "Text": "Calendar",
+      "Style": "H2",
+      "RelativeField": "",
+      "Name": "Label",
+      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.LabelFieldDesign"
     }
   ],
   "UserWriteCondition": {
@@ -62,6 +69,25 @@
         "ExpanderLabel": "",
         "IsExpanderDefaultOpened": false,
         "Rows": [
+          {
+            "IsWrap": false,
+            "IsRowMarginRemoved": false,
+            "Columns": [
+              {
+                "Layout": {
+                  "FieldName": "Label",
+                  "FontFamily": "",
+                  "Color": "",
+                  "Name": "",
+                  "IsViewOnly": false,
+                  "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.FieldLayoutDesign"
+                },
+                "Border": "None",
+                "HorizontalAlignment": "Center",
+                "CanResize": false
+              }
+            ]
+          },
           {
             "IsWrap": false,
             "IsRowMarginRemoved": false,
