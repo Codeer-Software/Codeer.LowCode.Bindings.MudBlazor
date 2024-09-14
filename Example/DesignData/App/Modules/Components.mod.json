@@ -24,17 +24,17 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudBooleanFieldDesign"
     },
     {
-      "MudVariant": "Outlined",
-      "Color": "Default",
+      "MudVariant": "Filled",
+      "Color": "Success",
       "Text": "Button",
       "Icon": "",
       "Variant": "Primary",
-      "OnClick": "",
+      "OnClick": "MudButton_OnClick",
       "Name": "MudButton",
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudButtonFieldDesign"
     },
     {
-      "Variant": "Outlined",
+      "Variant": "Text",
       "Color": "Default",
       "Format": "",
       "DbColumn": "",
@@ -47,7 +47,7 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudDateFieldDesign"
     },
     {
-      "Variant": "Outlined",
+      "Variant": "Text",
       "Color": "Default",
       "SaveAsUtc": false,
       "Format": "",
@@ -75,7 +75,7 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudFileFieldDesign"
     },
     {
-      "Variant": "Outlined",
+      "Variant": "Text",
       "DbColumn": "",
       "Placeholder": "",
       "IsManualInput": false,
@@ -90,7 +90,7 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudIdFieldDesign"
     },
     {
-      "Variant": "Outlined",
+      "Variant": "Text",
       "Placeholder": "",
       "Format": "",
       "DbColumn": "",
@@ -103,7 +103,7 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudNumberFieldDesign"
     },
     {
-      "Variant": "Outlined",
+      "Variant": "Text",
       "DisplayName": "",
       "IsRequired": false,
       "OnDataChanged": "",
@@ -119,8 +119,12 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudRadioButtonFieldDesign"
     },
     {
-      "Variant": "Outlined",
-      "Candidates": [],
+      "Variant": "Text",
+      "Candidates": [
+        "a",
+        "b",
+        "c"
+      ],
       "SearchCondition": {
         "SortFieldVariable": "",
         "SortDescending": false,
@@ -147,7 +151,7 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudSelectFieldDesign"
     },
     {
-      "Variant": "Outlined",
+      "Variant": "Text",
       "DbColumn": "",
       "IsMultiline": false,
       "Placeholder": "",
@@ -160,7 +164,7 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudTextFieldDesign"
     },
     {
-      "Variant": "Outlined",
+      "Variant": "Text",
       "SaveAsUtc": false,
       "DbColumn": "",
       "IsUpdateProtected": false,
@@ -203,7 +207,7 @@
       "Text": "Button",
       "Icon": "",
       "Variant": "Primary",
-      "OnClick": "",
+      "OnClick": "MudButton_OnClick",
       "Name": "MudButton1",
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudButtonFieldDesign"
     },
@@ -213,7 +217,7 @@
       "Text": "Button",
       "Icon": "",
       "Variant": "Primary",
-      "OnClick": "",
+      "OnClick": "MudButton_OnClick",
       "Name": "MudButton2",
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudButtonFieldDesign"
     },

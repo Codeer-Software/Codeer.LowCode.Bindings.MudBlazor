@@ -73,12 +73,6 @@
       "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.BooleanFieldDesign"
     },
     {
-      "Text": "Submit",
-      "Icon": "",
-      "Name": "SubmitButton",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.SubmitButtonFieldDesign"
-    },
-    {
       "Text": "",
       "Style": "Default",
       "RelativeField": "Name",
@@ -105,6 +99,14 @@
       "RelativeField": "AllDay",
       "Name": "AllDayLabel",
       "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.LabelFieldDesign"
+    },
+    {
+      "Variant": "Filled",
+      "Color": "Primary",
+      "Text": "Submit",
+      "Icon": "",
+      "Name": "MudSubmitButton",
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudSubmitButtonFieldDesign"
     }
   ],
   "UserWriteCondition": {
@@ -361,18 +363,18 @@
             "IsRowMarginRemoved": false,
             "Columns": [
               {
+                "Border": "None",
+                "CanResize": false
+              },
+              {
                 "Layout": {
-                  "FieldName": "SubmitButton",
+                  "FieldName": "MudSubmitButton",
                   "FontFamily": "",
                   "Color": "",
                   "Name": "",
                   "IsViewOnly": false,
                   "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.FieldLayoutDesign"
                 },
-                "Border": "None",
-                "CanResize": false
-              },
-              {
                 "Border": "None",
                 "CanResize": false
               },
