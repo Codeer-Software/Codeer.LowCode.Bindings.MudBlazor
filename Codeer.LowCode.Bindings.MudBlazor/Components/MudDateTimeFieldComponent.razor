@@ -1,3 +1,4 @@
+@using System.Globalization
 @using Codeer.LowCode.Bindings.MudBlazor.Enums
 @using Codeer.LowCode.Blazor.OperatingModel
 @inherits MudFieldComponentBase<DateTimeField, MudDateTimeFieldDesign>
@@ -5,20 +6,24 @@
 @if (IsViewMode) {
   <span class="d-block py-2">@GetViewOnlyValue()</span>
 } else {
-  <MudTextField T="DateTime?" @bind-Value:get="@GetValue()" @bind-Value:set="@RaiseOnValueChanged"
+  <MudTextField T="string?" @bind-Value:get="@GetValue()" @bind-Value:set="@RaiseOnValueChanged"
                 InputId="@WebElementId" Disabled="@IsDisabled" ReadOnly="IsViewMode" InputType="InputType.DateTimeLocal"
                 Variant="MudDesign.Variant.ToVariant()" />
 }
 
 @code {
+  private const string Format = "yyyy-MM-ddTHH:mm:ss";
+
   private bool IsDisabled => Field.IsEnabled == false;
   private bool IsViewMode => Field.IsViewOnly;
 
-  private DateTime? GetValue()
-    => Field.Design.SaveAsUtc ? Field.Value?.ToLocalTime() : Field.Value;
+  private string? GetValue()
+    => (Field.Design.SaveAsUtc ? Field.Value?.ToLocalTime() : Field.Value)?.ToString(Format);
 
-  private async Task RaiseOnValueChanged(DateTime? value) {
-    await Field.SetValueAsync(Field.Design.SaveAsUtc ? value?.ToUniversalTime() : value);
+  private async Task RaiseOnValueChanged(string? value) {
+    if (DateTime.TryParseExact(value, Format, CultureInfo.CurrentCulture, DateTimeStyles.AssumeLocal, out var date)) {
+      await Field.SetValueAsync(Field.Design.SaveAsUtc ? date.ToUniversalTime() : date);
+    }
   }
 
   private string GetViewOnlyValue()
