@@ -151,11 +151,10 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudSelectFieldDesign"
     },
     {
-      "Variant": "Filled",
+      "Variant": "Outlined",
       "DbColumn": "",
       "IsMultiline": true,
       "Placeholder": "",
-      "Rows": 10,
       "IsUpdateProtected": false,
       "OnSearchDataChanged": "",
       "DisplayName": "",
