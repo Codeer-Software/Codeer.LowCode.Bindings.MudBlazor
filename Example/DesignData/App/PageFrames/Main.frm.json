@@ -31,6 +31,12 @@
         "Module": "Chart"
       },
       {
+        "Title": "File",
+        "Icon": "",
+        "PageFrame": "",
+        "Module": "File"
+      },
+      {
         "Title": "Data/CalendarData",
         "Icon": "",
         "PageFrame": "",
