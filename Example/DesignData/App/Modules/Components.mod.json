@@ -63,8 +63,8 @@
     {
       "IsUpdateProtected": false,
       "DisplayName": "",
-      "ShowPreview": false,
-      "StorageName": "",
+      "ShowPreview": true,
+      "StorageName": "Local",
       "DbColumnFileName": "",
       "DbColumnFileSize": "",
       "DbColumnFileGuid": "",
@@ -151,7 +151,7 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudSelectFieldDesign"
     },
     {
-      "Variant": "Text",
+      "Variant": "Filled",
       "DbColumn": "",
       "IsMultiline": true,
       "Placeholder": "",
