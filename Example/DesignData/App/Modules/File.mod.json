@@ -27,7 +27,7 @@
     {
       "IsUpdateProtected": false,
       "DisplayName": "",
-      "ShowPreview": false,
+      "ShowPreview": true,
       "StorageName": "Local",
       "DbColumnFileName": "file_name",
       "DbColumnFileSize": "file_size",
