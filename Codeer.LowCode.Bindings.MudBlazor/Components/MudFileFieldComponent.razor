@@ -1,3 +1,4 @@
+@using Codeer.LowCode.Bindings.MudBlazor.Enums
 @using Microsoft.AspNetCore.Components.Forms
 @using Codeer.LowCode.Blazor.OperatingModel
 @using Codeer.LowCode.Blazor.Repository.Design
@@ -15,16 +16,18 @@
   <span class="d-block py-2">@(Field.FileName)</span>
 } else {
   if (IsViewMode == false) {
-    <div class="d-flex">
+    <div class="d-flex align-items-center gap-2">
       <MudFileUpload T="IBrowserFile" OnFilesChanged="LoadFiles" Disabled="IsDisabled">
         <ActivatorContent>
-          <MudIconButton Variant="Variant.Outlined" Icon="@Icons.Material.Filled.UploadFile" />
+          <MudIconButton Variant="@MudDesign.Variant.ToVariant()" Color="@MudDesign.Color.ToColor()" Icon="@Icons.Material.Filled.UploadFile" />
         </ActivatorContent>
       </MudFileUpload>
-      <a href="#" @onclick="Download" @onclick:preventDefault>
-        <span>@(Field.FileName)</span>
-      </a>
-      <MudIconButton Variant="Variant.Text" Color="Color.Error" Icon="@Icons.Material.Filled.Delete" OnClick="Remove"/>
+      @if (!string.IsNullOrEmpty(Field.FileName)) {
+        <a href="#" @onclick="Download" @onclick:preventDefault>
+          <span>@(Field.FileName)</span>
+        </a>
+        <MudIconButton Variant="Variant.Text" Color="Color.Error" Icon="@Icons.Material.Filled.Delete" OnClick="Remove"/>
+      }
     </div>
   }
 
