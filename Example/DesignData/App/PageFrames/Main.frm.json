@@ -47,6 +47,12 @@
         "Icon": "",
         "PageFrame": "",
         "Module": "ChartData"
+      },
+      {
+        "Title": "IdTest",
+        "Icon": "",
+        "PageFrame": "",
+        "Module": "IdTest"
       }
     ],
     "Foreground": "#ffffff",
