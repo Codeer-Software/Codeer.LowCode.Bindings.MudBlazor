@@ -1,0 +1,26 @@
+@using Codeer.LowCode.Blazor.OperatingModel
+@using Codeer.LowCode.Blazor.Repository.Match
+@inherits FieldComponentBase<TextField>
+
+<div class="d-flex">
+  <MudTextField T="string" @bind-Value:get="@Value!" @bind-Value:set="@OnChange" InputId="@WebElementId"/>
+  <MudSelect T="MatchComparison" @bind-Value:get="@Comparison" @bind-Value:set="@OnComparisonChange">
+    <MudSelectItem Value="MatchComparison.Equal">Equal</MudSelectItem>
+    <MudSelectItem Value="MatchComparison.Like">Like</MudSelectItem>
+  </MudSelect>
+</div>
+
+@code {
+
+  private string? Value => Field.SearchValue;
+  private MatchComparison Comparison => Field.SearchComparison;
+
+  private async Task OnChange(string? value) {
+    await Field.SetSearchValueAsync(value);
+  }
+
+  private async Task OnComparisonChange(MatchComparison value) {
+    await Field.SetSearchComparisonAsync(value);
+  }
+
+}

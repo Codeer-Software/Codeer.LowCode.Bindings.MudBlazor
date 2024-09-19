@@ -14,7 +14,7 @@
                     InputId="@WebElementId" AdornmentIcon="@Icons.Material.Filled.Close" OnAdornmentClick="@Clear"
                     Variant="MudDesign.Variant.ToVariant()" />
     } else {
-      <MudTextField T="string?" @bind-Value:get="@DisplayText" @bind-Value:set="RaiseOnValueChanged"
+      <MudTextField T="string" @bind-Value:get="@DisplayText" @bind-Value:set="RaiseOnValueChanged"
                     InputId="@WebElementId" Disabled="@IsDisabled" Adornment="Adornment"
                     AdornmentIcon="@Icons.Material.Filled.Close" OnAdornmentClick="@Clear"
                     Variant="MudDesign.Variant.ToVariant()"/>

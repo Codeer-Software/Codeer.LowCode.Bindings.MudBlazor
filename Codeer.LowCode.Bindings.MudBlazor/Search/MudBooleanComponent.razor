@@ -1,0 +1,24 @@
+@using Codeer.LowCode.Blazor.OperatingModel
+@using Microsoft.AspNetCore.Components.Web;
+@inherits FieldComponentBase<BooleanField>
+
+<div class="input-group">
+  <MudSelect T="string" @bind-Value:get="Value!" @bind-Value:set="OnChange" InputId="@WebElementId">
+    <MudSelectItem Value="@("")"></MudSelectItem>
+    <MudSelectItem Value="true">true</MudSelectItem>
+    <MudSelectItem Value="false">false</MudSelectItem>
+  </MudSelect>
+</div>
+
+@code {
+  private string? Value => Field.SearchValue?.ToString();
+
+  private bool? TryParse(string? value) {
+    if (string.IsNullOrWhiteSpace(value)) return null;
+    return bool.TryParse(value, out var result) ? result : null;
+  }
+
+  private async Task OnChange(string? value) {
+    await Field.SetSearchValueAsync(TryParse(value));
+  }
+}

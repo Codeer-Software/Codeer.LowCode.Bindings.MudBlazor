@@ -1,0 +1,39 @@
+@using System.Globalization
+@using Codeer.LowCode.Blazor.OperatingModel
+@inherits FieldComponentBase<DateTimeField>
+
+<div class="d-flex align-items-center">
+  <MudTextField T="string" @bind-Value:get="@MoreThanValue!" @bind-Value:set="@OnMoreThanChanged"
+                InputId="@WebElementId" InputType="InputType.DateTimeLocal" data-search-target="min"/>
+  <span>～</span>
+  <MudTextField T="string" @bind-Value:get="@LessThanValue!" @bind-Value:set="@OnLessThanChanged"
+                InputId="@WebElementId" InputType="InputType.DateTimeLocal" data-search-target="max"/>
+</div>
+
+@code {
+  private const string Format = "yyyy-MM-ddTHH:mm:ss";
+
+  private string? LessThanValue => ToString(Field.SearchMax);
+  private string? MoreThanValue => ToString(Field.SearchMin);
+
+  private DateTime? ParseDateTime(string? value) {
+    if (string.IsNullOrWhiteSpace(value)) return null;
+    if (DateTime.TryParseExact(value, Format, CultureInfo.CurrentCulture, DateTimeStyles.AssumeLocal, out var date)) {
+      return (Field.Design.SaveAsUtc ? date.ToUniversalTime() : date);
+    }
+
+    return null;
+  }
+
+  private async Task OnLessThanChanged(string? value) {
+    await Field.SetSearchMaxAsync(ParseDateTime(value));
+  }
+
+  private async Task OnMoreThanChanged(string? value) {
+    await Field.SetSearchMinAsync(ParseDateTime(value));
+  }
+
+  private string? ToString(DateTime? value) =>
+    (Field.Design.SaveAsUtc ? value?.ToLocalTime() : value)?.ToString(Format);
+
+}

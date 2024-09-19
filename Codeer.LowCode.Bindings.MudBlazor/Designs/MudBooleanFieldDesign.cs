@@ -1,5 +1,6 @@
 ﻿using Codeer.LowCode.Bindings.MudBlazor.Components;
 using Codeer.LowCode.Bindings.MudBlazor.Enums;
+using Codeer.LowCode.Bindings.MudBlazor.Search;
 using Codeer.LowCode.Blazor.Repository.Design;
 
 namespace Codeer.LowCode.Bindings.MudBlazor.Designs
@@ -11,5 +12,6 @@ namespace Codeer.LowCode.Bindings.MudBlazor.Designs
 
         public MudBooleanFieldDesign() => TypeFullName = typeof(MudBooleanFieldDesign).FullName!;
         public override string GetWebComponentTypeFullName() => typeof(MudBooleanFieldComponent).FullName!;
+        public override string GetSearchWebComponentTypeFullName() => typeof(MudBooleanComponent).FullName!;
     }
 }

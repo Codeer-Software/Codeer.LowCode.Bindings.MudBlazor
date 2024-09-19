@@ -1,5 +1,6 @@
 ﻿using Codeer.LowCode.Bindings.MudBlazor.Components;
 using Codeer.LowCode.Bindings.MudBlazor.Enums;
+using Codeer.LowCode.Bindings.MudBlazor.Search;
 using Codeer.LowCode.Blazor.Repository.Design;
 
 namespace Codeer.LowCode.Bindings.MudBlazor.Designs
@@ -11,5 +12,6 @@ namespace Codeer.LowCode.Bindings.MudBlazor.Designs
 
         public MudTimeFieldDesign() => TypeFullName = typeof(MudTimeFieldDesign).FullName!;
         public override string GetWebComponentTypeFullName() => typeof(MudTimeFieldComponent).FullName!;
+        public override string GetSearchWebComponentTypeFullName() => typeof(MudTimeComponent).FullName!;
     }
 }

@@ -6,7 +6,7 @@
 @if (IsViewMode) {
   <span class="d-block py-2">@(ViewOnlyValue)</span>
 } else {
-  <MudSelect T="string?" @bind-Value:get="SelectedValue" @bind-Value:set="@OnChange" InputId="@WebElementId" Disabled="@IsDisabled" OnOpen="@OnFocus"
+  <MudSelect T="string" @bind-Value:get="SelectedValue" @bind-Value:set="@OnChange" InputId="@WebElementId" Disabled="@IsDisabled" OnOpen="@OnFocus"
              Variant="MudDesign.Variant.ToVariant()">
     @if (Field.Design.EmptyCandidateType != SelectEmptyCandidateType.NotExist) {
       <MudSelectItem Value="@("")" />

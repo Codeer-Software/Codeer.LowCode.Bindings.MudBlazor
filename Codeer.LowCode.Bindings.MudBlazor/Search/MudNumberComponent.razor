@@ -1,0 +1,24 @@
+@using Codeer.LowCode.Blazor.OperatingModel
+@inherits FieldComponentBase<NumberField>
+
+<div class="input-group">
+  <MudNumericField T="decimal?" @bind-Value:get="@MoreThanValue" @bind-Value:set="@OnMoreThanChanged"
+                   InputId="@WebElementId" data-search-target="min" />
+  <span>～</span>
+  <MudNumericField T="decimal?" @bind-Value:get="@LessThanValue" @bind-Value:set="@OnLessThanChanged"
+                   data-search-target="max"/>
+</div>
+
+@code {
+
+  private decimal? LessThanValue => Field.SearchMax;
+  private decimal? MoreThanValue => Field.SearchMin;
+
+  private async Task OnMoreThanChanged(decimal? value) {
+    await Field.SetSearchMinAsync(value);
+  }
+
+  private async Task OnLessThanChanged(decimal? value) {
+    await Field.SetSearchMaxAsync(value);
+  }
+}

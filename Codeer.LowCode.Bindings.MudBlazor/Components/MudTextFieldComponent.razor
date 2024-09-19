@@ -6,11 +6,11 @@
   <span class="d-block py-2" style="@(WhiteSpaceStyle())">@ViewOnlyValue</span>
 } else {
   if (Field.Design.IsMultiline) {
-    <MudTextField T="string?" @bind-Value:get="@Value" @bind-Value:set="@RaiseOnValueChanged" InputId="@WebElementId" 
+    <MudTextField T="string" @bind-Value:get="@Value!" @bind-Value:set="@RaiseOnValueChanged" InputId="@WebElementId" 
                   Disabled="@IsDisabled" ReadOnly="IsViewMode" MaxLength="@(MaxLength ?? 524288)" Placeholder="@Placeholder" Lines="@Rows"
                   Variant="MudDesign.Variant.ToVariant()" />
   } else {
-    <MudTextField T="string?" @bind-Value:get="@Value" @bind-Value:set="@RaiseOnValueChanged" InputId="@WebElementId" 
+    <MudTextField T="string" @bind-Value:get="@Value!" @bind-Value:set="@RaiseOnValueChanged" InputId="@WebElementId" 
                   Disabled="@IsDisabled" ReadOnly="IsViewMode" MaxLength="@(MaxLength ?? 524288)" Placeholder="@Placeholder"
                   Variant="MudDesign.Variant.ToVariant()" />
   }

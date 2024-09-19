@@ -7,7 +7,7 @@
   <span class="d-block py-2">@GetViewOnlyValue()</span>
 } else {
   <MudTimePicker @bind-Time:get="@GetValue()" @bind-Time:set="@RaiseOnValueChanged" 
-                 InputId="@WebElementId" Disabled="@IsDisabled" ReadOnly="IsViewMode"
+                 Disabled="@IsDisabled" ReadOnly="IsViewMode"
                  Variant="MudDesign.Variant.ToVariant()" />
 }
 

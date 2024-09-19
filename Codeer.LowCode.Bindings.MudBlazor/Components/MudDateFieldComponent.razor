@@ -6,8 +6,8 @@
 @if (IsViewMode) {
   <span class="d-block py-2">@GetViewOnlyValue()</span>
 } else {
-  <MudDatePicker T="DateTime?" @bind-Date:get="@GetValue()" @bind-Date:set="@RaiseOnValueChanged" 
-                 InputId="@WebElementId" Disabled="@IsDisabled" ReadOnly="IsViewMode"
+  <MudDatePicker @bind-Date:get="@GetValue()" @bind-Date:set="@RaiseOnValueChanged" 
+                 Disabled="@IsDisabled" ReadOnly="IsViewMode"
                  Variant="MudDesign.Variant.ToVariant()" Color="MudDesign.Color.ToColor()" />
 }
 

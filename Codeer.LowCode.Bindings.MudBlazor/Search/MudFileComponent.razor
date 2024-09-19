@@ -1,0 +1,47 @@
+@using Codeer.LowCode.Blazor.OperatingModel
+@using Codeer.LowCode.Blazor.Repository.Match
+@inherits FieldComponentBase<FileField>
+
+<div class="mb-2">
+  <label class="form-label mb-1" for="@WebElementId">FileName</label>
+  <div class="d-flex">
+    <MudTextField T="string" @bind-Value:get="@FileNameValue!" @bind-Value:set="@OnFileNameChanged" InputId="@WebElementId"/>
+    <MudSelect T="MatchComparison" @bind-Value="@Field.SearchFileNameComparison">
+      <MudSelectItem Value="MatchComparison.Equal">Equal</MudSelectItem>
+      <MudSelectItem Value="MatchComparison.Like">Like</MudSelectItem>
+    </MudSelect>
+  </div>
+</div>
+
+<div>
+  <label class="form-label mb-1" for="@_fileSizeId">FileSize</label>
+  <div class="d-flex align-items-center">
+    <MudNumericField T="decimal?" @bind-Value:get="@FileSizeMoreThanValue" @bind-Value:set="@OnFileSizeMoreThanChanged"
+                     InputId="@WebElementId" data-search-target="min" />
+    <span>～</span>
+    <MudNumericField T="decimal?" @bind-Value:get="@FileSizeLessThanValue" @bind-Value:set="@OnFileSizeLessThanChanged"
+                     data-search-target="max"/>
+  </div>
+</div>
+
+@code {
+
+  private readonly string _fileSizeId = Guid.NewGuid().ToString();
+
+  private string? FileNameValue => Field.SearchFileName;
+  private decimal? FileSizeMoreThanValue => Field.SearchFileSizeMin;
+  private decimal? FileSizeLessThanValue => Field.SearchFileSizeMax;
+
+  private async Task OnFileNameChanged(string? value) {
+    await Field.SetSearchSearchFileNameAsync(value);
+  }
+  
+  private async Task OnFileSizeMoreThanChanged(decimal? value) {
+    await Field.SetSearchFileSizeMinAsync(value);
+  }
+  
+  private async Task OnFileSizeLessThanChanged(decimal? value) {
+    await Field.SetSearchFileSizeMaxAsync(value);
+  }
+
+}
