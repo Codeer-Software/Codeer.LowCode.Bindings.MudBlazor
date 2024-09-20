@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{C03AD4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codeer.LowCode.Bindings.MudBlazor.SeleniumDrivers", "Codeer.LowCode.Bindings.MudBlazor.SeleniumDrivers\Codeer.LowCode.Bindings.MudBlazor.SeleniumDrivers.csproj", "{9AA21E1C-2F86-4BBE-8E68-D4CB71837DC2}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeleniumTest", "Example\SeleniumTest\SeleniumTest.csproj", "{A8C5E851-A58E-4ABD-B72C-A7BBDCDE087D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{9AA21E1C-2F86-4BBE-8E68-D4CB71837DC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AA21E1C-2F86-4BBE-8E68-D4CB71837DC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9AA21E1C-2F86-4BBE-8E68-D4CB71837DC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8C5E851-A58E-4ABD-B72C-A7BBDCDE087D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8C5E851-A58E-4ABD-B72C-A7BBDCDE087D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8C5E851-A58E-4ABD-B72C-A7BBDCDE087D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8C5E851-A58E-4ABD-B72C-A7BBDCDE087D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,6 +81,7 @@ Global
 		{3C1EA1D2-ACA6-4511-BBEE-2CB77CB31637} = {C03AD475-B316-47A9-B768-EC6769434E2F}
 		{E74C2E75-0989-4402-9635-8FC8E6DFF011} = {A1C1286B-EBAE-40F2-9E9F-CA6C72B8505B}
 		{C03AD475-B316-47A9-B768-EC6769434E2F} = {A1C1286B-EBAE-40F2-9E9F-CA6C72B8505B}
+		{A8C5E851-A58E-4ABD-B72C-A7BBDCDE087D} = {A1C1286B-EBAE-40F2-9E9F-CA6C72B8505B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2690F32F-E2B7-45FD-B649-44A2702CD338}
