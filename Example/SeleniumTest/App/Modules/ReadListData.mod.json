@@ -22,7 +22,7 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "Id",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.IdFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudIdFieldDesign"
     },
     {
       "DbColumn": "code",
@@ -34,7 +34,7 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "Code",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.TextFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudTextFieldDesign"
     },
     {
       "Text": "",
@@ -90,7 +90,7 @@
       "Text": "Submit",
       "Icon": "",
       "Name": "SubmitButton",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.SubmitButtonFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudSubmitButtonFieldDesign"
     },
     {
       "Text": "",

@@ -36,7 +36,7 @@
       "IsRequired": false,
       "OnDataChanged": "Boolean_OnDataChanged",
       "Name": "Boolean",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.BooleanFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudBooleanFieldDesign"
     },
     {
       "Text": "Button",
@@ -44,7 +44,7 @@
       "Variant": "Primary",
       "OnClick": "",
       "Name": "Button",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.ButtonFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudButtonFieldDesign"
     },
     {
       "Format": "",
@@ -55,7 +55,7 @@
       "IsRequired": false,
       "OnDataChanged": "Date_OnDataChanged",
       "Name": "Date",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.DateFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudDateFieldDesign"
     },
     {
       "SaveAsUtc": false,
@@ -67,7 +67,7 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "DateTime",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.DateTimeFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudDateTimeFieldDesign"
     },
     {
       "IsUpdateProtected": false,
@@ -81,7 +81,7 @@
       "OnDataChanged": "",
       "OnSearchDataChanged": "",
       "Name": "File",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.FileFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudFileFieldDesign"
     },
     {
       "DbColumn": "",
@@ -95,7 +95,7 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "Id1",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.IdFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudIdFieldDesign"
     },
     {
       "SearchCondition": {
@@ -121,7 +121,7 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "Link",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.LinkFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudLinkFieldDesign"
     },
     {
       "ModuleName": "ModuleFieldDataSimple",
@@ -142,14 +142,14 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "Number",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.NumberFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudNumberFieldDesign"
     },
     {
       "DisplayName": "",
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "Password",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.PasswordFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudPasswordFieldDesign"
     },
     {
       "DbColumn": "",
@@ -167,14 +167,14 @@
       "Value": "A",
       "GroupField": "RadioGroup",
       "Name": "RadioButtonA",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.RadioButtonFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudRadioButtonFieldDesign"
     },
     {
       "Text": "B",
       "Value": "B",
       "GroupField": "RadioGroup",
       "Name": "RadioButtonB",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.RadioButtonFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudRadioButtonFieldDesign"
     },
     {
       "Candidates": [],
@@ -201,7 +201,7 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "Select",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.SelectFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudSelectFieldDesign"
     },
     {
       "DbColumn": "",
@@ -213,7 +213,7 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "Text",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.TextFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudTextFieldDesign"
     },
     {
       "SaveAsUtc": false,
@@ -224,7 +224,7 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "Time",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.TimeFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudTimeFieldDesign"
     },
     {
       "LayoutName": "",

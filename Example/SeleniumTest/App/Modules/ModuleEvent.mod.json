@@ -22,7 +22,7 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "Id",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.IdFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudIdFieldDesign"
     },
     {
       "Text": "Label",
@@ -41,7 +41,7 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "Boolean",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.BooleanFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudBooleanFieldDesign"
     }
   ],
   "UserWriteCondition": {

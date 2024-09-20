@@ -22,7 +22,7 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "Id",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.IdFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudIdFieldDesign"
     },
     {
       "UIType": "CheckBox",
@@ -34,7 +34,7 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "Check",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.BooleanFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudBooleanFieldDesign"
     },
     {
       "UIType": "ToggleButton",
@@ -46,7 +46,7 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "Toggle",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.BooleanFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudBooleanFieldDesign"
     },
     {
       "UIType": "Switch",
@@ -58,7 +58,7 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "Switch",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.BooleanFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudBooleanFieldDesign"
     },
     {
       "Format": "",
@@ -69,7 +69,7 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "Date",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.DateFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudDateFieldDesign"
     },
     {
       "SaveAsUtc": false,
@@ -81,7 +81,7 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "DateTime",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.DateTimeFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudDateTimeFieldDesign"
     },
     {
       "SearchCondition": {
@@ -107,7 +107,7 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "Link",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.LinkFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudLinkFieldDesign"
     },
     {
       "Placeholder": "",
@@ -119,7 +119,7 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "Number",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.NumberFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudNumberFieldDesign"
     },
     {
       "DbColumn": "radio",
@@ -161,7 +161,7 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "Select",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.SelectFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudSelectFieldDesign"
     },
     {
       "DbColumn": "text_",
@@ -173,7 +173,7 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "Text",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.TextFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudTextFieldDesign"
     },
     {
       "SaveAsUtc": false,
@@ -184,7 +184,7 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "Time",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.TimeFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudTimeFieldDesign"
     },
     {
       "Text": "DataControls",
@@ -275,7 +275,7 @@
       "OnDataChanged": "",
       "OnSearchDataChanged": "",
       "Name": "File",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.FileFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudFileFieldDesign"
     },
     {
       "Text": "",
@@ -289,21 +289,21 @@
       "Value": "A",
       "GroupField": "RadioGroup",
       "Name": "RadioA",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.RadioButtonFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudRadioButtonFieldDesign"
     },
     {
       "Text": "B",
       "Value": "B",
       "GroupField": "RadioGroup",
       "Name": "RadioB",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.RadioButtonFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudRadioButtonFieldDesign"
     },
     {
       "Text": "C",
       "Value": "C",
       "GroupField": "RadioGroup",
       "Name": "RadioC",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.RadioButtonFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudRadioButtonFieldDesign"
     },
     {
       "Text": "Radio",
@@ -331,7 +331,7 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "SelectLink",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.SelectFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudSelectFieldDesign"
     },
     {
       "Text": "",
@@ -352,7 +352,7 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "ParentId",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.IdFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudIdFieldDesign"
     }
   ],
   "UserWriteCondition": {

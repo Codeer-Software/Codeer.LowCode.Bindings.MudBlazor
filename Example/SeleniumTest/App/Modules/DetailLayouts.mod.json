@@ -20,7 +20,7 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "Text",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.TextFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudTextFieldDesign"
     },
     {
       "Format": "",
@@ -31,7 +31,7 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "Date",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.DateFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudDateFieldDesign"
     },
     {
       "SaveAsUtc": false,
@@ -43,7 +43,7 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "DateTime",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.DateTimeFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudDateTimeFieldDesign"
     },
     {
       "Placeholder": "",
@@ -55,7 +55,7 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "Number",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.NumberFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudNumberFieldDesign"
     }
   ],
   "UserWriteCondition": {

@@ -20,7 +20,7 @@
       "IsRequired": false,
       "OnDataChanged": "",
       "Name": "Text",
-      "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.TextFieldDesign"
+      "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudTextFieldDesign"
     }
   ],
   "UserWriteCondition": {
