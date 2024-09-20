@@ -1,0 +1,17 @@
+{
+  "DataSources": [
+    {
+      "Name": "SeleniumTestData",
+      "DataSourceType": "PostgreSQL",
+      "IdentityUserTable": "",
+      "HasDbContext": false
+    }
+  ],
+  "FileStorages": 
+  [
+    {
+        "FileStorageType": "FileSystem",
+        "Name": "Local"
+    }
+  ]
+}
