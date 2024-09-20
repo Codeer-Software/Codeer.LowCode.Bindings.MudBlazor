@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Version>0.4.0</Version>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Description>Used when testing web apps created with Coder.LowCode.Blazor with Selenium.</Description>
+    <PackageProjectUrl>https://github.com/Codeer-Software/Codeer.LowCode.Blazor.SeleniumDrivers</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Codeer-Software/Codeer.LowCode.Blazor.SeleniumDrivers</RepositoryUrl>
+    <PackageTags>Codeer.LowCode.Blazor;Selenium</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Codeer.LowCode.Blazor.SeleniumDrivers" Version="0.14.0" />
+  </ItemGroup>
+  
+</Project>
