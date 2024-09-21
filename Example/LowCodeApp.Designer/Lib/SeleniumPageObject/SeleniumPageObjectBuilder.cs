@@ -42,7 +42,7 @@ namespace LowCodeApp.Designer.Lib.SeleniumPageObject
             {
                 UsingNamespaces =
                 {
-                    "Codeer.LowCode.Blazor.SeleniumDrivers",
+                    "Codeer.LowCode.Bindings.MudBlazor.SeleniumDrivers",
                     "OpenQA.Selenium",
                     "Selenium.StandardControls",
                     "Selenium.StandardControls.PageObjectUtility",
@@ -382,7 +382,7 @@ namespace LowCodeApp.Designer.Lib.SeleniumPageObject
             {
                 UsingNamespaces =
                 {
-                    "Codeer.LowCode.Blazor.SeleniumDrivers",
+                    "Codeer.LowCode.Bindings.MudBlazor.SeleniumDrivers",
                     "OpenQA.Selenium",
                     "Selenium.StandardControls",
                     "Selenium.StandardControls.PageObjectUtility",

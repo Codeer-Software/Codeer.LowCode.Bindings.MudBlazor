@@ -7,7 +7,6 @@
 
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
-    <RootNamespace>BindingsTest</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,11 +18,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Codeer.LowCode.Bindings.MudBlazor\Codeer.LowCode.Bindings.MudBlazor.csproj" />
+    <Using Include="NUnit.Framework" />
   </ItemGroup>
 
   <ItemGroup>
-    <Using Include="NUnit.Framework" />
+    <ProjectReference Include="..\..\Codeer.LowCode.Bindings.MudBlazor\Codeer.LowCode.Bindings.MudBlazor.csproj" />
   </ItemGroup>
 
 </Project>

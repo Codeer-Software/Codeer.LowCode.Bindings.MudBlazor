@@ -1,7 +1,7 @@
 using Codeer.LowCode.Bindings.MudBlazor.Designs;
 using Codeer.LowCode.Blazor.DesignLogic.Check;
 
-namespace BindingsTest.DesignCheck
+namespace UnitTest.DesignCheck
 {
     public class MudChartFieldDesignCheck
     {

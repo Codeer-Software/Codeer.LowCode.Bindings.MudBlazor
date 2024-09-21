@@ -3,7 +3,7 @@ using Codeer.LowCode.Blazor.DesignLogic;
 using Codeer.LowCode.Blazor.DesignLogic.Refactor;
 using Codeer.LowCode.Blazor.Repository.Design;
 
-namespace BindingsTest.Rename
+namespace UnitTest.Rename
 {
     public class MudCalendarFieldDesignTest
     {

@@ -2,7 +2,7 @@ using Codeer.LowCode.Bindings.MudBlazor.Designs;
 using Codeer.LowCode.Blazor.DesignLogic;
 using Codeer.LowCode.Blazor.DesignLogic.Refactor;
 
-namespace BindingsTest.Rename
+namespace UnitTest.Rename
 {
     public class MudChartFieldDesignTest
     {

@@ -4,7 +4,7 @@ using Codeer.LowCode.Blazor.DesignLogic.Check;
 using Codeer.LowCode.Blazor.Repository.Design;
 using Codeer.LowCode.Blazor.Repository.Match;
 
-namespace BindingsTest
+namespace UnitTest
 {
     public static class Utilities
     {
