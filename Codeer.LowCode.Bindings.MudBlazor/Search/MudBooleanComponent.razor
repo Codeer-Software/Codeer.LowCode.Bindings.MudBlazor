@@ -4,9 +4,9 @@
 
 <div class="input-group">
   <MudSelect T="string" @bind-Value:get="Value!" @bind-Value:set="OnChange" InputId="@WebElementId">
-    <MudSelectItem Value="@("")"></MudSelectItem>
-    <MudSelectItem Value="true">true</MudSelectItem>
-    <MudSelectItem Value="false">false</MudSelectItem>
+    <MudSelectItem T="string" Value="@("")"></MudSelectItem>
+    <MudSelectItem T="string" Value="@("true")">true</MudSelectItem>
+    <MudSelectItem T="string" Value="@("false")">false</MudSelectItem>
   </MudSelect>
 </div>
 
