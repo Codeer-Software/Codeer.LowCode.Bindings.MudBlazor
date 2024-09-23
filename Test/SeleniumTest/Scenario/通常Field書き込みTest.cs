@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using SeleniumTest.PageObject;
+using System.Formats.Tar;
 
 namespace SeleniumTest.Scenario;
 
@@ -42,7 +43,7 @@ public class 通常Field書き込みTest
         WebDriverManager.WaitLoading();
         var writeDataControlsListPage1 = _driver.AttachWriteDataControlsListPage();
         writeDataControlsListPage1.List.Items.Count.Is(1);
-        writeDataControlsListPage1.List.Items.GetItem(0).Check.ReadOnlyText.Is("True");
+        writeDataControlsListPage1.List.Items.GetItem(0).Check.ReadOnlyText.Text.Is("True");
         writeDataControlsListPage1.List.Items.GetItem(0).NavigateToDetail.Click();
 
         //更新
@@ -58,7 +59,7 @@ public class 通常Field書き込みTest
         var writeDataControlsListPage2 = _driver.AttachWriteDataControlsListPage();
         WebDriverManager.WaitLoading();
         writeDataControlsListPage1.List.Items.Count.Is(1);
-        writeDataControlsListPage2.List.Items.GetItem(0).Check.ReadOnlyText.Is("False");
+        writeDataControlsListPage2.List.Items.GetItem(0).Check.ReadOnlyText.Text.Is("False");
     }
 
     [Test]
@@ -82,7 +83,7 @@ public class 通常Field書き込みTest
         WebDriverManager.WaitLoading();
         var writeDataControlsListPage1 = _driver.AttachWriteDataControlsListPage();
         writeDataControlsListPage1.List.Items.Count.Is(1);
-        writeDataControlsListPage1.List.Items.GetItem(0).Toggle.ReadOnlyText.Is("True");
+        writeDataControlsListPage1.List.Items.GetItem(0).Toggle.ReadOnlyText.Text.Is("True");
         writeDataControlsListPage1.List.Items.GetItem(0).NavigateToDetail.Click();
 
         //更新
@@ -98,7 +99,7 @@ public class 通常Field書き込みTest
         var writeDataControlsListPage2 = _driver.AttachWriteDataControlsListPage();
         WebDriverManager.WaitLoading();
         writeDataControlsListPage1.List.Items.Count.Is(1);
-        writeDataControlsListPage2.List.Items.GetItem(0).Toggle.ReadOnlyText.Is("False");
+        writeDataControlsListPage2.List.Items.GetItem(0).Toggle.ReadOnlyText.Text.Is("False");
     }
 
     [Test]
@@ -122,7 +123,7 @@ public class 通常Field書き込みTest
         WebDriverManager.WaitLoading();
         var writeDataControlsListPage1 = _driver.AttachWriteDataControlsListPage();
         writeDataControlsListPage1.List.Items.Count.Is(1);
-        writeDataControlsListPage1.List.Items.GetItem(0).Switch.ReadOnlyText.Is("True");
+        writeDataControlsListPage1.List.Items.GetItem(0).Switch.ReadOnlyText.Text.Is("True");
         writeDataControlsListPage1.List.Items.GetItem(0).NavigateToDetail.Click();
 
         //更新
@@ -138,7 +139,7 @@ public class 通常Field書き込みTest
         var writeDataControlsListPage2 = _driver.AttachWriteDataControlsListPage();
         WebDriverManager.WaitLoading();
         writeDataControlsListPage1.List.Items.Count.Is(1);
-        writeDataControlsListPage2.List.Items.GetItem(0).Switch.ReadOnlyText.Is("False");
+        writeDataControlsListPage2.List.Items.GetItem(0).Switch.ReadOnlyText.Text.Is("False");
     }
 
     [Test]
@@ -152,7 +153,6 @@ public class 通常Field書き込みTest
         WebDriverManager.WaitLoading();
 
         var writeDataControlsDetailPage = _driver.AttachWriteDataControlsDetailPage();
-        writeDataControlsDetailPage.Detail.Date.Input.Element.Click();
         writeDataControlsDetailPage.Detail.Date.Input.Edit(2024, 9, 15);
         writeDataControlsDetailPage.Detail.Submit.Submit.Click();
         WebDriverManager.WaitLoading();
@@ -194,7 +194,6 @@ public class 通常Field書き込みTest
         WebDriverManager.WaitLoading();
 
         var writeDataControlsDetailPage = _driver.AttachWriteDataControlsDetailPage();
-        writeDataControlsDetailPage.Detail.DateTime.Input.Element.Click();
         writeDataControlsDetailPage.Detail.DateTime.Input.Edit(2024, 9, 15, 10, 34);
         writeDataControlsDetailPage.Detail.Submit.Submit.Click();
         WebDriverManager.WaitLoading();
@@ -399,7 +398,6 @@ public class 通常Field書き込みTest
         WebDriverManager.WaitLoading();
 
         var writeDataControlsDetailPage = _driver.AttachWriteDataControlsDetailPage();
-        writeDataControlsDetailPage.Detail.SelectLink.Element.Click();
         writeDataControlsDetailPage.Detail.SelectLink.Select.Edit("AAA");
         writeDataControlsDetailPage.Detail.Submit.Submit.Click();
         WebDriverManager.WaitLoading();
@@ -416,7 +414,6 @@ public class 通常Field書き込みTest
         //更新
         var writeDataControlsDetailPage2 = _driver.AttachWriteDataControlsDetailPage();
         WebDriverManager.WaitLoading();
-        writeDataControlsDetailPage.Detail.SelectLink.Element.Click();
         writeDataControlsDetailPage2.Detail.SelectLink.Select.Edit("BBB");
         writeDataControlsDetailPage2.Detail.Submit.Submit.Click();
         WebDriverManager.WaitLoading();
@@ -526,7 +523,7 @@ public class 通常Field書き込みTest
         WebDriverManager.WaitLoading();
         writeDataControlsDetailPage.Detail.Submit.Submit.Click();
         WebDriverManager.WaitLoading();
-        writeDataControlsDetailPage.Detail.File.Element.Text.Is("地図.pdf");
+        writeDataControlsDetailPage.Detail.File.Download.Text.Is("地図.pdf");
 
         //一覧での表示確認
         _driver.AttachMainLeft().WriteDataControls.Click();
@@ -543,13 +540,13 @@ public class 通常Field書き込みTest
         WebDriverManager.WaitLoading();
         writeDataControlsDetailPage.Detail.Submit.Submit.Click();
         WebDriverManager.WaitLoading();
-        writeDataControlsDetailPage2.Detail.File.Element.Text.Is(string.Empty);
+        writeDataControlsDetailPage2.Detail.File.HasFile.Is(false);
 
         //一覧表示で確認
         _driver.AttachMainLeft().WriteDataControls.Click();
         var writeDataControlsListPage2 = _driver.AttachWriteDataControlsListPage();
         WebDriverManager.WaitLoading();
         writeDataControlsListPage2.List.Items.Count.Is(1);
-        writeDataControlsListPage2.List.Items.GetItem(0).File.ReadOnlyText.Text.Is(string.Empty);
+        writeDataControlsListPage2.List.Items.GetItem(0).File.HasFile.Is(false);
     }
 }

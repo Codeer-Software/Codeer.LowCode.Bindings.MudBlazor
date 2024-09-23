@@ -27,13 +27,13 @@ public class 通常Field検索Test
         readDataControlsListPage.Search.Fields.Check.Select.Edit("true");
         readDataControlsListPage.Search.Search.Click();
         WebDriverManager.WaitLoading();
-        readDataControlsListPage.List.Items.GetItem(0).Check.ReadOnlyText.Is("True");
+        readDataControlsListPage.List.Items.GetItem(0).Check.ReadOnlyText.Text.Is("True");
 
         //false検索
         readDataControlsListPage.Search.Fields.Check.Select.Edit("false");
         readDataControlsListPage.Search.Search.Click();
         WebDriverManager.WaitLoading();
-        readDataControlsListPage.List.Items.GetItem(0).Check.ReadOnlyText.Is("False");
+        readDataControlsListPage.List.Items.GetItem(0).Check.ReadOnlyText.Text.Is("False");
 
         //空にした場合は条件はクリアされる URLのパラメータも消える
         readDataControlsListPage.Search.Fields.Check.Select.Edit("");
@@ -51,12 +51,12 @@ public class 通常Field検索Test
         readDataControlsListPage.Search.Fields.Toggle.Select.Edit("true");
         readDataControlsListPage.Search.Search.Click();
         WebDriverManager.WaitLoading();
-        readDataControlsListPage.List.Items.GetItem(0).Toggle.ReadOnlyText.Is("True");
+        readDataControlsListPage.List.Items.GetItem(0).Toggle.ReadOnlyText.Text.Is("True");
         //false検索
         readDataControlsListPage.Search.Fields.Toggle.Select.Edit("false");
         readDataControlsListPage.Search.Search.Click();
         WebDriverManager.WaitLoading();
-        readDataControlsListPage.List.Items.GetItem(0).Toggle.ReadOnlyText.Is("False");
+        readDataControlsListPage.List.Items.GetItem(0).Toggle.ReadOnlyText.Text.Is("False");
         //空にした場合は条件はクリアされる URLのパラメータも消える
         readDataControlsListPage.Search.Fields.Toggle.Select.Edit("");
         readDataControlsListPage.Search.Search.Click();
@@ -73,12 +73,12 @@ public class 通常Field検索Test
         readDataControlsListPage.Search.Fields.Switch.Select.Edit("true");
         readDataControlsListPage.Search.Search.Click();
         WebDriverManager.WaitLoading();
-        readDataControlsListPage.List.Items.GetItem(0).Switch.ReadOnlyText.Is("True");
+        readDataControlsListPage.List.Items.GetItem(0).Switch.ReadOnlyText.Text.Is("True");
         //false検索
         readDataControlsListPage.Search.Fields.Switch.Select.Edit("false");
         readDataControlsListPage.Search.Search.Click();
         WebDriverManager.WaitLoading();
-        readDataControlsListPage.List.Items.GetItem(0).Switch.ReadOnlyText.Is("False");
+        readDataControlsListPage.List.Items.GetItem(0).Switch.ReadOnlyText.Text.Is("False");
         //空にした場合は条件はクリアされる URLのパラメータも消える
         readDataControlsListPage.Search.Fields.Switch.Select.Edit("");
         readDataControlsListPage.Search.Search.Click();
@@ -254,7 +254,7 @@ public class 通常Field検索Test
 
 
         // NOT 検索
-        readDataControlsListPage.Search.Fields.RadioGroup.IsNot.Element.Click();
+        readDataControlsListPage.Search.Fields.RadioGroup.IsNot.Edit(true);
         readDataControlsListPage.Search.Fields.RadioGroup.Select.Edit("B");
         readDataControlsListPage.Search.Search.Click();
         WebDriverManager.WaitLoading();
@@ -280,7 +280,7 @@ public class 通常Field検索Test
 
 
         // 'NOT' 検索
-        readDataControlsListPage.Search.Fields.Select.IsNot.Element.Click();
+        readDataControlsListPage.Search.Fields.Select.IsNot.Edit(true);
         readDataControlsListPage.Search.Fields.Select.Select.Edit("B");
         readDataControlsListPage.Search.Search.Click();
         WebDriverManager.WaitLoading();
@@ -306,7 +306,7 @@ public class 通常Field検索Test
 
 
         // 'NOT' 検索
-        readDataControlsListPage.Search.Fields.SelectLink.IsNot.Element.Click();
+        readDataControlsListPage.Search.Fields.SelectLink.IsNot.Edit(true);
         readDataControlsListPage.Search.Fields.SelectLink.Select.Edit("CCC");
         readDataControlsListPage.Search.Search.Click();
         WebDriverManager.WaitLoading();

@@ -452,7 +452,6 @@ public class DetailListField書き込み
         WebDriverManager.WaitLoading();
         writeListDataDetailPage.Detail.Name.Input.Edit("SelectLink編集");
         writeListDataDetailPage.Detail.List.Create.Click();
-        writeListDataDetailPage.Detail.List.Items.GetItem(0).SelectLink.Element.Click();
         writeListDataDetailPage.Detail.List.Items.GetItem(0).SelectLink.Select.Edit("BBB");
         writeListDataDetailPage.Detail.SubmitButton.Submit.Click();
         WebDriverManager.WaitLoading();
@@ -470,7 +469,6 @@ public class DetailListField書き込み
         WebDriverManager.WaitLoading();
         writeListDataDetailPage2.Detail.List.Items.GetItem(0).SelectLink.Select.Text.Is("BBB");
 
-        writeListDataDetailPage.Detail.List.Items.GetItem(0).SelectLink.Element.Click();
         writeListDataDetailPage2.Detail.List.Items.GetItem(0).SelectLink.Select.Edit("AAA");
         writeListDataDetailPage2.Detail.SubmitButton.Submit.Click();
         WebDriverManager.WaitLoading();
@@ -596,7 +594,7 @@ public class DetailListField書き込み
         WebDriverManager.WaitLoading();
         writeListDataDetailPage.Detail.SubmitButton.Submit.Click();
         WebDriverManager.WaitLoading();
-        writeListDataDetailPage.Detail.List.Items.GetItem(0).File.Element.Text.Is("地図.pdf");
+        writeListDataDetailPage.Detail.List.Items.GetItem(0).File.Download.Text.Is("地図.pdf");
 
         //一覧に戻る
         _driver.AttachMainLeft().WriteDetailListData.Click();
@@ -608,13 +606,13 @@ public class DetailListField書き込み
         //更新
         var writeListDataDetailPage2 = _driver.AttachWriteDetailListDataDetailPage();
         WebDriverManager.WaitLoading();
-        writeListDataDetailPage2.Detail.List.Items.GetItem(0).File.Element.Text.Is("地図.pdf");
+        writeListDataDetailPage2.Detail.List.Items.GetItem(0).File.Download.Text.Is("地図.pdf");
 
         writeListDataDetailPage2.Detail.List.Items.GetItem(0).File.Delete.Click();
         WebDriverManager.WaitLoading();
         writeListDataDetailPage2.Detail.SubmitButton.Submit.Click();
         WebDriverManager.WaitLoading();
-        writeListDataDetailPage2.Detail.List.Items.GetItem(0).File.Element.Text.Is(string.Empty);
+        writeListDataDetailPage2.Detail.List.Items.GetItem(0).File.HasFile.Is(false);
 
         //一覧に戻る
         _driver.AttachMainLeft().WriteDetailListData.Click();
@@ -626,6 +624,6 @@ public class DetailListField書き込み
         //最後の編集を確認
         var writeListDataDetailPage3 = _driver.AttachWriteDetailListDataDetailPage();
         WebDriverManager.WaitLoading();
-        writeListDataDetailPage3.Detail.List.Items.GetItem(0).File.Element.Text.Is(string.Empty);
+        writeListDataDetailPage3.Detail.List.Items.GetItem(0).File.HasFile.Is(false);
     }
 }

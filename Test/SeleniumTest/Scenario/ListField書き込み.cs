@@ -246,7 +246,6 @@ public class ListField書き込み
         writeListDataDetailPage3.Detail.List.Items.GetItem(0).DateTime.Input.Text.Is("2024-12-23T08:13");
     }
 
-    [Ignore("一覧から選択できない")]
     [Test]
     public void Link()
     {
@@ -294,7 +293,6 @@ public class ListField書き込み
         var writeListDataDetailPage3 = _driver.AttachWriteListDataDetailPage();
         WebDriverManager.WaitLoading();
         writeListDataDetailPage2.Detail.List.Items.GetItem(0).Link.Input.Text.Is("AAA");
-        writeListDataDetailPage3.Detail.List.Items.GetItem(0).DateTime.Input.Text.Is("2024-12-23T08:13");
     }
 
     [Test]
@@ -454,7 +452,6 @@ public class ListField書き込み
         WebDriverManager.WaitLoading();
         writeListDataDetailPage.Detail.Name.Input.Edit("SelectLink編集");
         writeListDataDetailPage.Detail.List.Create.Click();
-        writeListDataDetailPage.Detail.List.Items.GetItem(0).SelectLink.Element.Click();
         writeListDataDetailPage.Detail.List.Items.GetItem(0).SelectLink.Select.Edit("BBB");
         writeListDataDetailPage.Detail.SubmitButton.Submit.Click();
         WebDriverManager.WaitLoading();
@@ -472,7 +469,6 @@ public class ListField書き込み
         WebDriverManager.WaitLoading();
         writeListDataDetailPage2.Detail.List.Items.GetItem(0).SelectLink.Select.Text.Is("BBB");
 
-        writeListDataDetailPage.Detail.List.Items.GetItem(0).SelectLink.Element.Click();
         writeListDataDetailPage2.Detail.List.Items.GetItem(0).SelectLink.Select.Edit("AAA");
         writeListDataDetailPage2.Detail.SubmitButton.Submit.Click();
         WebDriverManager.WaitLoading();
@@ -598,7 +594,7 @@ public class ListField書き込み
         WebDriverManager.WaitLoading();
         writeListDataDetailPage.Detail.SubmitButton.Submit.Click();
         WebDriverManager.WaitLoading();
-        writeListDataDetailPage.Detail.List.Items.GetItem(0).File.Element.Text.Is("地図.pdf");
+        writeListDataDetailPage.Detail.List.Items.GetItem(0).File.Download.Text.Is("地図.pdf");
 
         //一覧に戻る
         _driver.AttachMainLeft().WriteListData.Click();
@@ -610,13 +606,13 @@ public class ListField書き込み
         //更新
         var writeListDataDetailPage2 = _driver.AttachWriteListDataDetailPage();
         WebDriverManager.WaitLoading();
-        writeListDataDetailPage2.Detail.List.Items.GetItem(0).File.Element.Text.Is("地図.pdf");
+        writeListDataDetailPage2.Detail.List.Items.GetItem(0).File.Download.Text.Is("地図.pdf");
 
         writeListDataDetailPage2.Detail.List.Items.GetItem(0).File.Delete.Click();
         WebDriverManager.WaitLoading();
         writeListDataDetailPage2.Detail.SubmitButton.Submit.Click();
         WebDriverManager.WaitLoading();
-        writeListDataDetailPage2.Detail.List.Items.GetItem(0).File.Element.Text.Is(string.Empty);
+        writeListDataDetailPage2.Detail.List.Items.GetItem(0).File.HasFile.Is(false);
 
         //一覧に戻る
         _driver.AttachMainLeft().WriteListData.Click();
@@ -628,6 +624,6 @@ public class ListField書き込み
         //最後の編集を確認
         var writeListDataDetailPage3 = _driver.AttachWriteListDataDetailPage();
         WebDriverManager.WaitLoading();
-        writeListDataDetailPage3.Detail.List.Items.GetItem(0).File.Element.Text.Is(string.Empty);
+        writeListDataDetailPage3.Detail.List.Items.GetItem(0).File.HasFile.Is(false);
     }
 }

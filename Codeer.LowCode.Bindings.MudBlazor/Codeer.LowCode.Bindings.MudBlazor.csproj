@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Codeer.LowCode.Blazor" Version="1.0.33" />
+    <PackageReference Include="Codeer.LowCode.Blazor" Version="1.0.34" />
     <PackageReference Include="Heron.MudCalendar" Version="2.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="8.0.4" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.4" />

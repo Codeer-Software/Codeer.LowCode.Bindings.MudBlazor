@@ -249,7 +249,7 @@ public class SearchFieldDetailListTest
 
         // Not検索
         readListDataDetailPage.Detail.Search.Fields.RadioGroup.Select.Edit("B");
-        readListDataDetailPage.Detail.Search.Fields.RadioGroup.IsNot.Element.Click();
+        readListDataDetailPage.Detail.Search.Fields.RadioGroup.IsNot.Edit(true);
         readListDataDetailPage.Detail.Search.Search.Click();
         WebDriverManager.WaitLoading();
         readListDataDetailPage.Detail.List.Items.Count.Is(15);
@@ -270,7 +270,7 @@ public class SearchFieldDetailListTest
 
         // Not検索
         readListDataDetailPage.Detail.Search.Fields.Select.Select.Edit("B");
-        readListDataDetailPage.Detail.Search.Fields.Select.IsNot.Element.Click();
+        readListDataDetailPage.Detail.Search.Fields.Select.IsNot.Edit(true);
         readListDataDetailPage.Detail.Search.Search.Click();
         WebDriverManager.WaitLoading();
         readListDataDetailPage.Detail.List.Items.Count.Is(15);
@@ -290,7 +290,7 @@ public class SearchFieldDetailListTest
 
         // Not検索
         readListDataDetailPage.Detail.Search.Fields.SelectLink.Select.Edit("CCC");
-        readListDataDetailPage.Detail.Search.Fields.SelectLink.IsNot.Element.Click();
+        readListDataDetailPage.Detail.Search.Fields.SelectLink.IsNot.Edit(true);
         readListDataDetailPage.Detail.Search.Search.Click();
         WebDriverManager.WaitLoading();
         readListDataDetailPage.Detail.List.Items.Count.Is(15);

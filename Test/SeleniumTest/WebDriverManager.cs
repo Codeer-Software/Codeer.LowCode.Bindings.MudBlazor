@@ -8,7 +8,7 @@ namespace SeleniumTest;
 [SetUpFixture]
 public class WebDriverManager
 {
-    public static string Domain = "https://codeerlowcodeseleniumtest2.azurewebsites.net";
+    public static string Domain = string.Empty;
 
     static WebDriverManager()
     {

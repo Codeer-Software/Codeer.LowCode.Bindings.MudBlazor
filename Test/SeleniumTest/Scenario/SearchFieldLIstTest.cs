@@ -31,13 +31,13 @@ public class SearchFieldListTest
         readListDataDetailPage.Detail.Search.Search.Click();
         WebDriverManager.WaitLoading();
         readListDataDetailPage.Detail.List.Items.Count.Is(1);
-        readListDataDetailPage.Detail.List.Items.GetItem(0).Check.ReadOnlyText.Is("True");
+        readListDataDetailPage.Detail.List.Items.GetItem(0).Check.ReadOnlyText.Text.Is("True");
 
         readListDataDetailPage.Detail.Search.Fields.Check.Select.Edit("false");
         readListDataDetailPage.Detail.Search.Search.Click();
         WebDriverManager.WaitLoading();
         readListDataDetailPage.Detail.List.Items.Count.Is(1);
-        readListDataDetailPage.Detail.List.Items.GetItem(0).Check.ReadOnlyText.Is("False");
+        readListDataDetailPage.Detail.List.Items.GetItem(0).Check.ReadOnlyText.Text.Is("False");
 
         readListDataDetailPage.Detail.Search.Fields.Check.Select.Edit("");
         readListDataDetailPage.Detail.Search.Search.Click();
@@ -56,12 +56,12 @@ public class SearchFieldListTest
         readListDataDetailPage.Detail.Search.Fields.Toggle.Select.Edit("true");
         readListDataDetailPage.Detail.Search.Search.Click();
         WebDriverManager.WaitLoading();
-        readListDataDetailPage.Detail.List.Items.GetItem(0).Toggle.ReadOnlyText.Is("True");
+        readListDataDetailPage.Detail.List.Items.GetItem(0).Toggle.ReadOnlyText.Text.Is("True");
         //false検索
         readListDataDetailPage.Detail.Search.Fields.Toggle.Select.Edit("false");
         readListDataDetailPage.Detail.Search.Search.Click();
         WebDriverManager.WaitLoading();
-        readListDataDetailPage.Detail.List.Items.GetItem(0).Toggle.ReadOnlyText.Is("False");
+        readListDataDetailPage.Detail.List.Items.GetItem(0).Toggle.ReadOnlyText.Text.Is("False");
         //空にした場合は条件はクリアされる URLのパラメータも消える
         readListDataDetailPage.Detail.Search.Fields.Toggle.Select.Edit("");
         readListDataDetailPage.Detail.Search.Search.Click();
@@ -80,12 +80,12 @@ public class SearchFieldListTest
         readListDataDetailPage.Detail.Search.Fields.Switch.Select.Edit("true");
         readListDataDetailPage.Detail.Search.Search.Click();
         WebDriverManager.WaitLoading();
-        readListDataDetailPage.Detail.List.Items.GetItem(0).Switch.ReadOnlyText.Is("True");
+        readListDataDetailPage.Detail.List.Items.GetItem(0).Switch.ReadOnlyText.Text.Is("True");
         //false検索
         readListDataDetailPage.Detail.Search.Fields.Switch.Select.Edit("false");
         readListDataDetailPage.Detail.Search.Search.Click();
         WebDriverManager.WaitLoading();
-        readListDataDetailPage.Detail.List.Items.GetItem(0).Switch.ReadOnlyText.Is("False");
+        readListDataDetailPage.Detail.List.Items.GetItem(0).Switch.ReadOnlyText.Text.Is("False");
         //空にした場合は条件はクリアされる URLのパラメータも消える
         readListDataDetailPage.Detail.Search.Fields.Switch.Select.Edit("");
         readListDataDetailPage.Detail.Search.Search.Click();
@@ -246,7 +246,7 @@ public class SearchFieldListTest
 
         // Not検索
         readListDataDetailPage.Detail.Search.Fields.RadioGroup.Select.Edit("B");
-        readListDataDetailPage.Detail.Search.Fields.RadioGroup.IsNot.Element.Click();
+        readListDataDetailPage.Detail.Search.Fields.RadioGroup.IsNot.Edit(true);
         readListDataDetailPage.Detail.Search.Search.Click();
         WebDriverManager.WaitLoading();
         readListDataDetailPage.Detail.List.Items.Count.Is(15);
@@ -267,7 +267,7 @@ public class SearchFieldListTest
 
         // Not検索
         readListDataDetailPage.Detail.Search.Fields.Select.Select.Edit("B");
-        readListDataDetailPage.Detail.Search.Fields.Select.IsNot.Element.Click();
+        readListDataDetailPage.Detail.Search.Fields.Select.IsNot.Edit(true);
         readListDataDetailPage.Detail.Search.Search.Click();
         WebDriverManager.WaitLoading();
         readListDataDetailPage.Detail.List.Items.Count.Is(15);
@@ -287,7 +287,7 @@ public class SearchFieldListTest
 
         // Not検索
         readListDataDetailPage.Detail.Search.Fields.SelectLink.Select.Edit("CCC");
-        readListDataDetailPage.Detail.Search.Fields.SelectLink.IsNot.Element.Click();
+        readListDataDetailPage.Detail.Search.Fields.SelectLink.IsNot.Edit(true);
         readListDataDetailPage.Detail.Search.Search.Click();
         WebDriverManager.WaitLoading();
         readListDataDetailPage.Detail.List.Items.Count.Is(15);
