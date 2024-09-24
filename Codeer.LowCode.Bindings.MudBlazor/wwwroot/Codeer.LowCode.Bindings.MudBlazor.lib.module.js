@@ -1,4 +1,6 @@
-﻿/**
+﻿const AssemblyName = "Codeer.LowCode.Bindings.MudBlazor";
+
+/**
  *
  * @param {string} src
  * @param {string | undefined} type
@@ -26,6 +28,10 @@ function installCss(src) {
 }
 
 function startup() {
+  if(document.head.querySelector(`meta[name="${AssemblyName}::autoload"]`)?.content === "false"){
+    return;
+  }
+  
   installCss("_content/MudBlazor/MudBlazor.min.css");
   installCss("_content/Heron.MudCalendar/Heron.MudCalendar.min.css");
   installScript("_content/MudBlazor/MudBlazor.min.js");
