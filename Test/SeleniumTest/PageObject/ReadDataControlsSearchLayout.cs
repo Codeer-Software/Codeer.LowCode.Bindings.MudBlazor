@@ -1,3 +1,4 @@
+using Codeer.LowCode.Bindings.MudBlazor.SeleniumDrivers.Search;
 using Codeer.LowCode.Blazor.SeleniumDrivers;
 using OpenQA.Selenium;
 using Selenium.StandardControls;
@@ -10,11 +11,11 @@ namespace SeleniumTest.PageObject
     {
         public SearchGridDriver SearchGridLayoutGrid => ByCssSelector("div[data-name='SearchGridLayout']").Wait();
         public LabelFieldSearchDriver CheckLabel => ByCssSelector("div[data-name='CheckLabel']").Wait();
-        public BooleanFieldSearchDriver Check => ByCssSelector("div[data-name='Check']").Wait();
+        public MudBooleanFieldSearchDriver Check => ByCssSelector("div[data-name='Check']").Wait();
         public LabelFieldSearchDriver ToggleLabel => ByCssSelector("div[data-name='ToggleLabel']").Wait();
-        public BooleanFieldSearchDriver Toggle => ByCssSelector("div[data-name='Toggle']").Wait();
+        public MudBooleanFieldSearchDriver Toggle => ByCssSelector("div[data-name='Toggle']").Wait();
         public LabelFieldSearchDriver SwitchLabel => ByCssSelector("div[data-name='SwitchLabel']").Wait();
-        public BooleanFieldSearchDriver Switch => ByCssSelector("div[data-name='Switch']").Wait();
+        public MudBooleanFieldSearchDriver Switch => ByCssSelector("div[data-name='Switch']").Wait();
         public LabelFieldSearchDriver DateLabel => ByCssSelector("div[data-name='DateLabel']").Wait();
         public DateFieldSearchDriver Date => ByCssSelector("div[data-name='Date']").Wait();
         public LabelFieldSearchDriver DateTimeLabel => ByCssSelector("div[data-name='DateTimeLabel']").Wait();
@@ -26,15 +27,15 @@ namespace SeleniumTest.PageObject
         public LabelFieldSearchDriver RadioLabel => ByCssSelector("div[data-name='RadioLabel']").Wait();
         public RadioGroupFieldSearchDriver RadioGroup => ByCssSelector("div[data-name='RadioGroup']").Wait();
         public LabelFieldSearchDriver SelectLabel => ByCssSelector("div[data-name='SelectLabel']").Wait();
-        public SelectFieldSearchDriver Select => ByCssSelector("div[data-name='Select']").Wait();
+        public MudSelectFieldSearchDriver Select => ByCssSelector("div[data-name='Select']").Wait();
         public LabelFieldSearchDriver SelectLinkLabel => ByCssSelector("div[data-name='SelectLinkLabel']").Wait();
-        public SelectFieldSearchDriver SelectLink => ByCssSelector("div[data-name='SelectLink']").Wait();
+        public MudSelectFieldSearchDriver SelectLink => ByCssSelector("div[data-name='SelectLink']").Wait();
         public LabelFieldSearchDriver TextLabel => ByCssSelector("div[data-name='TextLabel']").Wait();
-        public TextFieldSearchDriver Text => ByCssSelector("div[data-name='Text']").Wait();
+        public MudTextFieldSearchDriver Text => ByCssSelector("div[data-name='Text']").Wait();
         public LabelFieldSearchDriver TimeLabel => ByCssSelector("div[data-name='TimeLabel']").Wait();
-        public TimeFieldSearchDriver Time => ByCssSelector("div[data-name='Time']").Wait();
+        public MudTimeFieldSearchDriver Time => ByCssSelector("div[data-name='Time']").Wait();
         public LabelFieldSearchDriver FileLabel => ByCssSelector("div[data-name='FileLabel']").Wait();
-        public FileFieldSearchDriver File => ByCssSelector("div[data-name='File']").Wait();
+        public MudFileFieldSearchDriver File => ByCssSelector("div[data-name='File']").Wait();
 
         public ReadDataControlsSearchLayout(IWebElement element) : base(element) { }
 

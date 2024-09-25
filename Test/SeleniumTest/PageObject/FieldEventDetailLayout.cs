@@ -1,3 +1,4 @@
+using Codeer.LowCode.Bindings.MudBlazor.SeleniumDrivers.Components;
 using Codeer.LowCode.Blazor.SeleniumDrivers;
 using OpenQA.Selenium;
 using Selenium.StandardControls;
@@ -21,7 +22,7 @@ namespace SeleniumTest.PageObject
         public PasswordFieldDriver Password => ByCssSelector("div[data-name='Password']").Wait();
         public RadioButtonFieldDriver RadioButtonA => ByCssSelector("div[data-name='RadioButtonA']").Wait();
         public RadioButtonFieldDriver RadioButtonB => ByCssSelector("div[data-name='RadioButtonB']").Wait();
-        public SelectFieldDriver Select => ByCssSelector("div[data-name='Select']").Wait();
+        public MudSelectFieldDriver Select => ByCssSelector("div[data-name='Select']").Wait();
         public TextFieldDriver Text => ByCssSelector("div[data-name='Text']").Wait();
         public TimeFieldDriver Time => ByCssSelector("div[data-name='Time']").Wait();
         public ModuleFieldDriver<ModuleFieldDataSimpleDetailLayout> Module => ByCssSelector("div[data-name='Module']").Wait();

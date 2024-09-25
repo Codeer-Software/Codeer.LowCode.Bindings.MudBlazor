@@ -39,4 +39,8 @@
   <ItemGroup>
     <Folder Include="PageObject\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Codeer.LowCode.Bindings.MudBlazor.SeleniumDrivers\Codeer.LowCode.Bindings.MudBlazor.SeleniumDrivers.csproj" />
+  </ItemGroup>
 </Project>

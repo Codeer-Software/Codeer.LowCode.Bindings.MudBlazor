@@ -1,6 +1,6 @@
 @using Codeer.LowCode.Blazor.OperatingModel
 @using Codeer.LowCode.Blazor.RequestInterfaces
-@inherits FieldComponentBase<SelectField>
+@inherits MudFieldComponentBase<SelectField, MudSelectFieldDesign>
 @inject Services Services
 
 <div class="root">
@@ -13,6 +13,7 @@
       </MudSelect>
     } else {
       <MudSelect T="string" @bind-Value:get="@SelectedValue" @bind-Value:set="@OnChange">
+        <MudSelectItem Value="@("")"></MudSelectItem>
         @foreach (var item in ItemsSource) {
           <MudSelectItem Value="@item.Value">@item.Key</MudSelectItem>
         }

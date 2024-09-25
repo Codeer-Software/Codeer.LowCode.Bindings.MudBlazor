@@ -1,3 +1,4 @@
+using Codeer.LowCode.Bindings.MudBlazor.SeleniumDrivers.Search;
 using Codeer.LowCode.Blazor.SeleniumDrivers;
 using OpenQA.Selenium;
 using Selenium.StandardControls;
@@ -10,7 +11,7 @@ namespace SeleniumTest.PageObject
     {
         public SearchGridDriver SearchGridLayoutGrid => ByCssSelector("div[data-name='SearchGridLayout']").Wait();
         public LabelFieldSearchDriver LabelResult => ByCssSelector("div[data-name='LabelResult']").Wait();
-        public BooleanFieldSearchDriver Boolean => ByCssSelector("div[data-name='Boolean']").Wait();
+        public MudBooleanFieldSearchDriver Boolean => ByCssSelector("div[data-name='Boolean']").Wait();
 
         public ModuleEventSearchLayout(IWebElement element) : base(element) { }
 

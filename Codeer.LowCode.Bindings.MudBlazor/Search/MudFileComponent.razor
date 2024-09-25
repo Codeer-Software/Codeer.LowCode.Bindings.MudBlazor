@@ -5,8 +5,9 @@
 <div class="mb-2">
   <label class="form-label mb-1" for="@WebElementId">FileName</label>
   <div class="d-flex">
-    <MudTextField T="string" @bind-Value:get="@FileNameValue!" @bind-Value:set="@OnFileNameChanged" InputId="@WebElementId"/>
-    <MudSelect T="MatchComparison" @bind-Value="@Field.SearchFileNameComparison">
+    <MudTextField T="string" @bind-Value:get="@FileNameValue!" @bind-Value:set="@OnFileNameChanged" InputId="@WebElementId"
+                  data-search-target="filename"/>
+    <MudSelect T="MatchComparison" @bind-Value="@Field.SearchFileNameComparison" data-search-target="filenamematch">
       <MudSelectItem Value="MatchComparison.Equal">Equal</MudSelectItem>
       <MudSelectItem Value="MatchComparison.Like">Like</MudSelectItem>
     </MudSelect>
