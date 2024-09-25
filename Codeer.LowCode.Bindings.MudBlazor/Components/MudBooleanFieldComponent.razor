@@ -1,5 +1,6 @@
 @using Codeer.LowCode.Blazor.Repository.Design
 @using Codeer.LowCode.Blazor.OperatingModel
+@using Codeer.LowCode.Bindings.MudBlazor.Internal.Components
 @inherits MudFieldComponentBase<BooleanField, MudBooleanFieldDesign>
 
 @if (Field.ModuleLayoutType == ModuleLayoutType.List && Field.IsViewOnly) {
@@ -14,10 +15,8 @@
     <MudSwitch @bind-Value:get="@IsChecked" @bind-Value:set="@OnChange" Disabled="@(IsDisabled || IsViewMode)" Label="@Label"
                Color="MudDesign.Color" Error="!Field.IsValid" ErrorText="@(Field.ErrorText)"/>
   } else if (Field.Design.UIType == BooleanUIType.ToggleButton) {
-    <MudButton Variant="@(IsChecked ? Variant.Filled : Variant.Outlined)" Disabled="@(IsDisabled || IsViewMode)"
-               Color="MudDesign.Color" OnClick="@OnClick">
-      @Label
-    </MudButton>
+    <InternalMudToggleButton @bind-Value:get="@IsChecked" @bind-Value:set="@OnChange" Disabled="@(IsDisabled || IsViewMode)" Label="@Label"
+                             Color="MudDesign.Color" Error="!Field.IsValid" ErrorText="@(Field.ErrorText)"/>
   }
 }
 
@@ -30,10 +29,6 @@
 
   private async Task OnChange(bool isChecked) {
     await Field.SetValueAsync(isChecked);
-  }
-
-  private async Task OnClick() {
-    await Field.SetValueAsync(!IsChecked);
   }
 
 }
