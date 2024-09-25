@@ -1,7 +1,7 @@
 @using Codeer.LowCode.Blazor.OperatingModel
 @inherits FieldComponentBase<NumberField>
 
-<div class="input-group">
+<div class="d-flex align-items-center">
   <MudNumericField T="decimal?" @bind-Value:get="@MoreThanValue" @bind-Value:set="@OnMoreThanChanged"
                    InputId="@WebElementId" data-search-target="min" />
   <span>～</span>
