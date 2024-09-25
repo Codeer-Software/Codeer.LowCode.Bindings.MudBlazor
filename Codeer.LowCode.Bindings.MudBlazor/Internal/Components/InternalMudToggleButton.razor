@@ -2,7 +2,7 @@
 
 <div>
   <MudToggleGroup T="int?" SelectionMode="SelectionMode.ToggleSelection" @bind-Value:get="@RawValue" @bind-Value:set="OnChange"
-                  Disabled="Disabled" Color="@(Error ? Color.Error : Color)" CheckMark="CheckMark" Class="d-inline-grid">
+                  Disabled="Disabled" Color="@(Error ? Color.Error : Color)" CheckMark="CheckMark" Class="d-inline-grid" Size="Size.Small">
     <MudToggleItem Value="@((int?)1)">@Label</MudToggleItem>
   </MudToggleGroup>
   @if (Error && !string.IsNullOrWhiteSpace(ErrorText)) {
