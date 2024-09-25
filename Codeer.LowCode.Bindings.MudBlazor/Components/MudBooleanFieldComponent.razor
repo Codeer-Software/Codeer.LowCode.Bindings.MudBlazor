@@ -16,7 +16,7 @@
                Color="MudDesign.Color" Error="!Field.IsValid" ErrorText="@(Field.ErrorText)"/>
   } else if (Field.Design.UIType == BooleanUIType.ToggleButton) {
     <InternalMudToggleButton @bind-Value:get="@IsChecked" @bind-Value:set="@OnChange" Disabled="@(IsDisabled || IsViewMode)" Label="@Label"
-                             Color="MudDesign.Color" Error="!Field.IsValid" ErrorText="@(Field.ErrorText)"/>
+                             Color="MudDesign.Color" Error="!Field.IsValid" ErrorText="@(Field.ErrorText)" CheckMark />
   }
 }
 

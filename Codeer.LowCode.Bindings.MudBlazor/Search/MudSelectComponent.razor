@@ -1,5 +1,6 @@
 @using Codeer.LowCode.Blazor.OperatingModel
 @using Codeer.LowCode.Blazor.RequestInterfaces
+@using Codeer.LowCode.Bindings.MudBlazor.Internal.Components
 @inherits MudFieldComponentBase<SelectField, MudSelectFieldDesign>
 @inject Services Services
 
@@ -21,7 +22,7 @@
     }
   </div>
   <div>
-    <MudCheckBox Label="Not" @bind-Value:get="@Field.IsInverted" @bind-Value:set="@OnChangeFlag"/>
+    <InternalMudToggleButton Label="Not" @bind-Value:get="@Field.IsInverted" @bind-Value:set="@OnChangeFlag"/>
   </div>
 </div>
 
