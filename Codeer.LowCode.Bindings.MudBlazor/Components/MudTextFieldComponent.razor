@@ -11,7 +11,7 @@
   } else {
     <MudTextField T="string" @bind-Value:get="@Value!" @bind-Value:set="@RaiseOnValueChanged" InputId="@WebElementId" 
                   Disabled="@IsDisabled" ReadOnly="IsViewMode" MaxLength="@(MaxLength ?? 524288)" Placeholder="@Placeholder"
-                  Variant="MudDesign.Variant" Error="!Field.IsValid"/>
+                  Variant="MudDesign.Variant" Error="!Field.IsValid" ErrorText="@(Field.ErrorText)"/>
   }
 }
 

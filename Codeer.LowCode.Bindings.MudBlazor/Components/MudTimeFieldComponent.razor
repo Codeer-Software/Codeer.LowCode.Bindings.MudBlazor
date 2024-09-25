@@ -7,7 +7,7 @@
 } else {
   <MudTimePicker @bind-Time:get="@GetValue()" @bind-Time:set="@RaiseOnValueChanged" 
                  Disabled="@IsDisabled" ReadOnly="IsViewMode" Variant="MudDesign.Variant"
-                 Error="!Field.IsValid"/>
+                 Error="!Field.IsValid" ErrorText="@(Field.ErrorText)"/>
 }
 
 @code {

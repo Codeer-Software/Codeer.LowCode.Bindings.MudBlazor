@@ -7,7 +7,7 @@
   <MudNumericField T="decimal?" @bind-Value:get="@Field.Value" @bind-Value:set="@RaiseOnValueChanged"
                    InputId="@WebElementId" Disabled="@IsDisabled" ReadOnly="IsViewMode"
                    Placeholder="@Placeholder" Max="@Max" Min="@Min" Variant="MudDesign.Variant"
-                   Error="!Field.IsValid"/>
+                   Error="!Field.IsValid" ErrorText="@(Field.ErrorText)"/>
 }
 
 @code {
