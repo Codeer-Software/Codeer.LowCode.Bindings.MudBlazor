@@ -10,8 +10,8 @@
   </span>
 } else {
   <MudRadioGroup Disabled="@(IsDisabled || IsViewMode)" @bind-Value:get="@IsChecked" @bind-Value:set="OnChange"
-                 Error="!Field.IsValid" ErrorText="@(Field.ErrorText)">
-    <MudRadio T="bool" Value="true" Color="MudDesign.Color" >@Label</MudRadio>
+                 Error="Field.GetRadioGroupField()?.IsValid == false" ErrorText="@(Field.GetRadioGroupField()?.ErrorText)">
+    <MudRadio T="bool" Value="true" Color="MudDesign.Color">@Label</MudRadio>
   </MudRadioGroup>
 }
 
