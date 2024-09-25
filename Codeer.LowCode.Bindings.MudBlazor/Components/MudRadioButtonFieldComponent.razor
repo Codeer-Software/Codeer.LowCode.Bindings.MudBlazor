@@ -1,4 +1,3 @@
-@using Codeer.LowCode.Bindings.MudBlazor.Enums
 @using Codeer.LowCode.Blazor.Repository.Design
 @using Codeer.LowCode.Blazor.OperatingModel
 @using Codeer.LowCode.Blazor.Utils
@@ -11,7 +10,7 @@
   </span>
 } else {
   <MudRadioGroup Disabled="@(IsDisabled || IsViewMode)" @bind-Value:get="@IsChecked" @bind-Value:set="OnChange">
-    <MudRadio T="bool" Value="true" Color="MudDesign.Color.ToColor()" >@Label</MudRadio>
+    <MudRadio T="bool" Value="true" Color="MudDesign.Color" >@Label</MudRadio>
   </MudRadioGroup>
 }
 

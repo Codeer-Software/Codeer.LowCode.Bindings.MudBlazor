@@ -1,4 +1,3 @@
-@using Codeer.LowCode.Bindings.MudBlazor.Enums
 @using Microsoft.AspNetCore.Components.Forms
 @using Codeer.LowCode.Blazor.OperatingModel
 @using Codeer.LowCode.Blazor.Repository.Design
@@ -19,7 +18,7 @@
     <div class="d-flex align-items-center gap-2">
       <MudFileUpload T="IBrowserFile" OnFilesChanged="LoadFiles" Disabled="IsDisabled">
         <ActivatorContent>
-          <MudIconButton Variant="@MudDesign.Variant.ToVariant()" Color="@MudDesign.Color.ToColor()" Icon="@Icons.Material.Filled.UploadFile" />
+          <MudIconButton Variant="@MudDesign.Variant" Color="@MudDesign.Color" Icon="@Icons.Material.Filled.UploadFile" />
         </ActivatorContent>
       </MudFileUpload>
       @if (!string.IsNullOrEmpty(Field.FileName)) {

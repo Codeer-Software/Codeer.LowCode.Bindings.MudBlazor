@@ -1,4 +1,3 @@
-@using Codeer.LowCode.Bindings.MudBlazor.Enums
 @using Codeer.LowCode.Bindings.MudBlazor.Internal
 @using Codeer.LowCode.Blazor.OperatingModel
 @inherits MudFieldComponentBase<DateField, MudDateFieldDesign>
@@ -8,7 +7,7 @@
 } else {
   <MudDatePicker @bind-Date:get="@GetValue()" @bind-Date:set="@RaiseOnValueChanged" 
                  Disabled="@IsDisabled" ReadOnly="IsViewMode"
-                 Variant="MudDesign.Variant.ToVariant()" Color="MudDesign.Color.ToColor()" />
+                 Variant="MudDesign.Variant" Color="MudDesign.Color" />
 }
 
 @code {

@@ -1,4 +1,3 @@
-@using Codeer.LowCode.Bindings.MudBlazor.Enums
 @using Codeer.LowCode.Blazor.Repository.Design
 @using Codeer.LowCode.Blazor.OperatingModel
 @inherits MudFieldComponentBase<BooleanField, MudBooleanFieldDesign>
@@ -10,13 +9,13 @@
 } else {
   if (Field.Design.UIType == BooleanUIType.CheckBox) {
     <MudCheckBox @bind-Value:get="@IsChecked" @bind-Value:set="@OnChange" Disabled="@(IsDisabled || IsViewMode)" Label="@Label"
-                 Color="MudDesign.Color.ToColor()" />
+                 Color="MudDesign.Color" />
   } else if (Field.Design.UIType == BooleanUIType.Switch) {
     <MudSwitch @bind-Value:get="@IsChecked" @bind-Value:set="@OnChange" Disabled="@(IsDisabled || IsViewMode)" Label="@Label"
-               Color="MudDesign.Color.ToColor()" />
+               Color="MudDesign.Color" />
   } else if (Field.Design.UIType == BooleanUIType.ToggleButton) {
     <MudButton Variant="@(IsChecked ? Variant.Filled : Variant.Outlined)" Disabled="@(IsDisabled || IsViewMode)"
-               Color="MudDesign.Color.ToColor()" OnClick="@OnClick">
+               Color="MudDesign.Color" OnClick="@OnClick">
       @Label
     </MudButton>
   }

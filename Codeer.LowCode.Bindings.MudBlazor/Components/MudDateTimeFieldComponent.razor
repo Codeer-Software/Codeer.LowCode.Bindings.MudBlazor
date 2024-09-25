@@ -1,5 +1,4 @@
 @using System.Globalization
-@using Codeer.LowCode.Bindings.MudBlazor.Enums
 @using Codeer.LowCode.Blazor.OperatingModel
 @inherits MudFieldComponentBase<DateTimeField, MudDateTimeFieldDesign>
 
@@ -8,7 +7,7 @@
 } else {
   <MudTextField T="string" @bind-Value:get="@GetValue()!" @bind-Value:set="@RaiseOnValueChanged"
                 InputId="@WebElementId" Disabled="@IsDisabled" ReadOnly="IsViewMode" InputType="InputType.DateTimeLocal"
-                Variant="MudDesign.Variant.ToVariant()" />
+                Variant="MudDesign.Variant" />
 }
 
 @code {

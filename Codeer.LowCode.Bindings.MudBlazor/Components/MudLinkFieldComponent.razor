@@ -1,4 +1,3 @@
-@using Codeer.LowCode.Bindings.MudBlazor.Enums
 @using Codeer.LowCode.Blazor.Components.Renderer
 @using Codeer.LowCode.Blazor.OperatingModel
 @using Codeer.LowCode.Blazor.Components.Dialog
@@ -12,15 +11,15 @@
     @if (IsSelectOnly) {
       <MudTextField Value="@DisplayText" Disabled="@IsDisabled" ReadOnly="true" Adornment="Adornment"
                     InputId="@WebElementId" AdornmentIcon="@Icons.Material.Filled.Close" OnAdornmentClick="@Clear"
-                    Variant="MudDesign.Variant.ToVariant()" />
+                    Variant="MudDesign.Variant" />
     } else {
       <MudTextField T="string" @bind-Value:get="@DisplayText" @bind-Value:set="RaiseOnValueChanged"
                     InputId="@WebElementId" Disabled="@IsDisabled" Adornment="Adornment"
                     AdornmentIcon="@Icons.Material.Filled.Close" OnAdornmentClick="@Clear"
-                    Variant="MudDesign.Variant.ToVariant()"/>
+                    Variant="MudDesign.Variant"/>
     }
     <MudIconButton Icon="@Icons.Material.Filled.Search" OnClick="OpenModal" Disabled="@IsDisabled"
-                   Variant="MudDesign.ButtonVariant.ToVariant()" Color="MudDesign.ButtonColor.ToColor()"/>
+                   Variant="MudDesign.ButtonVariant" Color="MudDesign.ButtonColor"/>
   </MudStack>
 
   <ModalBase @bind-IsOpen="_isModalOpen" Title="検索" Size="modal-lg">

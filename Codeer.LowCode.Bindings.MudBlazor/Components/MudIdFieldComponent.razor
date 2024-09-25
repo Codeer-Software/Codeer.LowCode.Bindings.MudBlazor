@@ -1,4 +1,3 @@
-@using Codeer.LowCode.Bindings.MudBlazor.Enums
 @using Codeer.LowCode.Blazor.OperatingModel
 @inherits MudFieldComponentBase<IdField, MudIdFieldDesign>
 
@@ -6,7 +5,7 @@
   <span class="d-block py-2">@ViewOnlyValue</span>
 } else {
   <MudTextField T="string" @bind-Value:get="@Value!" @bind-Value:set="@RaiseOnValueChanged" InputId="@WebElementId" 
-                Disabled="@IsDisabled" ReadOnly="IsViewMode" Placeholder="@Placeholder" Variant="MudDesign.Variant.ToVariant()" />
+                Disabled="@IsDisabled" ReadOnly="IsViewMode" Placeholder="@Placeholder" Variant="MudDesign.Variant" />
 }
 
 @code {

@@ -1,6 +1,6 @@
 ﻿using Codeer.LowCode.Bindings.MudBlazor.Components;
-using Codeer.LowCode.Bindings.MudBlazor.Enums;
 using Codeer.LowCode.Blazor.Repository.Design;
+using MudBlazor;
 
 namespace Codeer.LowCode.Bindings.MudBlazor.Designs
 {
@@ -10,10 +10,10 @@ namespace Codeer.LowCode.Bindings.MudBlazor.Designs
         public MudButtonFieldDesign() => TypeFullName = typeof(MudButtonFieldDesign).FullName!;
 
         [Designer(DisplayName = "Variant")]
-        public MudVariant MudVariant { get; set; }
+        public Variant MudVariant { get; set; }
 
         [Designer]
-        public MudColor Color { get; set; }
+        public Color Color { get; set; }
 
         public override string GetWebComponentTypeFullName() => typeof(MudButtonFieldComponent).FullName!;
     }

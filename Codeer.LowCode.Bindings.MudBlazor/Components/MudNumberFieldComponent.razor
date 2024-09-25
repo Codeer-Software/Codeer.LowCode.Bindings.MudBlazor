@@ -1,4 +1,3 @@
-@using Codeer.LowCode.Bindings.MudBlazor.Enums
 @using Codeer.LowCode.Blazor.OperatingModel
 @inherits MudFieldComponentBase<NumberField, MudNumberFieldDesign>
 
@@ -8,7 +7,7 @@
   <MudNumericField T="decimal?" @bind-Value:get="@Field.Value" @bind-Value:set="@RaiseOnValueChanged"
                    InputId="@WebElementId" Disabled="@IsDisabled" ReadOnly="IsViewMode"
                    Placeholder="@Placeholder" Max="@Max" Min="@Min"
-                   Variant="MudDesign.Variant.ToVariant()" />
+                   Variant="MudDesign.Variant" />
 }
 
 @code {

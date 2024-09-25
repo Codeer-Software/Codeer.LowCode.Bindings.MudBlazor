@@ -1,4 +1,3 @@
-@using Codeer.LowCode.Bindings.MudBlazor.Enums
 @using Codeer.LowCode.Bindings.MudBlazor.Internal
 @using Codeer.LowCode.Blazor.OperatingModel
 @inherits MudFieldComponentBase<TimeField, MudTimeFieldDesign>
@@ -8,7 +7,7 @@
 } else {
   <MudTimePicker @bind-Time:get="@GetValue()" @bind-Time:set="@RaiseOnValueChanged" 
                  Disabled="@IsDisabled" ReadOnly="IsViewMode"
-                 Variant="MudDesign.Variant.ToVariant()" />
+                 Variant="MudDesign.Variant" />
 }
 
 @code {
