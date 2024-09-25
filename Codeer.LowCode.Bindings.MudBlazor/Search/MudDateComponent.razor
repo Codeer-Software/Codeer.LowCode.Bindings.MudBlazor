@@ -1,13 +1,13 @@
 @using Codeer.LowCode.Bindings.MudBlazor.Internal
 @using Codeer.LowCode.Blazor.OperatingModel
-@inherits FieldComponentBase<DateField>
+@inherits MudFieldComponentBase<DateField, MudDateFieldDesign>
 
 <div class="d-flex align-items-center">
   <MudDatePicker @bind-Date:get="@MoreThanValue" @bind-Date:set="@OnMoreThanChanged"
-                 data-search-target="min"/>
+                 Variant="MudDesign.Variant" data-search-target="min"/>
   <span>～</span>
   <MudDatePicker @bind-Date:get="@LessThanValue" @bind-Date:set="@OnLessThanChanged"
-                 data-search-target="max" />
+                 Variant="MudDesign.Variant" data-search-target="max" />
 </div>
 
 @code {

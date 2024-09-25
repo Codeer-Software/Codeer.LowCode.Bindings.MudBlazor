@@ -1,6 +1,6 @@
 @using Codeer.LowCode.Blazor.OperatingModel
 @using Microsoft.AspNetCore.Components.Web;
-@inherits FieldComponentBase<BooleanField>
+@inherits MudFieldComponentBase<BooleanField, MudBooleanFieldDesign>
 
 <div class="input-group">
   <MudSelect T="string" @bind-Value:get="Value!" @bind-Value:set="OnChange" InputId="@WebElementId">

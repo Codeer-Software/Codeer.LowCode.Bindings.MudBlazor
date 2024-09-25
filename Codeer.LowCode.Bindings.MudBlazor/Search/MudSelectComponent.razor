@@ -6,13 +6,13 @@
 <div class="root">
   <div class="input-group">
     @if (Field.Design.AllowOrSearch) {
-      <MudSelect @bind-SelectedValues:get="SelectedValues" @bind-SelectedValues:set="@OnChangeItems" MultiSelection="true">
+      <MudSelect @bind-SelectedValues:get="SelectedValues" @bind-SelectedValues:set="@OnChangeItems" MultiSelection="true" Variant="MudDesign.Variant">
         @foreach (var item in ItemsSource) {
           <MudSelectItem Value="@item.Value">@item.Key</MudSelectItem>
         }
       </MudSelect>
     } else {
-      <MudSelect T="string" @bind-Value:get="@SelectedValue" @bind-Value:set="@OnChange">
+      <MudSelect T="string" @bind-Value:get="@SelectedValue" @bind-Value:set="@OnChange" Variant="MudDesign.Variant">
         <MudSelectItem Value="@("")"></MudSelectItem>
         @foreach (var item in ItemsSource) {
           <MudSelectItem Value="@item.Value">@item.Key</MudSelectItem>

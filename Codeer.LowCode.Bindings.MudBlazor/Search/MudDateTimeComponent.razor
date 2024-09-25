@@ -1,13 +1,15 @@
 @using System.Globalization
 @using Codeer.LowCode.Blazor.OperatingModel
-@inherits FieldComponentBase<DateTimeField>
+@inherits MudFieldComponentBase<DateTimeField, MudDateTimeFieldDesign>
 
 <div class="d-flex align-items-center">
   <MudTextField T="string" @bind-Value:get="@MoreThanValue!" @bind-Value:set="@OnMoreThanChanged"
-                InputId="@WebElementId" InputType="InputType.DateTimeLocal" data-search-target="min"/>
+                InputId="@WebElementId" InputType="InputType.DateTimeLocal" data-search-target="min"
+                Variant="MudDesign.Variant"/>
   <span>～</span>
   <MudTextField T="string" @bind-Value:get="@LessThanValue!" @bind-Value:set="@OnLessThanChanged"
-                InputId="@WebElementId" InputType="InputType.DateTimeLocal" data-search-target="max"/>
+                InputId="@WebElementId" InputType="InputType.DateTimeLocal" data-search-target="max"
+                Variant="MudDesign.Variant"/>
 </div>
 
 @code {
