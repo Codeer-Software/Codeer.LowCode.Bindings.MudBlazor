@@ -33,7 +33,7 @@ namespace SeleniumTest.PageObject
         public LabelFieldSearchDriver TextLabel => ByCssSelector("div[data-name='TextLabel']").Wait();
         public MudTextFieldSearchDriver Text => ByCssSelector("div[data-name='Text']").Wait();
         public LabelFieldSearchDriver TimeLabel => ByCssSelector("div[data-name='TimeLabel']").Wait();
-        public MudTimeFieldSearchDriver Time => ByCssSelector("div[data-name='Time']").Wait();
+        public TimeFieldSearchDriver Time => ByCssSelector("div[data-name='Time']").Wait();
         public LabelFieldSearchDriver FileLabel => ByCssSelector("div[data-name='FileLabel']").Wait();
         public MudFileFieldSearchDriver File => ByCssSelector("div[data-name='File']").Wait();
 

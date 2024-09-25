@@ -1,23 +1,26 @@
+@using System.Globalization
 @using Codeer.LowCode.Bindings.MudBlazor.Internal
 @using Codeer.LowCode.Blazor.OperatingModel
+@using Codeer.LowCode.Bindings.MudBlazor.Internal.Components
 @inherits MudFieldComponentBase<DateField, MudDateFieldDesign>
 
 @if (IsViewMode) {
   <span class="d-block py-2">@GetViewOnlyValue()</span>
 } else {
-  <MudDatePicker @bind-Date:get="@GetValue()" @bind-Date:set="@RaiseOnValueChanged" 
-                 Disabled="@IsDisabled" ReadOnly="IsViewMode"
-                 Variant="MudDesign.Variant" Color="MudDesign.Color" Error="!Field.IsValid" ErrorText="@(Field.ErrorText)"/>
+  <InternalMudDatePicker @bind-Value:get="@GetValue()" @bind-Value:set="@RaiseOnValueChanged" InputId="@WebElementId"
+                         Disabled="@IsDisabled" ReadOnly="IsViewMode" Variant="MudDesign.Variant" Color="MudDesign.Color"
+                         Error="!Field.IsValid" ErrorText="@(Field.ErrorText)" StandardInput="MudDesign.StandardInput"/>
 }
 
 @code {
+
   private bool IsDisabled => Field.IsEnabled == false;
   private bool IsViewMode => Field.IsViewOnly;
 
-  private DateTime? GetValue() => DateTimeHelper.ToDateTime(Field.Value);
+  private DateOnly? GetValue() => Field.Value;
 
-  private async Task RaiseOnValueChanged(DateTime? value) {
-    await Field.SetValueAsync(DateTimeHelper.ToDateOnly(value));
+  private async Task RaiseOnValueChanged(DateOnly? value) {
+    await Field.SetValueAsync(value);
   }
 
   private string GetViewOnlyValue() {

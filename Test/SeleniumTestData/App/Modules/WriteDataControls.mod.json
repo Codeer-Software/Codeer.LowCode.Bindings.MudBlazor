@@ -11,6 +11,7 @@
   "CanBulkDataDownload": true,
   "Fields": [
     {
+      "Variant": "Text",
       "DbColumn": "id",
       "Placeholder": "",
       "IsManualInput": false,
@@ -25,6 +26,7 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudIdFieldDesign"
     },
     {
+      "Color": "Default",
       "UIType": "CheckBox",
       "Text": "Check",
       "DbColumn": "check_",
@@ -37,6 +39,7 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudBooleanFieldDesign"
     },
     {
+      "Color": "Default",
       "UIType": "ToggleButton",
       "Text": "toggle",
       "DbColumn": "toggle",
@@ -49,6 +52,7 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudBooleanFieldDesign"
     },
     {
+      "Color": "Default",
       "UIType": "Switch",
       "Text": "switch",
       "DbColumn": "switch",
@@ -61,6 +65,9 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudBooleanFieldDesign"
     },
     {
+      "Variant": "Text",
+      "Color": "Default",
+      "StandardInput": true,
       "Format": "",
       "DbColumn": "date_",
       "IsUpdateProtected": false,
@@ -72,6 +79,8 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudDateFieldDesign"
     },
     {
+      "Variant": "Text",
+      "Color": "Default",
       "SaveAsUtc": false,
       "Format": "",
       "DbColumn": "date_time",
@@ -84,6 +93,9 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudDateTimeFieldDesign"
     },
     {
+      "Variant": "Text",
+      "ButtonVariant": "Text",
+      "ButtonColor": "Default",
       "SearchCondition": {
         "SortFieldVariable": "",
         "SortDescending": false,
@@ -104,6 +116,7 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudLinkFieldDesign"
     },
     {
+      "Variant": "Text",
       "Placeholder": "",
       "Format": "",
       "DbColumn": "number_",
@@ -127,6 +140,7 @@
       "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.RadioGroupFieldDesign"
     },
     {
+      "Variant": "Text",
       "Candidates": [
         "A,1",
         "B,2",
@@ -158,6 +172,7 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudSelectFieldDesign"
     },
     {
+      "Variant": "Text",
       "DbColumn": "text_",
       "IsMultiline": false,
       "Placeholder": "",
@@ -170,6 +185,9 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudTextFieldDesign"
     },
     {
+      "Variant": "Text",
+      "Color": "Default",
+      "StandardInput": true,
       "SaveAsUtc": false,
       "DbColumn": "time_",
       "IsUpdateProtected": false,
@@ -258,12 +276,16 @@
       "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.LabelFieldDesign"
     },
     {
+      "Variant": "Text",
+      "Color": "Default",
       "Text": "Submit",
       "Icon": "",
       "Name": "Submit",
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudSubmitButtonFieldDesign"
     },
     {
+      "Variant": "Filled",
+      "Color": "Default",
       "IsUpdateProtected": false,
       "DisplayName": "",
       "ShowPreview": false,
@@ -285,6 +307,7 @@
       "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.LabelFieldDesign"
     },
     {
+      "Color": "Default",
       "Text": "A",
       "Value": "A",
       "GroupField": "RadioGroup",
@@ -292,6 +315,7 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudRadioButtonFieldDesign"
     },
     {
+      "Color": "Default",
       "Text": "B",
       "Value": "B",
       "GroupField": "RadioGroup",
@@ -299,6 +323,7 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudRadioButtonFieldDesign"
     },
     {
+      "Color": "Default",
       "Text": "C",
       "Value": "C",
       "GroupField": "RadioGroup",
@@ -313,6 +338,7 @@
       "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.LabelFieldDesign"
     },
     {
+      "Variant": "Text",
       "Candidates": [],
       "SearchCondition": {
         "SortFieldVariable": "",

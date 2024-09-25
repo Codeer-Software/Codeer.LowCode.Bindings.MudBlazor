@@ -1,13 +1,14 @@
 @using Codeer.LowCode.Bindings.MudBlazor.Internal
 @using Codeer.LowCode.Blazor.OperatingModel
+@using Codeer.LowCode.Bindings.MudBlazor.Internal.Components
 @inherits MudFieldComponentBase<TimeField, MudTimeFieldDesign>
 
 @if (IsViewMode) {
   <span class="d-block py-2">@GetViewOnlyValue()</span>
 } else {
-  <MudTimePicker @bind-Time:get="@GetValue()" @bind-Time:set="@RaiseOnValueChanged" 
-                 Disabled="@IsDisabled" ReadOnly="IsViewMode" Variant="MudDesign.Variant"
-                 Error="!Field.IsValid" ErrorText="@(Field.ErrorText)"/>
+  <InternalMudTimePicker @bind-Value:get="@GetValue()" @bind-Value:set="@RaiseOnValueChanged" AssumeLocal="@(!Field.Design.SaveAsUtc)"
+                         InputId="@WebElementId" Disabled="@IsDisabled" ReadOnly="IsViewMode" Variant="MudDesign.Variant"
+                         Error="!Field.IsValid" ErrorText="@(Field.ErrorText)" StandardInput="MudDesign.StandardInput"/>
 }
 
 @code {
@@ -15,13 +16,12 @@
   private bool IsDisabled => Field.IsEnabled == false;
   private bool IsViewMode => Field.IsViewOnly;
 
-  private TimeSpan? GetValue() => (Field.Design.SaveAsUtc ? DateTimeHelper.ToLocalTime(Field.Value) : Field.Value)?.ToTimeSpan();
+  private TimeOnly? GetValue() => Field.Value;
 
-  private async Task RaiseOnValueChanged(TimeSpan? value) {
-    var timeOnly = DateTimeHelper.ToTimeOnly(value);
-    await Field.SetValueAsync(Field.Design.SaveAsUtc ? DateTimeHelper.ToUniversalTime(timeOnly) : timeOnly);
+  private async Task RaiseOnValueChanged(TimeOnly? value) {
+    await Field.SetValueAsync(value);
   }
 
-  private string GetViewOnlyValue() => GetValue().ToString() ?? "";
+  private string GetViewOnlyValue() => (Field.Design.SaveAsUtc ? DateTimeHelper.ToLocalTime(GetValue()) : GetValue())?.ToString("HH:mm:ss") ?? "";
 
 }

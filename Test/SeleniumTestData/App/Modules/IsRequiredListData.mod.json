@@ -11,6 +11,7 @@
   "CanBulkDataDownload": false,
   "Fields": [
     {
+      "Variant": "Text",
       "DbColumn": "id",
       "Placeholder": "",
       "IsManualInput": false,
@@ -69,12 +70,15 @@
       "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.ListFieldDesign"
     },
     {
+      "Variant": "Text",
+      "Color": "Default",
       "Text": "Submit",
       "Icon": "",
       "Name": "SubmitButton",
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudSubmitButtonFieldDesign"
     },
     {
+      "Variant": "Text",
       "DbColumn": "name",
       "IsMultiline": false,
       "Placeholder": "",

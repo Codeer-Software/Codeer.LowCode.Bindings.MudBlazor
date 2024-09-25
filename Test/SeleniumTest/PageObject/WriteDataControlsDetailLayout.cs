@@ -13,7 +13,7 @@ namespace SeleniumTest.PageObject
         public LabelFieldDriver CheckLabel => ByCssSelector("div[data-name='CheckLabel']").Wait();
         public BooleanFieldDriver Check => ByCssSelector("div[data-name='Check']").Wait();
         public LabelFieldDriver ToggleLabel => ByCssSelector("div[data-name='ToggleLabel']").Wait();
-        public BooleanFieldDriver Toggle => ByCssSelector("div[data-name='Toggle']").Wait();
+        public MudBooleanFieldToggleDriver Toggle => ByCssSelector("div[data-name='Toggle']").Wait();
         public LabelFieldDriver SwitchLabel => ByCssSelector("div[data-name='SwitchLabel']").Wait();
         public BooleanFieldDriver Switch => ByCssSelector("div[data-name='Switch']").Wait();
         public LabelFieldDriver DateLabel => ByCssSelector("div[data-name='DateLabel']").Wait();

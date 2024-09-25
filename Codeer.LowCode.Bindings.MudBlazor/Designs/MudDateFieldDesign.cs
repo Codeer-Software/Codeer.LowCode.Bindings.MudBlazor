@@ -13,6 +13,9 @@ namespace Codeer.LowCode.Bindings.MudBlazor.Designs
         [Designer]
         public Color Color { get; set; }
 
+        [Designer]
+        public bool StandardInput { get; set; }
+
         public MudDateFieldDesign() => TypeFullName = typeof(MudDateFieldDesign).FullName!;
         public override string GetWebComponentTypeFullName() => typeof(MudDateFieldComponent).FullName!;
         public override string GetSearchWebComponentTypeFullName() => typeof(MudDateComponent).FullName!;

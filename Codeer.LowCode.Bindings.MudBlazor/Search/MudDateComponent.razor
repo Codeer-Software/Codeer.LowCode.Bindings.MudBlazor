@@ -1,26 +1,29 @@
 @using Codeer.LowCode.Bindings.MudBlazor.Internal
 @using Codeer.LowCode.Blazor.OperatingModel
+@using Codeer.LowCode.Bindings.MudBlazor.Internal.Components
 @inherits MudFieldComponentBase<DateField, MudDateFieldDesign>
 
 <div class="d-flex align-items-center">
-  <MudDatePicker @bind-Date:get="@MoreThanValue" @bind-Date:set="@OnMoreThanChanged"
-                 Variant="MudDesign.Variant" data-search-target="min"/>
+  <InternalMudDatePicker @bind-Value:get="@MoreThanValue" @bind-Value:set="@OnMoreThanChanged"
+                         Variant="MudDesign.Variant" Color="MudDesign.Color" StandardInput="MudDesign.StandardInput"
+                         data-search-target="min"/>
   <span>～</span>
-  <MudDatePicker @bind-Date:get="@LessThanValue" @bind-Date:set="@OnLessThanChanged"
-                 Variant="MudDesign.Variant" data-search-target="max" />
+  <InternalMudDatePicker @bind-Value:get="@LessThanValue" @bind-Value:set="@OnLessThanChanged"
+                         Variant="MudDesign.Variant" Color="MudDesign.Color" StandardInput="MudDesign.StandardInput"
+                         data-search-target="max"/>
 </div>
 
 @code {
 
-  private DateTime? LessThanValue => DateTimeHelper.ToDateTime(Field.SearchMax);
-  private DateTime? MoreThanValue => DateTimeHelper.ToDateTime(Field.SearchMin);
+  private DateOnly? LessThanValue => Field.SearchMax;
+  private DateOnly? MoreThanValue => Field.SearchMin;
 
-  private async Task OnLessThanChanged(DateTime? value) {
-    await Field.SetSearchMaxAsync(DateTimeHelper.ToDateOnly(value));
+  private async Task OnLessThanChanged(DateOnly? value) {
+    await Field.SetSearchMaxAsync(value);
   }
-  
-  private async Task OnMoreThanChanged(DateTime? value) {
-    await Field.SetSearchMinAsync(DateTimeHelper.ToDateOnly(value));
+
+  private async Task OnMoreThanChanged(DateOnly? value) {
+    await Field.SetSearchMinAsync(value);
   }
 
 }

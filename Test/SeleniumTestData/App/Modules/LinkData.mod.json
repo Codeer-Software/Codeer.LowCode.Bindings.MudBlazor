@@ -11,6 +11,7 @@
   "CanBulkDataDownload": false,
   "Fields": [
     {
+      "Variant": "Text",
       "DbColumn": "id",
       "Placeholder": "",
       "IsManualInput": false,
@@ -25,6 +26,7 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudIdFieldDesign"
     },
     {
+      "Variant": "Text",
       "DbColumn": "code",
       "IsMultiline": false,
       "Placeholder": "",
@@ -37,6 +39,7 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudTextFieldDesign"
     },
     {
+      "Variant": "Text",
       "DbColumn": "name",
       "IsMultiline": false,
       "Placeholder": "",
@@ -63,6 +66,8 @@
       "TypeFullName": "Codeer.LowCode.Blazor.Repository.Design.LabelFieldDesign"
     },
     {
+      "Variant": "Text",
+      "Color": "Default",
       "Text": "Submit",
       "Icon": "",
       "Name": "Submit",

@@ -11,6 +11,7 @@
   "CanBulkDataDownload": false,
   "Fields": [
     {
+      "Variant": "Text",
       "DbColumn": "",
       "IsMultiline": false,
       "Placeholder": "",
@@ -23,6 +24,9 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudTextFieldDesign"
     },
     {
+      "Variant": "Text",
+      "Color": "Default",
+      "StandardInput": true,
       "Format": "",
       "DbColumn": "",
       "IsUpdateProtected": false,
@@ -34,6 +38,8 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudDateFieldDesign"
     },
     {
+      "Variant": "Text",
+      "Color": "Default",
       "SaveAsUtc": false,
       "Format": "",
       "DbColumn": "",
@@ -46,6 +52,7 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudDateTimeFieldDesign"
     },
     {
+      "Variant": "Text",
       "Placeholder": "",
       "Format": "",
       "DbColumn": "",

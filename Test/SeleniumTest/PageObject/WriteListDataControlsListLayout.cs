@@ -10,7 +10,7 @@ namespace SeleniumTest.PageObject
     public class WriteListDataControlsListLayout : ListLayoutBase
     {
         public BooleanFieldDriver Check => ByCssSelector("td[data-name='Check']").Wait();
-        public BooleanFieldDriver Toggle => ByCssSelector("td[data-name='Toggle']").Wait();
+        public MudBooleanFieldToggleDriver Toggle => ByCssSelector("td[data-name='Toggle']").Wait();
         public BooleanFieldDriver Switch => ByCssSelector("td[data-name='Switch']").Wait();
         public DateFieldDriver Date => ByCssSelector("td[data-name='Date']").Wait();
         public DateTimeFieldDriver DateTime => ByCssSelector("td[data-name='DateTime']").Wait();

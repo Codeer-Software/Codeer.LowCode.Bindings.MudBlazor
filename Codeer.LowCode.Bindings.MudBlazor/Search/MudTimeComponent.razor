@@ -1,32 +1,28 @@
-@using Codeer.LowCode.Bindings.MudBlazor.Internal
 @using Codeer.LowCode.Blazor.OperatingModel
-@using Codeer.LowCode.Blazor.Utils
+@using Codeer.LowCode.Bindings.MudBlazor.Internal.Components
 @inherits MudFieldComponentBase<TimeField, MudTimeFieldDesign>
 
 <div class="d-flex align-items-center">
-  <MudTimePicker @bind-Time:get="@MoreThanValue" @bind-Time:set="@OnMoreThanChanged"
-                 Variant="MudDesign.Variant" data-search-target="min"/>
+  <InternalMudTimePicker @bind-Value:get="@MoreThanValue" @bind-Value:set="@OnMoreThanChanged"
+                         Variant="MudDesign.Variant" Color="MudDesign.Color" StandardInput="MudDesign.StandardInput"
+                         AssumeLocal="!Field.Design.SaveAsUtc" data-search-target="min"/>
   <span>～</span>
-  <MudTimePicker @bind-Time:get="@LessThanValue" @bind-Time:set="@OnLessThanChanged"
-                 Variant="MudDesign.Variant" data-search-target="max"/>
+  <InternalMudTimePicker @bind-Value:get="@LessThanValue" @bind-Value:set="@OnLessThanChanged"
+                         Variant="MudDesign.Variant" Color="MudDesign.Color" StandardInput="MudDesign.StandardInput"
+                         AssumeLocal="!Field.Design.SaveAsUtc" data-search-target="max"/>
 </div>
 
 @code {
 
-  private TimeSpan? LessThanValue => (Field.Design.SaveAsUtc ? DateTimeHelper.ToLocalTime(Field.SearchMax) : Field.SearchMax)?.ToTimeSpan();
-  private TimeSpan? MoreThanValue => (Field.Design.SaveAsUtc ? DateTimeHelper.ToLocalTime(Field.SearchMin) : Field.SearchMin)?.ToTimeSpan();
+  private TimeOnly? LessThanValue => Field.SearchMax;
+  private TimeOnly? MoreThanValue => Field.SearchMin;
 
-  private TimeOnly? ParseTime(TimeSpan? value) {
-    var timeOnly = DateTimeHelper.ToTimeOnly(value);
-    return Field.Design.SaveAsUtc ? DateTimeHelper.ToUniversalTime(timeOnly) : timeOnly;
+  private async Task OnMoreThanChanged(TimeOnly? value) {
+    await Field.SetSearchMinAsync(value);
   }
 
-  private async Task OnMoreThanChanged(TimeSpan? value) {
-    await Field.SetSearchMinAsync(ParseTime(value));
-  }
-
-  private async Task OnLessThanChanged(TimeSpan? value) {
-    await Field.SetSearchMaxAsync(ParseTime(value));
+  private async Task OnLessThanChanged(TimeOnly? value) {
+    await Field.SetSearchMaxAsync(value);
   }
 
 }

@@ -11,6 +11,7 @@
   "CanBulkDataDownload": false,
   "Fields": [
     {
+      "Variant": "Text",
       "DbColumn": "",
       "IsMultiline": false,
       "Placeholder": "",
