@@ -9,7 +9,7 @@
     @Field.Value
   </span>
 } else {
-  <MudRadioGroup Disabled="@(IsDisabled || IsViewMode)" @bind-Value:get="@IsChecked" @bind-Value:set="OnChange">
+  <MudRadioGroup Disabled="@(IsDisabled || IsViewMode)" @bind-Value:get="@IsChecked" @bind-Value:set="OnChange" Error="!Field.IsValid">
     <MudRadio T="bool" Value="true" Color="MudDesign.Color" >@Label</MudRadio>
   </MudRadioGroup>
 }

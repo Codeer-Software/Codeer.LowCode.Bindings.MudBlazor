@@ -7,7 +7,7 @@
 } else {
   <MudTextField T="string" @bind-Value:get="@GetValue()!" @bind-Value:set="@RaiseOnValueChanged"
                 InputId="@WebElementId" Disabled="@IsDisabled" ReadOnly="IsViewMode" InputType="InputType.DateTimeLocal"
-                Variant="MudDesign.Variant" />
+                Variant="MudDesign.Variant" Error="!Field.IsValid"/>
 }
 
 @code {

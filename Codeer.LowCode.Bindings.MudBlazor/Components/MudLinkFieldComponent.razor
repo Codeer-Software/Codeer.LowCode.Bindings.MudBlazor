@@ -11,12 +11,12 @@
     @if (IsSelectOnly) {
       <MudTextField Value="@DisplayText" Disabled="@IsDisabled" ReadOnly="true" Adornment="Adornment"
                     InputId="@WebElementId" AdornmentIcon="@Icons.Material.Filled.Close" OnAdornmentClick="@Clear"
-                    Variant="MudDesign.Variant" />
+                    Variant="MudDesign.Variant" Error="!Field.IsValid"/>
     } else {
       <MudTextField T="string" @bind-Value:get="@DisplayText" @bind-Value:set="RaiseOnValueChanged"
                     InputId="@WebElementId" Disabled="@IsDisabled" Adornment="Adornment"
                     AdornmentIcon="@Icons.Material.Filled.Close" OnAdornmentClick="@Clear"
-                    Variant="MudDesign.Variant"/>
+                    Variant="MudDesign.Variant" Error="!Field.IsValid"/>
     }
     <MudIconButton Icon="@Icons.Material.Filled.Search" OnClick="OpenModal" Disabled="@IsDisabled"
                    Variant="MudDesign.ButtonVariant" Color="MudDesign.ButtonColor"/>

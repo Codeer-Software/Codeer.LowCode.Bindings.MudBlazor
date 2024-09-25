@@ -5,7 +5,8 @@
   <span class="d-block py-2">@ViewOnlyValue</span>
 } else {
   <MudTextField T="string" @bind-Value:get="@Value!" @bind-Value:set="@RaiseOnValueChanged" InputId="@WebElementId" 
-                Disabled="@IsDisabled" ReadOnly="IsViewMode" Placeholder="@Placeholder" Variant="MudDesign.Variant" />
+                Disabled="@IsDisabled" ReadOnly="IsViewMode" Placeholder="@Placeholder" Variant="MudDesign.Variant"
+                Error="!Field.IsValid"/>
 }
 
 @code {

@@ -6,8 +6,8 @@
   <span class="d-block py-2">@GetViewOnlyValue()</span>
 } else {
   <MudTimePicker @bind-Time:get="@GetValue()" @bind-Time:set="@RaiseOnValueChanged" 
-                 Disabled="@IsDisabled" ReadOnly="IsViewMode"
-                 Variant="MudDesign.Variant" />
+                 Disabled="@IsDisabled" ReadOnly="IsViewMode" Variant="MudDesign.Variant"
+                 Error="!Field.IsValid"/>
 }
 
 @code {
