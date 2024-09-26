@@ -21,13 +21,13 @@ namespace SeleniumTest.PageObject
         public LabelFieldDriver DateTimeLabel => ByCssSelector("div[data-name='DateTimeLabel']").Wait();
         public DateTimeFieldDriver DateTime => ByCssSelector("div[data-name='DateTime']").Wait();
         public LabelFieldDriver LinkLabel => ByCssSelector("div[data-name='LinkLabel']").Wait();
-        public LinkFieldDriver<LinkDataListLayout, LinkDataSearchLayout> Link => ByCssSelector("div[data-name='Link']").Wait();
+        public MudLinkFieldDriver<LinkDataListLayout, LinkDataSearchLayout> Link => ByCssSelector("div[data-name='Link']").Wait();
         public LabelFieldDriver NumberLabel => ByCssSelector("div[data-name='NumberLabel']").Wait();
         public NumberFieldDriver Number => ByCssSelector("div[data-name='Number']").Wait();
         public LabelFieldDriver RadioLabel => ByCssSelector("div[data-name='RadioLabel']").Wait();
-        public RadioButtonFieldDriver RadioA => ByCssSelector("div[data-name='RadioA']").Wait();
-        public RadioButtonFieldDriver RadioB => ByCssSelector("div[data-name='RadioB']").Wait();
-        public RadioButtonFieldDriver RadioC => ByCssSelector("div[data-name='RadioC']").Wait();
+        public MudRadioButtonFieldDriver RadioA => ByCssSelector("div[data-name='RadioA']").Wait();
+        public MudRadioButtonFieldDriver RadioB => ByCssSelector("div[data-name='RadioB']").Wait();
+        public MudRadioButtonFieldDriver RadioC => ByCssSelector("div[data-name='RadioC']").Wait();
         public LabelFieldDriver SelectLabel => ByCssSelector("div[data-name='SelectLabel']").Wait();
         public MudSelectFieldDriver Select => ByCssSelector("div[data-name='Select']").Wait();
         public LabelFieldDriver SelectLinkLabel => ByCssSelector("div[data-name='SelectLinkLabel']").Wait();
@@ -37,7 +37,7 @@ namespace SeleniumTest.PageObject
         public LabelFieldDriver TimeLabel => ByCssSelector("div[data-name='TimeLabel']").Wait();
         public TimeFieldDriver Time => ByCssSelector("div[data-name='Time']").Wait();
         public LabelFieldDriver FileLabel => ByCssSelector("div[data-name='FileLabel']").Wait();
-        public FileFieldDriver File => ByCssSelector("div[data-name='File']").Wait();
+        public MudFileFieldDriver File => ByCssSelector("div[data-name='File']").Wait();
         public SubmitButtonFieldDriver Submit => ByCssSelector("div[data-name='Submit']").Wait();
 
         public WriteDataControlsDetailLayout(IWebElement element) : base(element) { }

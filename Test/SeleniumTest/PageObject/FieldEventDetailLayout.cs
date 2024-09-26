@@ -15,13 +15,13 @@ namespace SeleniumTest.PageObject
         public ButtonFieldDriver Button => ByCssSelector("div[data-name='Button']").Wait();
         public DateFieldDriver Date => ByCssSelector("div[data-name='Date']").Wait();
         public DateTimeFieldDriver DateTime => ByCssSelector("div[data-name='DateTime']").Wait();
-        public FileFieldDriver File => ByCssSelector("div[data-name='File']").Wait();
+        public MudFileFieldDriver File => ByCssSelector("div[data-name='File']").Wait();
         public IdFieldDriver Id1 => ByCssSelector("div[data-name='Id1']").Wait();
-        public LinkFieldDriver<LinkDataListLayout, LinkDataSearchLayout> Link => ByCssSelector("div[data-name='Link']").Wait();
+        public MudLinkFieldDriver<LinkDataListLayout, LinkDataSearchLayout> Link => ByCssSelector("div[data-name='Link']").Wait();
         public NumberFieldDriver Number => ByCssSelector("div[data-name='Number']").Wait();
         public PasswordFieldDriver Password => ByCssSelector("div[data-name='Password']").Wait();
-        public RadioButtonFieldDriver RadioButtonA => ByCssSelector("div[data-name='RadioButtonA']").Wait();
-        public RadioButtonFieldDriver RadioButtonB => ByCssSelector("div[data-name='RadioButtonB']").Wait();
+        public MudRadioButtonFieldDriver RadioButtonA => ByCssSelector("div[data-name='RadioButtonA']").Wait();
+        public MudRadioButtonFieldDriver RadioButtonB => ByCssSelector("div[data-name='RadioButtonB']").Wait();
         public MudSelectFieldDriver Select => ByCssSelector("div[data-name='Select']").Wait();
         public TextFieldDriver Text => ByCssSelector("div[data-name='Text']").Wait();
         public TimeFieldDriver Time => ByCssSelector("div[data-name='Time']").Wait();
