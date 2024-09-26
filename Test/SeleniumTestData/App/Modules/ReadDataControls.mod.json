@@ -26,6 +26,7 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudIdFieldDesign"
     },
     {
+      "Variant": "Text",
       "Color": "Default",
       "UIType": "CheckBox",
       "Text": "Check",
@@ -39,6 +40,7 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudBooleanFieldDesign"
     },
     {
+      "Variant": "Text",
       "Color": "Default",
       "UIType": "ToggleButton",
       "Text": "toggle",
@@ -52,6 +54,7 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudBooleanFieldDesign"
     },
     {
+      "Variant": "Text",
       "Color": "Default",
       "UIType": "Switch",
       "Text": "switch",
@@ -135,6 +138,8 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudNumberFieldDesign"
     },
     {
+      "Variant": "Text",
+      "Color": "Primary",
       "DbColumn": "radio",
       "AllowOrSearch": false,
       "IsUpdateProtected": false,
@@ -147,6 +152,7 @@
     },
     {
       "Variant": "Text",
+      "Color": "Primary",
       "Candidates": [
         "A,1",
         "B,2",
@@ -290,7 +296,7 @@
       "TypeFullName": "Codeer.LowCode.Bindings.MudBlazor.Designs.MudSubmitButtonFieldDesign"
     },
     {
-      "Variant": "Filled",
+      "Variant": "Text",
       "Color": "Default",
       "IsUpdateProtected": false,
       "DisplayName": "",
@@ -345,6 +351,7 @@
     },
     {
       "Variant": "Text",
+      "Color": "Primary",
       "Candidates": [],
       "SearchCondition": {
         "SortFieldVariable": "",
