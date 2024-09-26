@@ -10,6 +10,9 @@ namespace Codeer.LowCode.Bindings.MudBlazor.Designs
         [Designer]
         public Variant Variant { get; set; }
 
+        [Designer]
+        public Color Color { get; set; } = Color.Primary;
+
         public MudSelectFieldDesign() => TypeFullName = typeof(MudSelectFieldDesign).FullName!;
         public override string GetWebComponentTypeFullName() => typeof(MudSelectFieldComponent).FullName!;
         public override string GetSearchWebComponentTypeFullName() => typeof(MudSelectComponent).FullName!;

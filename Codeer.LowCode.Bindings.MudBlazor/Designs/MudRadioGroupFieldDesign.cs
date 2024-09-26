@@ -10,6 +10,9 @@ namespace Codeer.LowCode.Bindings.MudBlazor.Designs
         [Designer]
         public Variant Variant { get; set; }
 
+        [Designer]
+        public Color Color { get; set; } = Color.Primary;
+
         public MudRadioGroupFieldDesign() => TypeFullName = typeof(MudRadioGroupFieldDesign).FullName!;
         public override string GetWebComponentTypeFullName() => typeof(MudRadioGroupFieldComponent).FullName!;
         public override string GetSearchWebComponentTypeFullName() => typeof(MudRadioGroupComponent).FullName!;

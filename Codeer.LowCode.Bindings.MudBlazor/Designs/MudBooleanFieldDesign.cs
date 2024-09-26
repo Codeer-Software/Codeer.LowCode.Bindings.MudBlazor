@@ -8,6 +8,9 @@ namespace Codeer.LowCode.Bindings.MudBlazor.Designs
     public class MudBooleanFieldDesign : BooleanFieldDesign
     {
         [Designer]
+        public Variant Variant { get; set; }
+
+        [Designer]
         public Color Color { get; set; }
 
         public MudBooleanFieldDesign() => TypeFullName = typeof(MudBooleanFieldDesign).FullName!;

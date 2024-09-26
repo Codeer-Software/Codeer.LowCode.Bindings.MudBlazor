@@ -1,29 +1,8 @@
 @using Codeer.LowCode.Blazor.Components.Dialog
 @using Codeer.LowCode.Blazor.Components.Renderer
 @using Codeer.LowCode.Blazor.OperatingModel
-@using Codeer.LowCode.Blazor.Properties
 @using Codeer.LowCode.Blazor.Repository.Match
 @inherits MudFieldComponentBase<LinkField, MudLinkFieldDesign>
-
-@* <div class="input-group"> *@
-@*   @if (IsSelectOnly) *@
-@*   { *@
-@*     <div class="form-control d-flex align-items-center"> *@
-@*       <input class="border-0 outline-0 flex-grow-1 w-0" readonly value="@Field.DisplayText" id="@WebElementId"/> *@
-@*       @if (!string.IsNullOrEmpty(Field.DisplayText)) *@
-@*       { *@
-@*         <button class="btn-close" @onclick="Clear" data-system="clear-link-text"></button> *@
-@*       } *@
-@*     </div> *@
-@*   } *@
-@*   else *@
-@*   { *@
-@*     <input type="text" class="form-control" @bind-value:get="Value" @bind-value:set="OnChange" @bind-value:event="oninput" id="@WebElementId"/> *@
-@*   } *@
-@*   <button class="btn btn-outline-secondary" type="button" @onclick="@OpenModal"> *@
-@*     <i class="bi bi-search"></i> *@
-@*   </button> *@
-@* </div> *@
 
 <MudStack Row Spacing="1">
   @if (IsSelectOnly) {

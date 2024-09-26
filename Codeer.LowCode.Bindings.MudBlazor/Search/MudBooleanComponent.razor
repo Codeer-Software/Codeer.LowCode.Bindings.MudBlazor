@@ -3,7 +3,8 @@
 @inherits MudFieldComponentBase<BooleanField, MudBooleanFieldDesign>
 
 <div class="input-group">
-  <MudSelect T="string" @bind-Value:get="Value!" @bind-Value:set="OnChange" InputId="@WebElementId">
+  <MudSelect T="string" @bind-Value:get="Value!" @bind-Value:set="OnChange" InputId="@WebElementId"
+             Variant="MudDesign.Variant">
     <MudSelectItem T="string" Value="@("")"></MudSelectItem>
     <MudSelectItem T="string" Value="@("true")">true</MudSelectItem>
     <MudSelectItem T="string" Value="@("false")">false</MudSelectItem>

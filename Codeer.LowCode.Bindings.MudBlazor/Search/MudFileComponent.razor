@@ -1,13 +1,14 @@
 @using Codeer.LowCode.Blazor.OperatingModel
 @using Codeer.LowCode.Blazor.Repository.Match
-@inherits FieldComponentBase<FileField>
+@inherits MudFieldComponentBase<FileField, MudFileFieldDesign>
 
 <div class="mb-2">
   <label class="form-label mb-1" for="@WebElementId">FileName</label>
   <div class="d-flex">
     <MudTextField T="string" @bind-Value:get="@FileNameValue!" @bind-Value:set="@OnFileNameChanged" InputId="@WebElementId"
-                  data-search-target="filename"/>
-    <MudSelect T="MatchComparison" @bind-Value="@Field.SearchFileNameComparison" data-search-target="filenamematch">
+                  data-search-target="filename" Variant="MudDesign.Variant"/>
+    <MudSelect T="MatchComparison" @bind-Value="@Field.SearchFileNameComparison" data-search-target="filenamematch"
+               Variant="MudDesign.Variant">
       <MudSelectItem Value="MatchComparison.Equal">Equal</MudSelectItem>
       <MudSelectItem Value="MatchComparison.Like">Like</MudSelectItem>
     </MudSelect>
@@ -18,10 +19,10 @@
   <label class="form-label mb-1" for="@_fileSizeId">FileSize</label>
   <div class="d-flex align-items-center">
     <MudNumericField T="decimal?" @bind-Value:get="@FileSizeMoreThanValue" @bind-Value:set="@OnFileSizeMoreThanChanged"
-                     InputId="@WebElementId" data-search-target="min" />
+                     InputId="@WebElementId" data-search-target="min" Variant="MudDesign.Variant" />
     <span>～</span>
     <MudNumericField T="decimal?" @bind-Value:get="@FileSizeLessThanValue" @bind-Value:set="@OnFileSizeLessThanChanged"
-                     data-search-target="max"/>
+                     data-search-target="max" Variant="MudDesign.Variant"/>
   </div>
 </div>
 
