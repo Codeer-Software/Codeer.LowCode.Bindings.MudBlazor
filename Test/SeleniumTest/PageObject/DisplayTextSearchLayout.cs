@@ -25,7 +25,7 @@ namespace SeleniumTest.PageObject
         public LabelFieldSearchDriver NumberLabel => ByCssSelector("div[data-name='NumberLabel']").Wait();
         public NumberFieldSearchDriver Number => ByCssSelector("div[data-name='Number']").Wait();
         public LabelFieldSearchDriver RadioLabel => ByCssSelector("div[data-name='RadioLabel']").Wait();
-        public RadioGroupFieldSearchDriver RadioGroup => ByCssSelector("div[data-name='RadioGroup']").Wait();
+        public MudRadioGroupFieldSearchDriver RadioGroup => ByCssSelector("div[data-name='RadioGroup']").Wait();
         public LabelFieldSearchDriver SelectLabel => ByCssSelector("div[data-name='SelectLabel']").Wait();
         public MudSelectFieldSearchDriver Select => ByCssSelector("div[data-name='Select']").Wait();
         public LabelFieldSearchDriver SelectLinkLabel => ByCssSelector("div[data-name='SelectLinkLabel']").Wait();
