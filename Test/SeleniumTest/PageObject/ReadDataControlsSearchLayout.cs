@@ -21,7 +21,7 @@ namespace SeleniumTest.PageObject
         public LabelFieldSearchDriver DateTimeLabel => ByCssSelector("div[data-name='DateTimeLabel']").Wait();
         public DateTimeFieldSearchDriver DateTime => ByCssSelector("div[data-name='DateTime']").Wait();
         public LabelFieldSearchDriver LinkLabel => ByCssSelector("div[data-name='LinkLabel']").Wait();
-        public LinkFieldSearchDriver<LinkDataListLayout, LinkDataSearchLayout> Link => ByCssSelector("div[data-name='Link']").Wait();
+        public MudLinkFieldSearchDriver<LinkDataListLayout, LinkDataSearchLayout> Link => ByCssSelector("div[data-name='Link']").Wait();
         public LabelFieldSearchDriver NumberLabel => ByCssSelector("div[data-name='NumberLabel']").Wait();
         public NumberFieldSearchDriver Number => ByCssSelector("div[data-name='Number']").Wait();
         public LabelFieldSearchDriver RadioLabel => ByCssSelector("div[data-name='RadioLabel']").Wait();

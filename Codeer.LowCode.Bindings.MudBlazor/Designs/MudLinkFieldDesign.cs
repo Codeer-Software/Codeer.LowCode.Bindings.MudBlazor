@@ -1,4 +1,5 @@
 ﻿using Codeer.LowCode.Bindings.MudBlazor.Components;
+using Codeer.LowCode.Bindings.MudBlazor.Search;
 using MudBlazor;
 using Codeer.LowCode.Blazor.Repository.Design;
 
@@ -17,5 +18,6 @@ namespace Codeer.LowCode.Bindings.MudBlazor.Designs
 
         public MudLinkFieldDesign() => TypeFullName = typeof(MudLinkFieldDesign).FullName!;
         public override string GetWebComponentTypeFullName() => typeof(MudLinkFieldComponent).FullName!;
+        public override string GetSearchWebComponentTypeFullName() => typeof(MudLinkComponent).FullName!;
     }
 }

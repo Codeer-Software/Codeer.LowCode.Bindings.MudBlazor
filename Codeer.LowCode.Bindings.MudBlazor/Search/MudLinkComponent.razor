@@ -1,0 +1,92 @@
+@using Codeer.LowCode.Blazor.Components.Dialog
+@using Codeer.LowCode.Blazor.Components.Renderer
+@using Codeer.LowCode.Blazor.OperatingModel
+@using Codeer.LowCode.Blazor.Properties
+@using Codeer.LowCode.Blazor.Repository.Match
+@inherits MudFieldComponentBase<LinkField, MudLinkFieldDesign>
+
+@* <div class="input-group"> *@
+@*   @if (IsSelectOnly) *@
+@*   { *@
+@*     <div class="form-control d-flex align-items-center"> *@
+@*       <input class="border-0 outline-0 flex-grow-1 w-0" readonly value="@Field.DisplayText" id="@WebElementId"/> *@
+@*       @if (!string.IsNullOrEmpty(Field.DisplayText)) *@
+@*       { *@
+@*         <button class="btn-close" @onclick="Clear" data-system="clear-link-text"></button> *@
+@*       } *@
+@*     </div> *@
+@*   } *@
+@*   else *@
+@*   { *@
+@*     <input type="text" class="form-control" @bind-value:get="Value" @bind-value:set="OnChange" @bind-value:event="oninput" id="@WebElementId"/> *@
+@*   } *@
+@*   <button class="btn btn-outline-secondary" type="button" @onclick="@OpenModal"> *@
+@*     <i class="bi bi-search"></i> *@
+@*   </button> *@
+@* </div> *@
+
+<MudStack Row Spacing="1">
+  @if (IsSelectOnly) {
+    <MudTextField Value="@Field.DisplayText" ReadOnly="true" Adornment="Adornment"
+                  InputId="@WebElementId" AdornmentIcon="@Icons.Material.Filled.Close" OnAdornmentClick="@Clear"
+                  Variant="MudDesign.Variant" Error="!Field.IsValid" ErrorText="@(Field.ErrorText)"/>
+  } else {
+  <MudTextField T="string" @bind-Value:get="@Value!" @bind-Value:set="OnChange"
+                InputId="@WebElementId" Variant="MudDesign.Variant" Error="!Field.IsValid" ErrorText="@(Field.ErrorText)"/>
+  }
+  <MudIconButton Icon="@Icons.Material.Filled.Search" OnClick="OpenModal"
+                 Variant="MudDesign.ButtonVariant" Color="MudDesign.ButtonColor" data-system="clear-link-text"/>
+</MudStack>
+
+<ModalBase @bind-IsOpen="_isModalOpen" Title="Search" Size="modal-lg">
+  @if (_isModalOpen)
+  {
+    <LinkTableRenderer SearchConditions="@SearchConditions" ItemSelected="OnItemSelected" ModuleDesign="Field.Module.Design" LinkFieldDesign="Field.Design"/>
+  }
+</ModalBase>
+
+@code {
+
+  private string? Value => Field.SearchValue;
+  private bool _isModalOpen = false;
+
+  private bool IsSelectOnly => !string.IsNullOrEmpty(Field.Design.DisplayTextVariable);
+  private bool HasValue => Value != null;
+  private Adornment Adornment => HasValue ? Adornment.End : Adornment.None;
+
+  [Parameter] public SearchCondition? SearchConditions { get; set; }
+
+  protected override async Task OnParametersSetAsync()
+  {
+    await base.OnParametersSetAsync();
+    if (IsSelectOnly && !string.IsNullOrEmpty(Value) && string.IsNullOrEmpty(Field.DisplayText))
+    {
+      Field.DisplayText = await Field.GetLinkDisplayText(Value);
+    }
+  }
+
+  private void OpenModal() => _isModalOpen = true;
+
+  private void CloseModal() => _isModalOpen = false;
+
+  private async void OnItemSelected(Module obj)
+  {
+    // ここはValueVariableの値じゃないとあかん
+    await Field.SetSearchValueAsync(LinkField.GetLinkValue(Field.Design, obj));
+    // こっちはDisplayTextVariableの値
+    Field.DisplayText = LinkField.GetLinkDisplayText(Field.Design, obj);
+    CloseModal();
+  }
+
+  private async void Clear()
+  {
+    await Field.SetSearchValueAsync(null);
+    Field.DisplayText = string.Empty;
+  }
+
+  private async Task OnChange(string? value)
+  {
+    await Field.SetSearchValueAsync(value);
+  }
+
+}
