@@ -10,9 +10,6 @@ namespace Codeer.LowCode.Bindings.MudBlazor.Designs
         [Designer]
         public Variant Variant { get; set; }
 
-        [Designer]
-        public Color Color { get; set; }
-
         public MudDateTimeFieldDesign() => TypeFullName = typeof(MudDateTimeFieldDesign).FullName!;
         public override string GetWebComponentTypeFullName() => typeof(MudDateTimeFieldComponent).FullName!;
         public override string GetSearchWebComponentTypeFullName() => typeof(MudDateTimeComponent).FullName!;
