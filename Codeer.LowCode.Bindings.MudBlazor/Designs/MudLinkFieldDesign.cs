@@ -11,10 +11,7 @@ namespace Codeer.LowCode.Bindings.MudBlazor.Designs
         public Variant Variant { get; set; }
 
         [Designer]
-        public Variant ButtonVariant { get; set; }
-
-        [Designer]
-        public Color ButtonColor { get; set; }
+        public Color Color { get; set; }
 
         public MudLinkFieldDesign() => TypeFullName = typeof(MudLinkFieldDesign).FullName!;
         public override string GetWebComponentTypeFullName() => typeof(MudLinkFieldComponent).FullName!;
