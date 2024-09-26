@@ -16,16 +16,20 @@ namespace Codeer.LowCode.Bindings.MudBlazor.SeleniumDrivers.Native
         {
             Element.Click();
 
-            var popoverContentElement = WebDriver.FindElement(By.CssSelector("div[id^='popovercontent-']:has(> div.mud-list)"));
-            var listItemElements = popoverContentElement.FindElements(By.CssSelector("div.mud-list-item"));
-
-            foreach (var element in listItemElements)
+            for (int i = 0; i < 10; i++)
             {
-                if (element.Text == value)
+                var popoverContentElement = WebDriver.FindElement(By.CssSelector("div[id^='popovercontent-']:has(> div.mud-list)"));
+                var listItemElements = popoverContentElement.FindElements(By.CssSelector("div.mud-list-item"));
+
+                foreach (var element in listItemElements)
                 {
-                    element.Click();
-                    return;
+                    if (element.Text == value)
+                    {
+                        element.Click();
+                        return;
+                    }
                 }
+                Thread.Sleep(100);
             }
 
             throw new InvalidOperationException($"The Value {value} could not found");
