@@ -20,7 +20,7 @@
     => (Field.Design.SaveAsUtc ? Field.Value?.ToLocalTime() : Field.Value)?.ToString(Format);
 
   private async Task RaiseOnValueChanged(string? value) {
-    if (DateTime.TryParseExact(value, Format, CultureInfo.CurrentCulture, DateTimeStyles.AssumeLocal, out var date)) {
+    if (DateTime.TryParseExact(value, Format, CultureInfo.CurrentCulture, DateTimeStyles.None, out var date)) {
       await Field.SetValueAsync(Field.Design.SaveAsUtc ? date.ToUniversalTime() : date);
     }
   }

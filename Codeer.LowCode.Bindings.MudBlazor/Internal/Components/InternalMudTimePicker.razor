@@ -68,7 +68,7 @@
       await ValueChanged.InvokeAsync(null);
       return;
     }
-    if (DateTime.TryParseExact(value, Format, CultureInfo.CurrentCulture, DateTimeStyles.AssumeLocal, out var date)) {
+    if (DateTime.TryParseExact(value, Format, CultureInfo.CurrentCulture, DateTimeStyles.None, out var date)) {
       await RaiseCallback(DateTimeHelper.ToTimeOnly(date.TimeOfDay));
     }
   }
