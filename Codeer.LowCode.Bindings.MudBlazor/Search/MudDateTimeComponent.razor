@@ -20,7 +20,7 @@
 
   private DateTime? ParseDateTime(string? value) {
     if (string.IsNullOrWhiteSpace(value)) return null;
-    if (DateTime.TryParseExact(value, Format, CultureInfo.CurrentCulture, DateTimeStyles.AssumeLocal, out var date)) {
+    if (DateTime.TryParseExact(value, Format, CultureInfo.CurrentCulture, DateTimeStyles.None, out var date)) {
       return (Field.Design.SaveAsUtc ? date.ToUniversalTime() : date);
     }
 
