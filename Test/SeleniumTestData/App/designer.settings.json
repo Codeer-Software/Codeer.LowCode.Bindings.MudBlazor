@@ -7,11 +7,8 @@
       "HasDbContext": false
     }
   ],
-  "FileStorages": 
-  [
-    {
-        "FileStorageType": "FileSystem",
-        "Name": "Local"
-    }
+  "FileStorageNames": [
+      "Local",
+      "Azure"
   ]
 }
