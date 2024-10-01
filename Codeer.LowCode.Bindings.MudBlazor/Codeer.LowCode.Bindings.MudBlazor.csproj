@@ -6,6 +6,17 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+
+    <Version>0.1.0</Version>
+    <Description>You can use MudBlazor with Codeer.LowCode.Blazor.</Description>
+    <PackageProjectUrl>https://github.com/Codeer-Software/Codeer.LowCode.Bindings.MudBlazor</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Codeer-Software/Codeer.LowCode.Bindings.MudBlazor</RepositoryUrl>
+    <PackageTags>Blazor;LowCode;Codeer</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageReleaseNotes>
+    </PackageReleaseNotes>
+
   </PropertyGroup>
 
   <ItemGroup>
