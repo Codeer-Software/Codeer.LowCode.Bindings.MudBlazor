@@ -258,7 +258,7 @@ public class 通常Field検索Test
         readDataControlsListPage.Search.Fields.RadioGroup.Select.Edit("B");
         readDataControlsListPage.Search.Search.Click();
         WebDriverManager.WaitLoading();
-        readDataControlsListPage.List.Items.Count.Is(14);
+        readDataControlsListPage.List.Items.Count.Is(15);
         readDataControlsListPage.List.Items.GetItem(0).RadioGroup.Value.Text.Is(string.Empty);
     }
 
@@ -284,7 +284,7 @@ public class 通常Field検索Test
         readDataControlsListPage.Search.Fields.Select.Select.Edit("B");
         readDataControlsListPage.Search.Search.Click();
         WebDriverManager.WaitLoading();
-        readDataControlsListPage.List.Items.Count.Is(14);
+        readDataControlsListPage.List.Items.Count.Is(15);
         readDataControlsListPage.List.Items.GetItem(0).Select.ReadOnlyText.Text.Is(string.Empty);
     }
 
@@ -310,7 +310,7 @@ public class 通常Field検索Test
         readDataControlsListPage.Search.Fields.SelectLink.Select.Edit("CCC");
         readDataControlsListPage.Search.Search.Click();
         WebDriverManager.WaitLoading();
-        readDataControlsListPage.List.Items.Count.Is(14);
+        readDataControlsListPage.List.Items.Count.Is(15);
         readDataControlsListPage.List.Items.GetItem(0).SelectLink.ReadOnlyText.Text.Is(string.Empty);
     }
 
