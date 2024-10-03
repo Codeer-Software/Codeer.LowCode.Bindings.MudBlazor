@@ -312,7 +312,7 @@ public class TileListField検索Test
     {
         var readListDataListPage = _driver.AttachReadTileListDataListPage();
         readListDataListPage.Search.Fields.List_Text.Text.Edit("abc");
-        readListDataListPage.Search.Fields.List_Text.Match.Edit("Equal");
+        readListDataListPage.Search.Fields.List_Text.Match.Edit("完全一致");
         readListDataListPage.Search.Search.Click();
         WebDriverManager.WaitLoading();
         readListDataListPage.List.Items.Count.Is(2);
@@ -322,7 +322,7 @@ public class TileListField検索Test
         readListDataListPage.List.Items.Count.Is(3);
 
         readListDataListPage.Search.Fields.List_Text.Text.Edit("c");
-        readListDataListPage.Search.Fields.List_Text.Match.Edit("Like");
+        readListDataListPage.Search.Fields.List_Text.Match.Edit("部分一致");
         readListDataListPage.Search.Search.Click();
         WebDriverManager.WaitLoading();
         readListDataListPage.List.Items.Count.Is(2);
@@ -389,14 +389,14 @@ public class TileListField検索Test
         var readListDataListPage = _driver.AttachReadTileListDataListPage();
         // File名 Equals 検索
         readListDataListPage.Search.Fields.List_File.FileName.Edit("data.txt");
-        readListDataListPage.Search.Fields.List_File.FileNameMatch.Edit("Equal");
+        readListDataListPage.Search.Fields.List_File.FileNameMatch.Edit("完全一致");
         readListDataListPage.Search.Search.Click();
         WebDriverManager.WaitLoading();
         readListDataListPage.List.Items.Count.Is(2);
 
         // File名 Like 検索
         readListDataListPage.Search.Fields.List_File.FileName.Edit("ata");
-        readListDataListPage.Search.Fields.List_File.FileNameMatch.Edit("Like");
+        readListDataListPage.Search.Fields.List_File.FileNameMatch.Edit("部分一致");
         readListDataListPage.Search.Search.Click();
         WebDriverManager.WaitLoading();
         readListDataListPage.List.Items.Count.Is(2);

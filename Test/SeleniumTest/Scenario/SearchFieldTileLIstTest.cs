@@ -304,7 +304,7 @@ public class SearchFieldTileListTest
 
         var readListDataDetailPage = _driver.AttachReadTileListDataDetailPage();
         readListDataDetailPage.Detail.Search.Fields.Text.Text.Edit("abc");
-        readListDataDetailPage.Detail.Search.Fields.Text.Match.Edit("Equal");
+        readListDataDetailPage.Detail.Search.Fields.Text.Match.Edit("完全一致");
         readListDataDetailPage.Detail.Search.Search.Click();
         WebDriverManager.WaitLoading();
         readListDataDetailPage.Detail.List.Items.GetItem(0).Text.ReadOnlyText.Text.Is("abc");
@@ -314,7 +314,7 @@ public class SearchFieldTileListTest
 
         // Like 検索
         readListDataDetailPage.Detail.Search.Fields.Text.Text.Edit("b");
-        readListDataDetailPage.Detail.Search.Fields.Text.Match.Edit("Like");
+        readListDataDetailPage.Detail.Search.Fields.Text.Match.Edit("部分一致");
         readListDataDetailPage.Detail.Search.Search.Click();
         WebDriverManager.WaitLoading();
         readListDataDetailPage.Detail.List.Items.GetItem(0).Text.ReadOnlyText.Text.Is("abc");
@@ -376,7 +376,7 @@ public class SearchFieldTileListTest
 
         var readListDataDetailPage = _driver.AttachReadTileListDataDetailPage();
         readListDataDetailPage.Detail.Search.Fields.File.FileName.Edit("data.txt");
-        readListDataDetailPage.Detail.Search.Fields.File.FileNameMatch.Edit("Equal");
+        readListDataDetailPage.Detail.Search.Fields.File.FileNameMatch.Edit("完全一致");
         readListDataDetailPage.Detail.Search.Search.Click();
         WebDriverManager.WaitLoading();
         // readListDataDetailPage.Detail.List.Items.GetItem(0).File.Input.Text.Is("data.txt");
@@ -385,7 +385,7 @@ public class SearchFieldTileListTest
 
         // Like 検索
         readListDataDetailPage.Detail.Search.Fields.File.FileName.Edit("ta");
-        readListDataDetailPage.Detail.Search.Fields.File.FileNameMatch.Edit("Like");
+        readListDataDetailPage.Detail.Search.Fields.File.FileNameMatch.Edit("部分一致");
         readListDataDetailPage.Detail.Search.Search.Click();
         WebDriverManager.WaitLoading();
         // readListDataDetailPage.Detail.List.Items.GetItem(0).File.Input.Text.Is("data.txt");

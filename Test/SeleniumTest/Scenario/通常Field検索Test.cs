@@ -320,7 +320,7 @@ public class 通常Field検索Test
         // Equal 検索
         var readDataControlsListPage = _driver.AttachReadDataControlsListPage();
         readDataControlsListPage.Search.Fields.Text.Text.Edit("abc");
-        readDataControlsListPage.Search.Fields.Text.Match.Edit("Equal");
+        readDataControlsListPage.Search.Fields.Text.Match.Edit("完全一致");
         readDataControlsListPage.Search.Search.Click();
         WebDriverManager.WaitLoading();
         readDataControlsListPage.List.Items.GetItem(0).Text.ReadOnlyText.Text.Is("abc");
@@ -329,7 +329,7 @@ public class 通常Field検索Test
 
         // Like 検索
         readDataControlsListPage.Search.Fields.Text.Text.Edit("b");
-        readDataControlsListPage.Search.Fields.Text.Match.Edit("Like");
+        readDataControlsListPage.Search.Fields.Text.Match.Edit("部分一致");
         readDataControlsListPage.Search.Search.Click();
         WebDriverManager.WaitLoading();
         readDataControlsListPage.List.Items.GetItem(0).Text.ReadOnlyText.Text.Is("abc");
@@ -396,14 +396,14 @@ public class 通常Field検索Test
         var readDataControlsListPage = _driver.AttachReadDataControlsListPage();
         // File名 Equals 検索
         readDataControlsListPage.Search.Fields.File.FileName.Edit("data.txt");
-        readDataControlsListPage.Search.Fields.File.FileNameMatch.Edit("Equal");
+        readDataControlsListPage.Search.Fields.File.FileNameMatch.Edit("完全一致");
         readDataControlsListPage.Search.Search.Click();
         WebDriverManager.WaitLoading();
         readDataControlsListPage.List.Items.GetItem(0).File.ReadOnlyText.Text.Is("data.txt");
 
         // File名 Like 検索
         readDataControlsListPage.Search.Fields.File.FileName.Edit("ata");
-        readDataControlsListPage.Search.Fields.File.FileNameMatch.Edit("Like");
+        readDataControlsListPage.Search.Fields.File.FileNameMatch.Edit("部分一致");
         readDataControlsListPage.Search.Search.Click();
         WebDriverManager.WaitLoading();
         readDataControlsListPage.List.Items.GetItem(0).File.ReadOnlyText.Text.Is("data.txt");
