@@ -1,9 +1,10 @@
+@using Codeer.LowCode.Bindings.Radzen.Blazor.Properties
 @using Codeer.LowCode.Blazor.OperatingModel
 @using Codeer.LowCode.Blazor.Repository.Match
 @inherits MudFieldComponentBase<FileField, MudFileFieldDesign>
 
 <div class="mb-2">
-  <label class="form-label mb-1" for="@WebElementId">FileName</label>
+  <label class="form-label mb-1" for="@WebElementId">@(Resource.SearchField_FileField_FileName)</label>
   <div class="d-flex">
     <MudTextField T="string" @bind-Value:get="@FileNameValue!" @bind-Value:set="@OnFileNameChanged" InputId="@WebElementId"
                   data-search-target="filename" Variant="MudDesign.Variant"/>
@@ -16,7 +17,7 @@
 </div>
 
 <div>
-  <label class="form-label mb-1" for="@_fileSizeId">FileSize</label>
+  <label class="form-label mb-1" for="@_fileSizeId">@(Resource.SearchField_FileField_FileSize)</label>
   <div class="d-flex align-items-center">
     <MudNumericField T="decimal?" @bind-Value:get="@FileSizeMoreThanValue" @bind-Value:set="@OnFileSizeMoreThanChanged"
                      InputId="@WebElementId" data-search-target="min" Variant="MudDesign.Variant" />

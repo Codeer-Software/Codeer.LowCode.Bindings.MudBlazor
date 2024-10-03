@@ -33,4 +33,10 @@
     <UpToDateCheckInput Remove="Fields\FrappeGantt\FrappeGanttFieldComponent.razor" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="Properties\Resource.Designer.cs" />
+    <Content Include="Properties\Resource.ja-JP.resx" />
+    <Content Include="Properties\Resource.resx" />
+  </ItemGroup>
+
 </Project>
