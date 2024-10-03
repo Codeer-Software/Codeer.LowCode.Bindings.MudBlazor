@@ -1,3 +1,4 @@
+@using Codeer.LowCode.Bindings.MudBlazor.Properties
 @using Codeer.LowCode.Blazor.OperatingModel
 @using Codeer.LowCode.Blazor.Repository.Match
 @inherits MudFieldComponentBase<TextField, MudTextFieldDesign>
@@ -5,8 +6,8 @@
 <div class="d-flex">
   <MudTextField T="string" @bind-Value:get="@Value!" @bind-Value:set="@OnChange" InputId="@WebElementId" Variant="MudDesign.Variant"/>
   <MudSelect T="MatchComparison" @bind-Value:get="@Comparison" @bind-Value:set="@OnComparisonChange" Variant="MudDesign.Variant">
-    <MudSelectItem Value="MatchComparison.Equal">Equal</MudSelectItem>
-    <MudSelectItem Value="MatchComparison.Like">Like</MudSelectItem>
+    <MudSelectItem Value="MatchComparison.Equal">@(Resource.SearchField_MatchCondition_Equals)</MudSelectItem>
+    <MudSelectItem Value="MatchComparison.Like">@(Resource.SearchField_MatchCondition_Equals)</MudSelectItem>
   </MudSelect>
 </div>
 

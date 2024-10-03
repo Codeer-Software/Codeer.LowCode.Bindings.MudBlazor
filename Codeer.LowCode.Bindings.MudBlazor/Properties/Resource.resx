@@ -123,4 +123,10 @@
   <data name="SearchField.FileField.FileName" xml:space="preserve">
     <value>File name</value>
   </data>
+  <data name="SearchField.MatchCondition.Equals" xml:space="preserve">
+    <value>Equals</value>
+  </data>
+  <data name="SearchField.MatchCondition.Like" xml:space="preserve">
+    <value>Contains</value>
+  </data>
 </root>

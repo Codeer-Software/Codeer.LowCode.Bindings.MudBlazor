@@ -1,4 +1,4 @@
-@using Codeer.LowCode.Bindings.Radzen.Blazor.Properties
+@using Codeer.LowCode.Bindings.MudBlazor.Properties
 @using Codeer.LowCode.Blazor.OperatingModel
 @using Codeer.LowCode.Blazor.Repository.Match
 @inherits MudFieldComponentBase<FileField, MudFileFieldDesign>
@@ -10,8 +10,8 @@
                   data-search-target="filename" Variant="MudDesign.Variant"/>
     <MudSelect T="MatchComparison" @bind-Value="@Field.SearchFileNameComparison" data-search-target="filenamematch"
                Variant="MudDesign.Variant">
-      <MudSelectItem Value="MatchComparison.Equal">Equal</MudSelectItem>
-      <MudSelectItem Value="MatchComparison.Like">Like</MudSelectItem>
+      <MudSelectItem Value="MatchComparison.Equal">@(Resource.SearchField_MatchCondition_Equals)</MudSelectItem>
+      <MudSelectItem Value="MatchComparison.Like">@(Resource.SearchField_MatchCondition_Like)</MudSelectItem>
     </MudSelect>
   </div>
 </div>

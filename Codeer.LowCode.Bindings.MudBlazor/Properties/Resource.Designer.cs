@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Codeer.LowCode.Bindings.Radzen.Blazor.Properties {
+namespace Codeer.LowCode.Bindings.MudBlazor.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Codeer.LowCode.Bindings.Radzen.Blazor.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Codeer.LowCode.Bindings.Radzen.Blazor.Properties.Resource", typeof(Resource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Codeer.LowCode.Bindings.MudBlazor.Properties.Resource", typeof(Resource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -75,6 +75,24 @@ namespace Codeer.LowCode.Bindings.Radzen.Blazor.Properties {
         internal static string SearchField_FileField_FileSize {
             get {
                 return ResourceManager.GetString("SearchField.FileField.FileSize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Equals に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string SearchField_MatchCondition_Equals {
+            get {
+                return ResourceManager.GetString("SearchField.MatchCondition.Equals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Contains に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string SearchField_MatchCondition_Like {
+            get {
+                return ResourceManager.GetString("SearchField.MatchCondition.Like", resourceCulture);
             }
         }
     }
