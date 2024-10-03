@@ -10,8 +10,8 @@ namespace Codeer.LowCode.Bindings.MudBlazor.SeleniumDrivers.Search
         where TSearchLayout : ComponentBase
     {
         public TextBoxDriver Text => ByTagName("input").Wait().Find<TextBoxDriver>();
-        public ButtonDriver Clear => ByCssSelector(".mud-input-adornment button").Wait().Find<ButtonDriver>();
-        public ButtonDriver Search => ByCssSelector("div[role='group'] > button.mud-icon-button").Wait();
+        public ButtonDriver Clear => ByCssSelector("input ~ div > button").Wait().Find<ButtonDriver>();
+        public ButtonDriver Search => ByCssSelector("button[data-system='search']").Wait();
         public SearchFieldDriver<TSearchLayout> LinkSearch => ByCssSelector("div[data-system='search-field']").Wait();
         public ListFieldDriver<TListLayout> LinkList => ByCssSelector("div[data-system='list-field']").Wait();
         public MudLinkFieldSearchDriver(IWebElement element) : base(element) { }

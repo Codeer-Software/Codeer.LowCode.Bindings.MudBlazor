@@ -6,7 +6,7 @@ namespace Codeer.LowCode.Bindings.MudBlazor.SeleniumDrivers.Components
 {
     public class MudBooleanFieldToggleDriver : ComponentBase
     {
-        public MudToggleButtonDriver Toggle => ByCssSelector("div.mud-toggle-item").Find<MudToggleButtonDriver>();
+        public MudToggleButtonDriver Toggle => ByCssSelector(".mud-toggle-group button").Find<MudToggleButtonDriver>();
         public IWebElement Label => ByTagName("label").Wait().Find();
         public IWebElement ReadOnlyText => ByTagName("span").Wait().Find();
 
