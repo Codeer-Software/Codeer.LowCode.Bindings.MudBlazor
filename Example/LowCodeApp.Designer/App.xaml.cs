@@ -36,10 +36,7 @@ namespace LowCodeApp.Designer
             ScriptRuntimeTypeManager.AddService(new MailService());
 
             BlazorRuntime.InstallBundleCss("LowCodeApp.Client.Shared");
-            BlazorRuntime.InstallContentCss("MudBlazor", "/MudBlazor.min.css");
-            BlazorRuntime.InstallContentCss("Heron.MudCalendar", "/Heron.MudCalendar.min.css");
-            BlazorRuntime.InstallContentScript("MudBlazor", "/MudBlazor.min.js");
-            BlazorRuntime.InstallContentScript("Heron.MudCalendar", "/Heron.MudCalendar.min.js", "module");
+            BlazorRuntime.InstallAssemblyInitializer(typeof(MudBlazorInstaller).Assembly);
             BlazorRuntime.InstallRenderProvider(typeof(MudBlazorInstaller));
 
             IconCandidate.Icons.AddRange(LowCodeApp.Designer.Properties.Resources.bootstrap_icons
