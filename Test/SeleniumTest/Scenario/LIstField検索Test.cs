@@ -23,12 +23,12 @@ public class ListField検索Test
     {
         var readListDataListPage = _driver.AttachReadListDataListPage();
 
-        readListDataListPage.Search.Fields.List.Select.Edit("Exists");
+        readListDataListPage.Search.Fields.List.Select.Edit("行を持つ");
         readListDataListPage.Search.Search.Click();
         WebDriverManager.WaitLoading();
         readListDataListPage.List.Items.Count.Is(2);
 
-        readListDataListPage.Search.Fields.List.Select.Edit("NotExists");
+        readListDataListPage.Search.Fields.List.Select.Edit("行を持たない");
         readListDataListPage.Search.Search.Click();
         WebDriverManager.WaitLoading();
         readListDataListPage.List.Items.Count.Is(1);
