@@ -23,6 +23,7 @@ LowCodeApp.Client.Shared プロジェクトにNuGetから次のパッケージ�
 `Program.cs` に以下のコードを追加してください。
 
 ```csharp
+MudBlazorLoader.LoadAssemblies();
 builder.Services.AddMudServices();
 ```
 
@@ -39,8 +40,7 @@ builder.Services.AddMudServices();
 `Program.cs` に以下のコードを追加してください。
 
 ```csharp
-typeof(MudButtonFieldDesign).ToString();
-typeof(ChartType).ToString();
+MudBlazorLoader.LoadAssemblies();
 ```
 
 #### LowCodeApp.Designer
@@ -48,6 +48,7 @@ typeof(ChartType).ToString();
 `App.xaml.cs` に以下のコードを追加してください。
 
 ```csharp
+MudBlazorLoader.LoadAssemblies();
 Services.AddMudServices();
 BlazorRuntime.InstallAssemblyInitializer(typeof(MudBlazorInstaller).Assembly);
 BlazorRuntime.InstallRenderProvider(typeof(MudBlazorInstaller));

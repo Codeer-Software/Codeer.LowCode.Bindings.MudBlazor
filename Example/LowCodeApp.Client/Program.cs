@@ -1,3 +1,4 @@
+using Codeer.LowCode.Bindings.MudBlazor.Installer;
 using Codeer.LowCode.Blazor.RequestInterfaces;
 using LowCodeApp.Client;
 using LowCodeApp.Client.Shared;
@@ -5,6 +6,8 @@ using LowCodeApp.Client.Shared.Services;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using MudBlazor.Services;
+
+MudBlazorLoader.LoadAssemblies();
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");

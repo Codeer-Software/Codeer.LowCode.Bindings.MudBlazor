@@ -11,7 +11,6 @@ using System.Configuration;
 using System.IO;
 using System.IO.Compression;
 using System.Windows;
-using Codeer.LowCode.Bindings.MudBlazor.Designs;
 using Codeer.LowCode.Bindings.MudBlazor.Installer;
 using MudBlazor.Services;
 
@@ -21,7 +20,7 @@ namespace LowCodeApp.Designer
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            typeof(MudCalendarFieldDesign).ToString();
+            MudBlazorLoader.LoadAssemblies();
 
             Codeer.LowCode.Blazor.License.LicenseManager.IsAutoUpdate =
                 bool.TryParse(ConfigurationManager.AppSettings["IsLicenseAutoUpdate"], out var val) ? val : true;

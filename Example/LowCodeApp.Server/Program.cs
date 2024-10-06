@@ -7,12 +7,9 @@ using LowCodeApp.Server.Services.FileManagement;
 using PdfSharp.Fonts;
 using System.Globalization;
 using System.Text.Json.Serialization;
-using Codeer.LowCode.Bindings.MudBlazor.Designs;
-using MudBlazor;
+using Codeer.LowCode.Bindings.MudBlazor.Installer;
 
-//load dll.
-typeof(MudButtonFieldDesign).ToString();
-typeof(ChartType).ToString();
+MudBlazorLoader.LoadAssemblies();
 
 var builder = WebApplication.CreateBuilder(args);
 
