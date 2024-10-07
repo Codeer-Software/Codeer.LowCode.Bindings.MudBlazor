@@ -1,7 +1,8 @@
 # Bindings.MudBlazor
 
-Codeer.LowCode.BlazorにMudBlazor UIコンポーネントを追加するためのライブラリです。
+[Codeer.LowCode.Blazor](https://github.com/Codeer-Software/Codeer.LowCode.Blazor.Manual/blob/main/JP/README.md)に[MudBlazor](https://github.com/MudBlazor/MudBlazor) UIコンポーネントを追加するためのライブラリです。
 
+[サンプル](https://lowcodedemo.azurewebsites.net/MudBlazor/MudBlazorHome)
 ## インストール
 
 ### パッケージのインストール
