@@ -1,4 +1,5 @@
 using Codeer.LowCode.Blazor.DesignLogic;
+using Codeer.LowCode.Blazor.DesignLogic.Transfer;
 using Codeer.LowCode.Blazor.Repository;
 using Codeer.LowCode.Blazor.Repository.Data;
 using Codeer.LowCode.Blazor.Repository.Match;
@@ -53,8 +54,8 @@ namespace LowCodeApp.Client.Shared.Services
             await InitializeHotReloadAsync();
             if (_design != null) return;
 
-            _design = await _http.GetFromJsonAsync<DesignData>($"/api/module_data/design") ?? new();
-            var currentUserModule = _design.Modules.FirstOrDefault(e => e.Name == _design.AppSettings.CurrentUserModuleDesignName);
+            _design = DesignDataTransferLogic.ToDesignData(await _http.GetFromStreamAsync($"/api/module_data/design"));
+            var currentUserModule = _design.Modules.Find(_design.AppSettings.CurrentUserModuleDesignName);
             if (currentUserModule == null || string.IsNullOrEmpty(CurrentUserId)) return;
             CurrentUserData = (await _http.PostAsJsonAsync<SearchCondition, Paging<ModuleData>>($"/api/module_data/list",
                 new()

@@ -7,7 +7,7 @@ namespace Codeer.LowCode.Bindings.MudBlazor.Designs
     public class MudSubmitButtonFieldDesign : SubmitButtonFieldDesign
     {
         [Designer]
-        public Variant Variant { get; set; }
+        public new Variant Variant { get; set; }
 
         [Designer]
         public Color Color { get; set; }

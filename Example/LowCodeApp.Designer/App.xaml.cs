@@ -58,43 +58,7 @@ namespace LowCodeApp.Designer
             base.OnStartup(e);
 
             MainWindow.Title = "LowCodeApp";
-            DesignerEnvironment.AddMainMenu(ImportExcel, "Tools", "Import Module from Excel");
             DesignerEnvironment.AddMainMenu(ExportPageObject, "Tools", "Export PageObject");
-        }
-
-        private void ImportExcel()
-        {
-            if (string.IsNullOrEmpty(DesignerEnvironment.CurrentFileDirectory))
-            {
-                return;
-            }
-
-            var dialog = new OpenFileDialog
-            {
-                Filter = "Excel files (*.xlsx)|*.xlsx",
-            };
-            if (dialog.ShowDialog() != true) return;
-
-            try
-            {
-                var ddl = new ExcelImporter
-                {
-                    ProjectPath = DesignerEnvironment.CurrentFileDirectory
-                }.Import(dialog.FileName);
-                if (string.IsNullOrEmpty(ddl)) return;
-
-                new TextDisplayWindow
-                {
-                    DisplayText = ddl,
-                    Owner = MainWindow,
-                    WindowStartupLocation = WindowStartupLocation.CenterOwner,
-                    Title = "DDL",
-                }.Show();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
         }
 
         private void ExportPageObject()

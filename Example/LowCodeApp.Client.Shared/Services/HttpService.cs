@@ -24,6 +24,9 @@ namespace LowCodeApp.Client.Shared.Services
         public async Task<TValue?> GetFromJsonAsync<TValue>(string url) where TValue : class
             => await ExecuteReturnJson<TValue>(async () => await _http.GetAsync(url));
 
+        public async Task<Stream?> GetFromStreamAsync(string url)
+            => await ExecuteReturnStream(async () => await _http.GetAsync(url));
+
         public async Task<HttpResponseMessage?> GetAsync(string? requestUri)
              => await ExecuteReturnHttpResponseMessage(async () => await _http.GetAsync(requestUri));
 
@@ -61,6 +64,21 @@ namespace LowCodeApp.Client.Shared.Services
             try
             {
                 return response == null ? null : await response.Content.ReadFromJsonAsync<T>(CreateJsonOption());
+            }
+            catch (Exception e)
+            {
+                await Error(HttpStatusCode.InternalServerError, e.Message);
+                return null;
+            }
+        }
+
+        async Task<Stream?> ExecuteReturnStream(Func<Task<HttpResponseMessage>> a)
+        {
+            using var scope = _loadingService.StartLoading();
+            var response = await ExecuteReturnHttpResponseMessage(a);
+            try
+            {
+                return response == null ? null : await response.Content.ReadAsStreamAsync();
             }
             catch (Exception e)
             {
@@ -121,7 +139,7 @@ namespace LowCodeApp.Client.Shared.Services
         public IDisposable AddChecker(Action<HttpStatusCode, string> check)
             => new ErrorCheckerScope(check, _checkers);
 
-        private class ErrorCheckerScope : IDisposable
+        class ErrorCheckerScope : IDisposable
         {
             List<ErrorCheckerScope> _checkers;
             Action<HttpStatusCode, string> _check;

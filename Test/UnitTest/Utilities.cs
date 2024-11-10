@@ -1,11 +1,60 @@
 using Codeer.LowCode.Blazor.DataIO.Db.Definition;
 using Codeer.LowCode.Blazor.DesignLogic;
 using Codeer.LowCode.Blazor.DesignLogic.Check;
+using Codeer.LowCode.Blazor.Json;
 using Codeer.LowCode.Blazor.Repository.Design;
 using Codeer.LowCode.Blazor.Repository.Match;
 
 namespace UnitTest
 {
+    class RawPageFrameDesigns : IPageFrameDesigns
+    {
+        List<PageFrameDesign> _pageFrames;
+
+        internal RawPageFrameDesigns() => _pageFrames = new();
+        internal RawPageFrameDesigns(List<PageFrameDesign> pageFrames) => _pageFrames = pageFrames.ToList();
+
+        public string ResolvedMainPageFrameName => string.Empty;
+        public ResolvedPageFrame? FindResolved(string? name) => null;
+        public List<string> GetPageFrameNames() => _pageFrames.Select(e => e.Name).ToList();
+        public PageFrameDesign? Find(string? name) => _pageFrames.FirstOrDefault(e => e.Name == name);
+
+        internal List<PageFrameDesign> ToList() => _pageFrames.ToList();
+
+        internal bool Any(Func<PageFrameDesign, bool> condition) => _pageFrames.Any(condition);
+        internal void Add(PageFrameDesign page) => _pageFrames.Add(page);
+        internal void Remove(PageFrameDesign pageFrames) => _pageFrames.Add(pageFrames);
+
+        internal void Remove(string name)
+        {
+            var i = _pageFrames.FindIndex(e => e.Name == name);
+            if (i == -1) return;
+            _pageFrames.RemoveAt(i);
+        }
+
+        internal void Sort()
+        {
+            var list = _pageFrames.OrderBy(e => e.Name).ToList();
+            _pageFrames.Clear();
+            _pageFrames.AddRange(list);
+        }
+
+        internal void SetData(PageFrameDesign pageFrameDesign)
+        {
+            var i = _pageFrames.FindIndex(e => e.Name == pageFrameDesign.Name);
+            if (i == -1)
+            {
+                _pageFrames.Add(pageFrameDesign);
+            }
+            else
+            {
+                _pageFrames[i] = pageFrameDesign;
+            }
+        }
+
+        public IPageFrameDesigns Clone() => new RawPageFrameDesigns(_pageFrames.JsonClone());
+    }
+
     public static class Utilities
     {
         public static Dictionary<string, string> CreateScripts(string moduleName = "mod") => new()
@@ -13,10 +62,10 @@ namespace UnitTest
             { moduleName, "void Func1(){}" }
         };
 
-        public static List<PageFrameDesign> CreatePageFrames() =>
+        public static IPageFrameDesigns CreatePageFrames() => new RawPageFrameDesigns(
         [
             new PageFrameDesign { Name = "PageFrame" }
-        ];
+        ]);
 
         public static ModuleDesign CreateModule(string moduleName = "mod") => new()
             { Name = moduleName, DataSourceName = "datasource", DbTable = "table" };
