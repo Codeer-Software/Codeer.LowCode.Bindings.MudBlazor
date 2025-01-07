@@ -16,7 +16,11 @@
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageReleaseNotes>
     </PackageReleaseNotes>
+  </PropertyGroup>
 
+  <PropertyGroup>
+    <StaticWebAssetFingerprintingEnabled>false</StaticWebAssetFingerprintingEnabled>
+    <StaticWebAssetsFingerprintContent>false</StaticWebAssetsFingerprintContent>
   </PropertyGroup>
 
   <ItemGroup>
