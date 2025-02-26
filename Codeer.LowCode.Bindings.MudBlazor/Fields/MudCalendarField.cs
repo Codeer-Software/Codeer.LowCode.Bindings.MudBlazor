@@ -40,6 +40,8 @@ namespace Codeer.LowCode.Bindings.MudBlazor.Fields
 
         internal DateTime SelectedDate { get; private set; } = DateTime.Now;
 
+        public int Page => 0;
+
         [ScriptHide]
         public override async Task InitializeDataAsync(FieldDataBase? fieldDataBase)
         {

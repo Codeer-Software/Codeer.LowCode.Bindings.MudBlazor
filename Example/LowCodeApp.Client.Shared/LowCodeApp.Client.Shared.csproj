@@ -14,7 +14,7 @@
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="8.0.8" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Codeer.LowCode.Blazor" Version="1.1.0" />
+    <PackageReference Include="Codeer.LowCode.Blazor" Version="1.1.34" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Codeer.LowCode.Bindings.MudBlazor\Codeer.LowCode.Bindings.MudBlazor.csproj" />

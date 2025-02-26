@@ -7,7 +7,7 @@
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 
-    <Version>0.3.0</Version>
+    <Version>0.4.0</Version>
     <Description>You can use MudBlazor with Codeer.LowCode.Blazor.</Description>
     <PackageProjectUrl>https://github.com/Codeer-Software/Codeer.LowCode.Bindings.MudBlazor</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Codeer-Software/Codeer.LowCode.Bindings.MudBlazor</RepositoryUrl>
@@ -24,7 +24,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Codeer.LowCode.Blazor" Version="1.1.0" />
+    <PackageReference Include="Codeer.LowCode.Blazor" Version="1.1.34" />
     <PackageReference Include="Heron.MudCalendar" Version="2.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="8.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.8" />
