@@ -4,9 +4,11 @@
 <div class="d-flex align-items-center">
   <MudNumericField T="decimal?" @bind-Value:get="@MoreThanValue" @bind-Value:set="@OnMoreThanChanged"
                    InputId="@WebElementId" data-search-target="min" Variant="MudDesign.Variant"/>
-  <span>～</span>
-  <MudNumericField T="decimal?" @bind-Value:get="@LessThanValue" @bind-Value:set="@OnLessThanChanged"
-                   data-search-target="max" Variant="MudDesign.Variant"/>
+  @if (!Field.Design.IsSimpleSearchParameter) {
+    <span>～</span>
+    <MudNumericField T="decimal?" @bind-Value:get="@LessThanValue" @bind-Value:set="@OnLessThanChanged"
+                     data-search-target="max" Variant="MudDesign.Variant"/>
+  }
 </div>
 
 @code {

@@ -4,6 +4,7 @@ using Codeer.LowCode.Blazor.Repository.Design;
 
 namespace Codeer.LowCode.Bindings.MudBlazor.Designs
 {
+    [IgnoreBaseProperties(nameof(ImageResourceSet))]
     public class MudSubmitButtonFieldDesign : SubmitButtonFieldDesign
     {
         [Designer]

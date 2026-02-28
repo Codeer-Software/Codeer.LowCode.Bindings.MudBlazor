@@ -18,7 +18,7 @@
 @code {
   private bool IsDisabled => Field.IsEnabled == false;
   private bool IsViewMode => Field.IsViewOnly;
-  private string Label => Field.Design.Text;
+  private string? Label => Field.Services.AppInfoService.Localize(Field.Design.Text);
   private bool? _tempValue;
 
   private bool IsChecked {

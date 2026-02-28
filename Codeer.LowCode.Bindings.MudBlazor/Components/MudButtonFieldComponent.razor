@@ -7,7 +7,7 @@
 </MudButton>
 
 @code {
-  private string? Label => Field.Design.Text;
+  private string? Label => Field.Services.AppInfoService.Localize(Field.Text);
   private bool IsDisabled => Field.IsEnabled == false || IsViewMode;
   private bool IsViewMode => Field.IsViewOnly;
 

@@ -24,8 +24,24 @@
   private bool IsDisabled => Field.IsEnabled == false;
   private bool IsViewMode => Field.IsViewOnly;
   private bool IsChecked => Field.Value == true;
-  private string Label => Field.Design.Text;
-  private object? ViewOnlyValue => Field.Services.AppInfoService.IsDesignMode ? "Boolean" : Field.Value;
+  private string? Label => (Field.ModuleLayoutType == ModuleLayoutType.List && Field.Design.UIType != BooleanUIType.ToggleButton) ? string.Empty : Field.Services.AppInfoService.Localize(Field.Design.Text);
+
+  private object? ViewOnlyValue
+  {
+    get
+    {
+      if (Field.Services.AppInfoService.IsDesignMode) return "Boolean";
+      if (Field.Value == null) return null;
+      if (Field.Value == true)
+      {
+        return string.IsNullOrEmpty(Field.Design.TrueText) ? true : Field.Services.AppInfoService.Localize(Field.Design.TrueText);
+      }
+      else
+      {
+        return string.IsNullOrEmpty(Field.Design.FalseText) ? false : Field.Services.AppInfoService.Localize(Field.Design.FalseText);
+      }
+    }
+  }
 
   private async Task OnChange(bool isChecked) {
     await Field.SetValueAsync(isChecked);

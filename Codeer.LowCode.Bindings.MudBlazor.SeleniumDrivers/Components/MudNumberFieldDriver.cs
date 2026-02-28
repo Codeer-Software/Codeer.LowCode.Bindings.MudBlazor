@@ -7,6 +7,7 @@ namespace Codeer.LowCode.Bindings.MudBlazor.SeleniumDrivers.Components
     public class MudNumberFieldDriver : ComponentBase
     {
         public TextBoxDriver Input => ByTagName("input").Wait();
+        public IWebElement Slider => ByCssSelector(".mud-slider").Wait().Find();
         public IWebElement ReadOnlyText => ByTagName("span").Wait().Find();
         public MudNumberFieldDriver(IWebElement element) : base(element) { }
         public static implicit operator MudNumberFieldDriver(ElementFinder finder) => finder.Find<MudNumberFieldDriver>();

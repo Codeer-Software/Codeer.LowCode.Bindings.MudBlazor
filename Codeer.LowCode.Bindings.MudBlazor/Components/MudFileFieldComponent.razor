@@ -71,7 +71,7 @@
   private async Task LoadFiles(InputFileChangeEventArgs e) {
     var maxAllowedSize = Field.Design.MaxAllowedSize ?? FileFieldDesign.DefaultMaxAllowedSize;
     var file = e.File;
-    await Field.SetFile(e.File.Name, new StreamContent(file.OpenReadStream(maxAllowedSize)));
+    await Field.SetFileAsync(e.File.Name, new StreamContent(file.OpenReadStream(maxAllowedSize)));
     if (IsImageType()) {
       await using var stream = file.OpenReadStream(maxAllowedSize);
       await LoadImageFromStream(stream);

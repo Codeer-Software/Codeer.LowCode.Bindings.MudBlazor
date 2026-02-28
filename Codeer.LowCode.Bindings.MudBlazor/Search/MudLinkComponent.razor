@@ -44,15 +44,21 @@
     }
   }
 
-  private void OpenModal() => _isModalOpen = true;
+  private async Task OpenModal()
+  {
+    if (!string.IsNullOrEmpty(Field.Design.OnSearchButtonClicked))
+    {
+      await Field.Module.ExecuteScriptAsync(Field.Design.OnSearchButtonClicked);
+    }
+    _isModalOpen = true;
+  }
 
   private void CloseModal() => _isModalOpen = false;
 
-  private async void OnItemSelected(Module obj)
+  private async void OnItemSelected(Module? obj)
   {
-    // ここはValueVariableの値じゃないとあかん
+    if (obj == null) return;
     await Field.SetSearchValueAsync(LinkField.GetLinkValue(Field.Design, obj));
-    // こっちはDisplayTextVariableの値
     Field.DisplayText = LinkField.GetLinkDisplayText(Field.Design, obj);
     CloseModal();
   }

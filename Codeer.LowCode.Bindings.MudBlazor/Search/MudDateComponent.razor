@@ -7,10 +7,12 @@
   <InternalMudDatePicker @bind-Value:get="@MoreThanValue" @bind-Value:set="@OnMoreThanChanged"
                          Variant="MudDesign.Variant" Color="MudDesign.Color" StandardInput="MudDesign.StandardInput"
                          data-search-target="min"/>
-  <span>～</span>
-  <InternalMudDatePicker @bind-Value:get="@LessThanValue" @bind-Value:set="@OnLessThanChanged"
-                         Variant="MudDesign.Variant" Color="MudDesign.Color" StandardInput="MudDesign.StandardInput"
-                         data-search-target="max"/>
+  @if (!Field.Design.IsSimpleSearchParameter) {
+    <span>～</span>
+    <InternalMudDatePicker @bind-Value:get="@LessThanValue" @bind-Value:set="@OnLessThanChanged"
+                           Variant="MudDesign.Variant" Color="MudDesign.Color" StandardInput="MudDesign.StandardInput"
+                           data-search-target="max"/>
+  }
 </div>
 
 @code {

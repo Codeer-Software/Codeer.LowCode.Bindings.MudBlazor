@@ -18,16 +18,12 @@
 @code {
   private bool IsDisabled => Field.IsEnabled == false;
   private bool IsViewMode => Field.IsViewOnly;
-  private string? Placeholder => Field.Design.Placeholder;
+  private string? Placeholder => Field.Services.AppInfoService.Localize(Field.Design.Placeholder);
   private int? MaxLength => Field.Design.MaxLength;
-  private int Rows { get; set; }
+  private int Rows => GetRowCount();
   private string? ViewOnlyValue => Field.Services.AppInfoService.IsDesignMode ? "text" : Field.Value;
-  private string? Value => Field.Value;
 
-  protected override void OnParametersSet() {
-    base.OnParametersSet();
-    Rows = Field.Design.Rows ?? 3;
-  }
+  private string? Value => Field.Value;
 
   private async void RaiseOnValueChanged(string? value) {
     await Field.SetValueAsync(value);
@@ -35,5 +31,12 @@
 
   private string WhiteSpaceStyle()
     => Field.Design.IsMultiline ? "white-space: pre-line" : "";
+
+  private int GetRowCount() {
+    if (!Field.Design.IsAutoFitRows) return Field.Design.Rows ?? 3;
+    var rows = Field.Design.Rows ?? 1;
+    var lineCount = Field.Value?.Split(new[] { "\r\n", "\n" }, StringSplitOptions.None).Length ?? 1;
+    return Math.Max(rows, lineCount);
+  }
 
 }

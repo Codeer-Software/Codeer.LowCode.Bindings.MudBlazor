@@ -7,6 +7,7 @@ namespace Codeer.LowCode.Bindings.MudBlazor.SeleniumDrivers.Components
     public class MudDateFieldDriver : ComponentBase
     {
         public TextBoxDriver Input => ByTagName("input").Wait();
+        public TextBoxDriver MonthInput => ByCssSelector("input[type='month']").Wait();
         public IWebElement ReadOnlyText => ByTagName("span").Wait().Find();
         public MudDateFieldDriver(IWebElement element) : base(element) { }
         public static implicit operator MudDateFieldDriver(ElementFinder finder) => finder.Find<MudDateFieldDriver>();

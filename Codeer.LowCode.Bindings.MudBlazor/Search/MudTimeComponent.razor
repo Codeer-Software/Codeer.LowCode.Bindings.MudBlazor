@@ -6,10 +6,12 @@
   <InternalMudTimePicker @bind-Value:get="@MoreThanValue" @bind-Value:set="@OnMoreThanChanged"
                          Variant="MudDesign.Variant" Color="MudDesign.Color" StandardInput="MudDesign.StandardInput"
                          AssumeLocal="!Field.Design.SaveAsUtc" data-search-target="min"/>
-  <span>～</span>
-  <InternalMudTimePicker @bind-Value:get="@LessThanValue" @bind-Value:set="@OnLessThanChanged"
-                         Variant="MudDesign.Variant" Color="MudDesign.Color" StandardInput="MudDesign.StandardInput"
-                         AssumeLocal="!Field.Design.SaveAsUtc" data-search-target="max"/>
+  @if (!Field.Design.IsSimpleSearchParameter) {
+    <span>～</span>
+    <InternalMudTimePicker @bind-Value:get="@LessThanValue" @bind-Value:set="@OnLessThanChanged"
+                           Variant="MudDesign.Variant" Color="MudDesign.Color" StandardInput="MudDesign.StandardInput"
+                           AssumeLocal="!Field.Design.SaveAsUtc" data-search-target="max"/>
+  }
 </div>
 
 @code {

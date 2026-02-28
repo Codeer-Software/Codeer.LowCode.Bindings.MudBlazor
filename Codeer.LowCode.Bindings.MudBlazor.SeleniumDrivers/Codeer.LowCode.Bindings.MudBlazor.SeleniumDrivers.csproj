@@ -4,7 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Version>0.2.0</Version>
+    <Version>0.3.0</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Description>Used when testing web apps created with Coder.LowCode.Blazor with Selenium.</Description>
     <PackageProjectUrl>https://github.com/Codeer-Software/Codeer.LowCode.Blazor.SeleniumDrivers</PackageProjectUrl>
@@ -15,8 +15,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Codeer.LowCode.Blazor.Designer" Version="1.1.34" />
-    <PackageReference Include="Codeer.LowCode.Blazor.SeleniumDrivers" Version="0.20.0" />
+    <PackageReference Include="Codeer.LowCode.Blazor.Designer" Version="1.2.49" />
+    <PackageReference Include="Codeer.LowCode.Blazor.SeleniumDrivers" Version="0.24.0" />
   </ItemGroup>
   
 </Project>

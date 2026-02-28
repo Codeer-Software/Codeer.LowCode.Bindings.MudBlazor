@@ -28,6 +28,7 @@
   private string GetViewOnlyValue()
   {
     var value = Field.Services.AppInfoService.IsDesignMode ? new DateTime(2024, 5, 13) : Field.Value;
+    if (Field.Design.SaveAsUtc) value = value?.ToLocalTime();
     try {
       return value?.ToString(Field.Design.Format) ?? string.Empty;
     } catch(FormatException) {

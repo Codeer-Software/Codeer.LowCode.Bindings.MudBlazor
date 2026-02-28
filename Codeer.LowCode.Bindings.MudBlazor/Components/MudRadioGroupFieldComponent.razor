@@ -1,10 +1,32 @@
+@using Codeer.LowCode.Blazor.Repository.Design
 @using Codeer.LowCode.Blazor.OperatingModel
-@inherits FieldComponentBase<RadioGroupField>
+@inherits MudFieldComponentBase<RadioGroupField, MudRadioGroupFieldDesign>
 
-<span class="d-block py-2">
-  @ViewOnlyValue
-</span>
+@if (Field.ModuleLayoutType == ModuleLayoutType.List && Field.Design.PopulateRadioButtons) {
+  <div class="py-2">
+    <MudRadioGroup T="string" @bind-Value:get="@Field.Value" @bind-Value:set="@OnChange"
+                   Disabled="@(IsDisabled || IsViewMode)">
+      @foreach (var item in Items) {
+        <MudRadio T="string" Value="@item.Design.Value" Color="MudDesign.Color">
+          @Field.Services.AppInfoService.Localize(item.Design.Text)
+        </MudRadio>
+      }
+    </MudRadioGroup>
+  </div>
+} else {
+  <span class="d-block py-2">
+    @ViewOnlyValue
+  </span>
+}
 
 @code {
+  private bool IsDisabled => Field.IsEnabled == false;
+  private bool IsViewMode => Field.IsViewOnly;
   private object? ViewOnlyValue => Field.Services.AppInfoService.IsDesignMode ? "RadioGroup" : Field.Value;
+
+  private IEnumerable<RadioButtonField> Items => Field.Module.GetFields().OfType<RadioButtonField>().Where(radio => radio.Design.GroupField == Field.Design.Name).ToList();
+
+  private async Task OnChange(string? value) {
+    if (value != null) await Field.SetValueAsync(value);
+  }
 }

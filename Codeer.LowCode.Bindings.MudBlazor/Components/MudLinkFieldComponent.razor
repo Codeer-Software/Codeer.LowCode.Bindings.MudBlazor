@@ -31,18 +31,21 @@
 
 @code {
   private bool _isModalOpen;
-  private SearchCondition Conditions => Field.GetSearchConditionAssignedValue();
+  private SearchCondition? Conditions => Field.GetSearchConditionAssignedValue();
 
   private bool IsSelectOnly => !string.IsNullOrEmpty(Field.Design.DisplayTextVariable);
   private bool IsDisabled => Field.IsEnabled == false;
   private bool IsViewMode => Field.IsViewOnly;
   private bool HasValue => Field.Value != null;
   private Adornment Adornment => HasValue ? Adornment.End : Adornment.None;
-  private string DisplayText => Field.DisplayText;
+  private string? DisplayText => Field.DisplayText;
   private string? ViewOnlyValue => Field.Services.AppInfoService.IsDesignMode ? "Link" : DisplayText;
 
   private async Task OpenModal() {
-    await Task.CompletedTask;
+    if (!string.IsNullOrEmpty(Field.Design.OnSearchButtonClicked))
+    {
+      await Field.Module.ExecuteScriptAsync(Field.Design.OnSearchButtonClicked);
+    }
     _isModalOpen = true;
   }
 
@@ -52,8 +55,9 @@
     await Field.SetValueAsync(value);
   }
 
-  private async Task OnItemSelected(Module obj) {
+  private async Task OnItemSelected(Module? obj) {
     CloseModal();
+    if (obj == null) return;
     await Field.SetValueAsync(obj);
   }
 

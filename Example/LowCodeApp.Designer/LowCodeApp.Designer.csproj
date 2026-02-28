@@ -8,7 +8,7 @@
     <ApplicationIcon>Resources\AppIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Codeer.LowCode.Blazor.Designer" Version="1.1.34" />
+    <PackageReference Include="Codeer.LowCode.Blazor.Designer" Version="1.2.49" />
     <ProjectReference Include="..\LowCodeApp.Client.Shared\LowCodeApp.Client.Shared.csproj" />
     <ProjectReference Include="..\LowCodeApp.Server.Shared\LowCodeApp.Server.Shared.csproj" />
   </ItemGroup>

@@ -6,10 +6,12 @@
   <MudTextField T="string" @bind-Value:get="@MoreThanValue!" @bind-Value:set="@OnMoreThanChanged"
                 InputId="@WebElementId" InputType="InputType.DateTimeLocal" data-search-target="min"
                 Variant="MudDesign.Variant"/>
-  <span>～</span>
-  <MudTextField T="string" @bind-Value:get="@LessThanValue!" @bind-Value:set="@OnLessThanChanged"
-                InputId="@WebElementId" InputType="InputType.DateTimeLocal" data-search-target="max"
-                Variant="MudDesign.Variant"/>
+  @if (!Field.Design.IsSimpleSearchParameter) {
+    <span>～</span>
+    <MudTextField T="string" @bind-Value:get="@LessThanValue!" @bind-Value:set="@OnLessThanChanged"
+                  InputId="@WebElementId" InputType="InputType.DateTimeLocal" data-search-target="max"
+                  Variant="MudDesign.Variant"/>
+  }
 </div>
 
 @code {

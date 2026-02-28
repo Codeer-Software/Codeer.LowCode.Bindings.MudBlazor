@@ -4,21 +4,33 @@
 @if (IsViewMode) {
   <span class="d-block py-2">@GetViewOnlyValue()</span>
 } else {
-  <MudNumericField T="decimal?" @bind-Value:get="@Field.Value" @bind-Value:set="@RaiseOnValueChanged"
-                   InputId="@WebElementId" Disabled="@IsDisabled" ReadOnly="IsViewMode"
-                   Placeholder="@Placeholder" Max="@Max" Min="@Min" Variant="MudDesign.Variant"
-                   Error="!Field.IsValid" ErrorText="@(Field.ErrorText)"/>
+  if (Field.Design.IsSlider) {
+    <MudSlider T="decimal" @bind-Value:get="@SliderValue" @bind-Value:set="@OnSliderChanged"
+               Min="@(Min ?? 0)" Max="@(Max ?? 100)" Step="@(Field.Design.Step ?? 1)"
+               Disabled="@IsDisabled" />
+  } else {
+    <MudNumericField T="decimal?" @bind-Value:get="@Field.Value" @bind-Value:set="@RaiseOnValueChanged"
+                     InputId="@WebElementId" Disabled="@IsDisabled" ReadOnly="IsViewMode"
+                     Placeholder="@Placeholder" Max="@Max" Min="@Min" Step="@(Field.Design.Step ?? 1)"
+                     Variant="MudDesign.Variant"
+                     Error="!Field.IsValid" ErrorText="@(Field.ErrorText)"/>
+  }
 }
 
 @code {
   private bool IsDisabled => Field.IsEnabled == false;
   private bool IsViewMode => Field.IsViewOnly;
-  private string? Placeholder => Field.Design.Placeholder;
+  private string? Placeholder => Field.Services.AppInfoService.Localize(Field.Design.Placeholder);
   private decimal? Max => Field.Design.Max;
   private decimal? Min => Field.Design.Min;
+  private decimal SliderValue => Field.Value ?? 0;
 
   private async Task RaiseOnValueChanged(decimal? fieldValue) {
     await Field.SetValueAsync(fieldValue);
+  }
+
+  private async Task OnSliderChanged(decimal value) {
+    await Field.SetValueAsync(value);
   }
 
   private string GetViewOnlyValue() {

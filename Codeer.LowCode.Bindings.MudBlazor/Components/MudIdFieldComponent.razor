@@ -12,7 +12,7 @@
 @code {
   private bool IsDisabled => Field.IsEnabled == false;
   private bool IsViewMode => Field.IsViewOnly;
-  private string Placeholder => Field.Design.Placeholder;
+  private string? Placeholder => Field.Services.AppInfoService.Localize(Field.Design.Placeholder);
   private string? Value => Field.Services.AppInfoService.IsDesignMode ? string.Empty : Field.Value;
   private string? ViewOnlyValue => Field.Services.AppInfoService.IsDesignMode ? "Id" : Field.Value;
 

@@ -19,21 +19,35 @@ namespace LowCodeApp.Client.Shared.ScriptObjects
     {
         private class DataGetter : IExcelSymbolConverter
         {
-            Module _module;
+            Module? _module;
+            string _name = string.Empty;
             internal DataGetter(Module module)
                 => _module = module;
 
+            internal DataGetter(object? x, string name)
+            {
+                _module = x as Module;
+                _name = name;
+            }
+
             public async Task<ExcelOverWriteCell?> GetData(string text)
             {
+                if (_module == null) return null;
                 var value = new ObjectWrapper<object>();
                 return await _module.TryGetValueByPropertyTextAsync(text, value) ? new ExcelOverWriteCell { Value = value.Value } : null;
             }
 
             public async Task<ExcelOverWriteCell?> GetData(object? x, string elementName, string text)
             {
+                if (_module == null) return null;
                 var value = new ObjectWrapper<object>();
                 return await _module.TryGetValueByPropertyTextAsync(x, text, elementName, value) ? new ExcelOverWriteCell { Value = value.Value } : null;
             }
+
+            public IExcelSymbolConverter CreateChildExcelSymbolConverter(object? x, string name)
+                => new DataGetter(x, name);
+
+            public ExcelOverWriteCell Adjust(ExcelOverWriteCell cell) => cell;
         }
 
         XLWorkbook _book;

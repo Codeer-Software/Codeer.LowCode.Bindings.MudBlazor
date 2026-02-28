@@ -4,7 +4,7 @@ using MudBlazor;
 
 namespace Codeer.LowCode.Bindings.MudBlazor.Designs
 {
-    [IgnoreBaseProperties(nameof(Variant))]
+    [IgnoreBaseProperties(nameof(Variant), nameof(ImageResourceSet), nameof(ShowTextInToolTip))]
     public class MudButtonFieldDesign: ButtonFieldDesign
     {
         public MudButtonFieldDesign() => TypeFullName = typeof(MudButtonFieldDesign).FullName!;
