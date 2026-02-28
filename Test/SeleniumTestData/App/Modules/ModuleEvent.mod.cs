@@ -15,12 +15,12 @@ void DetailLayoutDesign_OnAfterInitialization()
 int _listInit = 0;
 void ListLayoutDesign_OnBeforeInitialization()
 {
-    _listInit++
+    _listInit++;
     LabelResult.Text = "ListLayoutDesign_OnBeforeInitialization";
 }
 void ListLayoutDesign_OnAfterInitialization()
 {
-    _listInit++
+    _listInit++;
     LabelResult.Text = "ListLayoutDesign_OnAfterInitialization" + _listInit;
 }
 void SearchLayoutDesign_OnSearchInitialization()

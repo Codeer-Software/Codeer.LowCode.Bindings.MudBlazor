@@ -2,5 +2,19 @@
   "CurrentUserModuleDesignName": "",
   "AppAccessConditions": {
     "ModuleName": ""
-  }
+  },
+  "BackgroundColor": "",
+  "Color": "",
+  "FontFamily": "",
+  "Versions": [
+    {
+      "AssemblyName": "Codeer.LowCode.Bindings.MudBlazor",
+      "Version": "0.5.0.0"
+    },
+    {
+      "AssemblyName": "Codeer.LowCode.Blazor",
+      "Version": "1.2.49.0"
+    }
+  ],
+  "LocalizeResourcePath": ""
 }
