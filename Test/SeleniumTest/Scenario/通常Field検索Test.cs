@@ -182,7 +182,7 @@ public class 通常Field検索Test
     {
         var readDataControlsListPage = _driver.AttachReadDataControlsListPage();
         readDataControlsListPage.Search.Fields.Link.Search.Click();
-        readDataControlsListPage.Search.Fields.Link.LinkList.Items.GetItem(1).Code.ReadOnlyText.Click();
+        readDataControlsListPage.Search.Fields.Link.LinkList.Items.GetItem(1).Code.ReadOnlyText.DoubleClick();
         readDataControlsListPage.Search.Search.Click();
         WebDriverManager.WaitLoading();
         readDataControlsListPage.List.Items.GetItem(0).Link.ReadOnlyText.Text.Is("BBB");

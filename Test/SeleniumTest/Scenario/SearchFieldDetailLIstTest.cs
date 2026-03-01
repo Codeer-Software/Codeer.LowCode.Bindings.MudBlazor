@@ -189,7 +189,7 @@ public class SearchFieldDetailListTest
 
         var readListDataDetailPage = _driver.AttachReadDetailListDataDetailPage();
         readListDataDetailPage.Detail.Search.Fields.Link.Search.Click();
-        readListDataDetailPage.Detail.Search.Fields.Link.LinkList.Items.GetItem(1).Code.ReadOnlyText.Click();
+        readListDataDetailPage.Detail.Search.Fields.Link.LinkList.Items.GetItem(1).Code.ReadOnlyText.DoubleClick();
         readListDataDetailPage.Detail.Search.Search.Click();
         WebDriverManager.WaitLoading();
         readListDataDetailPage.Detail.List.Items.GetItem(0).Link.ReadOnlyText.Text.Is("BBB");

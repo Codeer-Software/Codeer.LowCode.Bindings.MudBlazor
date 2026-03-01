@@ -13,8 +13,13 @@ namespace Codeer.LowCode.Bindings.MudBlazor.SeleniumDrivers.Components
         public ButtonDriver Search => ByCssSelector("button[data-system='search']").Wait();
         public IWebElement ReadOnlyText => ByTagName("span").Wait().Find();
         public SearchFieldDriver<TSearchLayout> LinkSearch => ByCssSelector("div[data-system='search-field']").Wait();
-        public ListFieldDriver<TListLayout> LinkList => ByCssSelector("div[data-system='list-field']").Wait();
+        public ListFieldDriver<TListLayout> LinkList => GetModal().ByCssSelector("div[data-system='list-field']").Wait();
         public MudLinkFieldDriver(IWebElement element) : base(element) { }
         public static implicit operator MudLinkFieldDriver<TListLayout, TSearchLayout>(ElementFinder finder) => finder.Find<MudLinkFieldDriver<TListLayout, TSearchLayout>>();
+
+        private ElementFinder GetModal()
+        {
+            return new ElementFinder(base.Element.FindElement(By.XPath("/html/body")).FindElement(By.CssSelector("div.modal.show")));
+        }
     }
 }

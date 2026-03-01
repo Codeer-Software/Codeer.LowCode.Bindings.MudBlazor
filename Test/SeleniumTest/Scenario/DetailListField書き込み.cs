@@ -23,7 +23,7 @@ public class DetailListField書き込み
     public void CheckBox()
     {
         var writeListDataListPage = _driver.AttachWriteDetailListDataListPage();
-        writeListDataListPage.List.Create.Click();
+        writeListDataListPage.Create.Click();
 
         //作成
         var writeListDataDetailPage = _driver.AttachWriteDetailListDataDetailPage();
@@ -68,7 +68,7 @@ public class DetailListField書き込み
     public void Toggle()
     {
         var writeListDataListPage = _driver.AttachWriteDetailListDataListPage();
-        writeListDataListPage.List.Create.Click();
+        writeListDataListPage.Create.Click();
 
         //作成
         var writeListDataDetailPage = _driver.AttachWriteDetailListDataDetailPage();
@@ -113,7 +113,7 @@ public class DetailListField書き込み
     public void Switch()
     {
         var writeListDataListPage = _driver.AttachWriteDetailListDataListPage();
-        writeListDataListPage.List.Create.Click();
+        writeListDataListPage.Create.Click();
 
         //作成
         var writeListDataDetailPage = _driver.AttachWriteDetailListDataDetailPage();
@@ -158,7 +158,7 @@ public class DetailListField書き込み
     public void Date()
     {
         var writeListDataListPage = _driver.AttachWriteDetailListDataListPage();
-        writeListDataListPage.List.Create.Click();
+        writeListDataListPage.Create.Click();
 
         //作成
         var writeListDataDetailPage = _driver.AttachWriteDetailListDataDetailPage();
@@ -203,7 +203,7 @@ public class DetailListField書き込み
     public void DateTime()
     {
         var writeListDataListPage = _driver.AttachWriteDetailListDataListPage();
-        writeListDataListPage.List.Create.Click();
+        writeListDataListPage.Create.Click();
 
         //作成
         var writeListDataDetailPage = _driver.AttachWriteDetailListDataDetailPage();
@@ -251,7 +251,7 @@ public class DetailListField書き込み
     public void Link()
     {
         var writeListDataListPage = _driver.AttachWriteDetailListDataListPage();
-        writeListDataListPage.List.Create.Click();
+        writeListDataListPage.Create.Click();
 
         //作成
         var writeListDataDetailPage = _driver.AttachWriteDetailListDataDetailPage();
@@ -259,7 +259,7 @@ public class DetailListField書き込み
         writeListDataDetailPage.Detail.Name.Input.Edit("Link編集");
         writeListDataDetailPage.Detail.List.Create.Click();
         writeListDataDetailPage.Detail.List.Items.GetItem(0).Link.Search.Click();
-        writeListDataDetailPage.Detail.List.Items.GetItem(0).Link.LinkList.Items.GetItem(1).Element.Click();
+        writeListDataDetailPage.Detail.List.Items.GetItem(0).Link.LinkList.Items.GetItem(1).Element.DoubleClick();
         writeListDataDetailPage.Detail.SubmitButton.Submit.Click();
         WebDriverManager.WaitLoading();
         writeListDataDetailPage.Detail.List.Items.GetItem(0).Link.Input.Text.Is("BBB");
@@ -277,7 +277,7 @@ public class DetailListField書き込み
         writeListDataDetailPage2.Detail.List.Items.GetItem(0).Link.Input.Text.Is("BBB");
 
         writeListDataDetailPage2.Detail.List.Items.GetItem(0).Link.Search.Click();
-        writeListDataDetailPage2.Detail.List.Items.GetItem(0).Link.LinkList.Items.GetItem(2).Element.Click();
+        writeListDataDetailPage2.Detail.List.Items.GetItem(0).Link.LinkList.Items.GetItem(2).Element.DoubleClick();
         writeListDataDetailPage2.Detail.SubmitButton.Submit.Click();
         WebDriverManager.WaitLoading();
         writeListDataDetailPage2.Detail.List.Items.GetItem(0).Link.Input.Text.Is("AAA");
@@ -299,7 +299,7 @@ public class DetailListField書き込み
     public void Number()
     {
         var writeListDataListPage = _driver.AttachWriteDetailListDataListPage();
-        writeListDataListPage.List.Create.Click();
+        writeListDataListPage.Create.Click();
 
         //作成
         var writeListDataDetailPage = _driver.AttachWriteDetailListDataDetailPage();
@@ -344,7 +344,7 @@ public class DetailListField書き込み
     public void RadioGroup()
     {
         var writeListDataListPage = _driver.AttachWriteDetailListDataListPage();
-        writeListDataListPage.List.Create.Click();
+        writeListDataListPage.Create.Click();
 
         //作成
         var writeListDataDetailPage = _driver.AttachWriteDetailListDataDetailPage();
@@ -398,7 +398,7 @@ public class DetailListField書き込み
     public void Select()
     {
         var writeListDataListPage = _driver.AttachWriteDetailListDataListPage();
-        writeListDataListPage.List.Create.Click();
+        writeListDataListPage.Create.Click();
 
         //作成
         var writeListDataDetailPage = _driver.AttachWriteDetailListDataDetailPage();
@@ -445,7 +445,7 @@ public class DetailListField書き込み
     public void SelectLink()
     {
         var writeListDataListPage = _driver.AttachWriteDetailListDataListPage();
-        writeListDataListPage.List.Create.Click();
+        writeListDataListPage.Create.Click();
 
         //作成
         var writeListDataDetailPage = _driver.AttachWriteDetailListDataDetailPage();
@@ -492,7 +492,7 @@ public class DetailListField書き込み
     public void Text()
     {
         var writeListDataListPage = _driver.AttachWriteDetailListDataListPage();
-        writeListDataListPage.List.Create.Click();
+        writeListDataListPage.Create.Click();
 
         //作成
         var writeListDataDetailPage = _driver.AttachWriteDetailListDataDetailPage();
@@ -537,7 +537,7 @@ public class DetailListField書き込み
     public void Time()
     {
         var writeListDataListPage = _driver.AttachWriteDetailListDataListPage();
-        writeListDataListPage.List.Create.Click();
+        writeListDataListPage.Create.Click();
 
         //作成
         var writeListDataDetailPage = _driver.AttachWriteDetailListDataDetailPage();
@@ -582,7 +582,7 @@ public class DetailListField書き込み
     public void File()
     {
         var writeListDataListPage = _driver.AttachWriteDetailListDataListPage();
-        writeListDataListPage.List.Create.Click();
+        writeListDataListPage.Create.Click();
 
         //作成
         var writeListDataDetailPage = _driver.AttachWriteDetailListDataDetailPage();
